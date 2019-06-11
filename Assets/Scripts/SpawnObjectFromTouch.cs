@@ -20,6 +20,7 @@ public class SpawnObjectFromTouch : MonoBehaviour
         {
             Instantiate(Sphere);
             Sphere.transform.position = new Vector3(transform.position.x,transform.position.y+3,transform.position.z);
+            isTouchedByStick = false;
         }
     }
 }

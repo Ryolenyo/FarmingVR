@@ -18,9 +18,10 @@ public class HoeBehavior : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.name == "BlueCube")
+        Debug.Log("yo");
+        if (collider.gameObject.name == "BlueCube")
         {
             GameObject blueCube = GameObject.Find("BlueCube");
             SpawnObjectFromTouch blueCubeVariable = blueCube.GetComponent<SpawnObjectFromTouch>();
