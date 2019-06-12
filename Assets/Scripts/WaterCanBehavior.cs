@@ -44,5 +44,15 @@ public class WaterCanBehavior : MonoBehaviour
             }
             Debug.Log("watering: "+currentVolume);
         }
+
+        //Spill
+        if (collider.gameObject.tag == "AllGround")
+        {
+            if (currentVolume > 0)
+            {
+                currentVolume = currentVolume - 1;
+            }
+            Debug.Log("spilling: " + currentVolume);
+        }
     }
 }
