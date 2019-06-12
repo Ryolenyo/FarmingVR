@@ -22,6 +22,8 @@ public class Seedling : MonoBehaviour
         {
             GameObject blueCube = collider.gameObject;
             ChangeObject blueCubeVariable = blueCube.GetComponent<ChangeObject>();
+            Destroy(blueCube);
+            Destroy(this);
             blueCubeVariable.isPlanted = true;
         }
     }
