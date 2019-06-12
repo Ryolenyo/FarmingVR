@@ -5,22 +5,27 @@ using UnityEngine;
 public class FertilizerBehavior : MonoBehaviour
 {
     public int max = 10;
-    public bool used;
 
     // Start is called before the first frame update
     void Start()
     {
-        used = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(used)
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject ground = other.gameObject;
+        Fertilized groundQuality = ground.GetComponent<Fertilized>();
+        if(ground.tag == "planted" && !groundQuality.fertilized && max > 0)
         {
             max--;
-
-            used = false;
+            groundQuality.fertilized = true;
         }
     }
 }
