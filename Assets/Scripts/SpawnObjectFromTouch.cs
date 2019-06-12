@@ -18,8 +18,8 @@ public class SpawnObjectFromTouch : MonoBehaviour
     {
         if (isTouchedByStick)
         {
-            Instantiate(Sphere);
-            Sphere.transform.position = new Vector3(transform.position.x,transform.position.y+3,transform.position.z);
+            Debug.Log(transform.position.x);
+            Instantiate(Sphere, new Vector3(transform.position.x, transform.position.y + 3, transform.position.z), Quaternion.identity);
             isTouchedByStick = false;
         }
     }

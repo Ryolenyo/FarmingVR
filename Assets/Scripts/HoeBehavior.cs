@@ -20,10 +20,9 @@ public class HoeBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("yo");
-        if (collider.gameObject.name == "BlueCube")
+        if (collider.gameObject.tag == "ground")
         {
-            GameObject blueCube = GameObject.Find("BlueCube");
+            GameObject blueCube = collider.gameObject;
             SpawnObjectFromTouch blueCubeVariable = blueCube.GetComponent<SpawnObjectFromTouch>();
             blueCubeVariable.isTouchedByStick = true;
         }
