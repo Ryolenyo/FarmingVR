@@ -265,6 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 181386397}
   - component: {fileID: 181386398}
+  - component: {fileID: 181386399}
   m_Layer: 0
   m_Name: spawnPoint
   m_TagString: Untagged
@@ -280,7 +281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181386396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: 0.049, z: -1.8}
+  m_LocalPosition: {x: -0.47, y: 0.049, z: -6.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 509027178}
@@ -301,6 +302,20 @@ MonoBehaviour:
   isGrowUp: 1
   fruitObject: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4,
     type: 3}
+  growUpTime: 3
+--- !u!65 &181386399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181386396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2642248, y: 0.08551195, z: 3.457231}
+  m_Center: {x: -0.92507577, y: 0.06397752, z: 0.24270217}
 --- !u!1 &369155301
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +538,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
+--- !u!1 &485638298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485638299}
+  - component: {fileID: 485638301}
+  - component: {fileID: 485638300}
+  m_Layer: 0
+  m_Name: spawnPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &485638299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485638298}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4699996, y: 0.537, z: -6.7999988}
+  m_LocalScale: {x: 1.0000293, y: 1, z: 0.99998456}
+  m_Children: []
+  m_Father: {fileID: 509027178}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &485638300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485638298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2642248, y: 0.08551195, z: 3.457231}
+  m_Center: {x: -0.92507577, y: 0.06397752, z: 0.24270217}
+--- !u!114 &485638301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485638298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2a3b21dc18946489c497221e709522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrowUp: 1
+  fruitObject: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4,
+    type: 3}
+  growUpTime: 3
 --- !u!1 &509027174
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,9 +688,72 @@ Transform:
   m_LocalScale: {x: 0.13929592, y: 3.100935, z: 0.09069139}
   m_Children:
   - {fileID: 181386397}
+  - {fileID: 568690022}
+  - {fileID: 485638299}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &568690021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568690022}
+  - component: {fileID: 568690024}
+  - component: {fileID: 568690023}
+  m_Layer: 0
+  m_Name: spawnPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &568690022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568690021}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4699996, y: 0.214, z: 6.2}
+  m_LocalScale: {x: 1.0000293, y: 1, z: 0.99998456}
+  m_Children: []
+  m_Father: {fileID: 509027178}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &568690023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568690021}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2642248, y: 0.08551195, z: 3.457231}
+  m_Center: {x: -0.92507577, y: 0.06397752, z: 0.24270217}
+--- !u!114 &568690024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568690021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2a3b21dc18946489c497221e709522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrowUp: 1
+  fruitObject: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4,
+    type: 3}
+  growUpTime: 3
 --- !u!1 &657861303
 GameObject:
   m_ObjectHideFlags: 0
