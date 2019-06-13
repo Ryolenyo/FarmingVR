@@ -39,7 +39,7 @@ namespace Valve.VR.InteractionSystem
         
 
 		protected VelocityEstimator velocityEstimator;
-        protected bool attached = false;
+        public bool attached = false; // protected -> public
         protected float attachTime;
         protected Vector3 attachPosition;
         protected Quaternion attachRotation;
@@ -49,10 +49,12 @@ namespace Valve.VR.InteractionSystem
         public UnityEvent onDetachFromHand;
         public UnityEvent<Hand> onHeldUpdate;
 
-        
+
         protected RigidbodyInterpolation hadInterpolation = RigidbodyInterpolation.None;
 
         protected new Rigidbody rigidbody;
+
+        public GameObject harvastablePlant;
 
         [HideInInspector]
         public Interactable interactable;
@@ -130,27 +132,28 @@ namespace Valve.VR.InteractionSystem
 		}
 
         //-------------------------------------------------
-        protected virtual void OnAttachedToHand( Hand hand )
-		{
+        protected virtual void OnAttachedToHand(Hand hand)
+        {
             //Debug.Log("<b>[SteamVR Interaction]</b> Pickup: " + hand.GetGrabStarting().ToString());
 
             hadInterpolation = this.rigidbody.interpolation;
 
             attached = true;
 
-			onPickUp.Invoke();
+            onPickUp.Invoke();
 
-			hand.HoverLock( null );
-            
+            hand.HoverLock(null);
+
             rigidbody.interpolation = RigidbodyInterpolation.None;
-            
-		    velocityEstimator.BeginEstimatingVelocity();
 
-			attachTime = Time.time;
-			attachPosition = transform.position;
-			attachRotation = transform.rotation;
+            velocityEstimator.BeginEstimatingVelocity();
 
-		}
+            attachTime = Time.time;
+            attachPosition = transform.position;
+            attachRotation = transform.rotation;
+
+        }
+  
 
 
         //-------------------------------------------------
