@@ -23,6 +23,7 @@ public class Seedling : MonoBehaviour
     {
         if (collider.gameObject.tag == "ground")
         {
+            Debug.Log("d");
             GameObject blueCube = collider.gameObject;
             ChangeObject blueCubeVariable = blueCube.GetComponent<ChangeObject>();
             Destroy(Dirt);
