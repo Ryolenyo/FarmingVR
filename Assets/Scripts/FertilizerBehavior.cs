@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FertilizerBehavior : MonoBehaviour
 {
-    public int max = 10;
+    public int max;
+    public GameObject fertilizerBag;
+    public float minHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +24,13 @@ public class FertilizerBehavior : MonoBehaviour
     {
         GameObject ground = other.gameObject;
         Fertilized groundQuality = ground.GetComponent<Fertilized>();
-        if(ground.tag == "planted" && !groundQuality.fertilized && max > 0)
+
+        if(ground.tag == "planted" && !groundQuality.fertilized && max > 0 && fertilizerBag.transform.position.y > minHeight)
         {
             max--;
             groundQuality.fertilized = true;
+            Debug.Log("fertilizer remain: ");
+            Debug.Log(max);
         }
     }
 }

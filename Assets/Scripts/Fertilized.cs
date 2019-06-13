@@ -21,9 +21,10 @@ public class Fertilized : MonoBehaviour
     {
         if(fertilized && !done)
         {
-            plantValue += 10 / 100;
+            plantValue += plantValue * 10 / 100;
             done = true;
+            Debug.Log("value: ");
+            Debug.Log(plantValue);
         }
-        Debug.Log("value: " + plantValue);
     }
 }
