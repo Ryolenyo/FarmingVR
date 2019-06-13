@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+<<<<<<< HEAD
   - planted
+=======
+>>>>>>> Movement-Plant
   layers:
   - Default
   - TransparentFX
