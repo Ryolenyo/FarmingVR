@@ -10,7 +10,6 @@ public class Seedling : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -23,12 +22,12 @@ public class Seedling : MonoBehaviour
     {
         if (collider.gameObject.tag == "ground")
         {
-            Debug.Log("d");
             GameObject blueCube = collider.gameObject;
+            Debug.Log(blueCube.transform.position.x);
             ChangeObject blueCubeVariable = blueCube.GetComponent<ChangeObject>();
-            Destroy(Dirt);
-            Destroy(gameObject);
             blueCubeVariable.isPlanted = true;
+
+            Destroy(gameObject);
         }
     }
 }
