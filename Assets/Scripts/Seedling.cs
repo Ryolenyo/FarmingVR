@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Seedling : MonoBehaviour
 {
+
+    public GameObject Dirt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +25,8 @@ public class Seedling : MonoBehaviour
         {
             GameObject blueCube = collider.gameObject;
             ChangeObject blueCubeVariable = blueCube.GetComponent<ChangeObject>();
-            Destroy(blueCube);
-            Destroy(this);
+            Destroy(Dirt);
+            Destroy(gameObject);
             blueCubeVariable.isPlanted = true;
         }
     }
