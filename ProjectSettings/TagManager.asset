@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - AllGround
+  - State_Sapling
+  - State_Ripe
+  - State_Golden
+  - State_Wilt
   layers:
   - Default
   - TransparentFX
