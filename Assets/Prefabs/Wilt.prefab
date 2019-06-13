@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: -8203863076183077842}
   - component: {fileID: -1428187216506042045}
   - component: {fileID: 4209938033452403227}
+  - component: {fileID: -5105202857268708736}
   m_Layer: 0
   m_Name: Wilt
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,4 +207,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  harvastablePlant: {fileID: 0}
   interactable: {fileID: 0}
+--- !u!114 &-5105202857268708736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5837977761638657962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4096dd9a40427e46a5024987e73769c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextObject: {fileID: 0}
+  targetTime: 0
+  isTimerRun: 0
+  valuePlant: 20

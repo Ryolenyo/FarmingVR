@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -1379872366509437503}
   m_Layer: 0
   m_Name: Golden
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
     type: 3}
   targetTime: 2
   isTimerRun: 1
+  valuePlant: 100
 --- !u!114 &3896879630141479044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,4 +224,5 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  harvastablePlant: {fileID: 0}
   interactable: {fileID: 0}

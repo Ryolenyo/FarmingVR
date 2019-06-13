@@ -8,6 +8,7 @@ public class PlantGrowBehavior : MonoBehaviour
     public GameObject nextObject; // Next state of plant
     public float targetTime;
     public bool isTimerRun = true;
+    public int valuePlant;
 
     // Start is called before the first frame update
     void Start()

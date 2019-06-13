@@ -108,3 +108,4 @@ MonoBehaviour:
     type: 3}
   targetTime: 5
   isTimerRun: 1
+  scorePlant: 0

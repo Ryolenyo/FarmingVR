@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 828210819347100621}
   m_Layer: 0
   m_Name: Ripe
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,6 +207,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  harvastablePlant: {fileID: 0}
   interactable: {fileID: 0}
 --- !u!114 &828210819347100621
 MonoBehaviour:
@@ -224,3 +225,4 @@ MonoBehaviour:
     type: 3}
   targetTime: 5
   isTimerRun: 1
+  valuePlant: 70

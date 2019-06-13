@@ -5,10 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - AllGround
-  - State_Sapling
-  - State_Ripe
-  - State_Golden
-  - State_Wilt
+  - Plant
   layers:
   - Default
   - TransparentFX
