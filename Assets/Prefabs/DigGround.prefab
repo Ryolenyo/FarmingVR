@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5907525975426009183
+--- !u!1 &8100399945980816535
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7800060759961408974}
-  - component: {fileID: 5475741097678122836}
-  - component: {fileID: 6213716798367349101}
-  - component: {fileID: -659632760799018594}
-  - component: {fileID: 3248214211873944207}
+  - component: {fileID: 2109935242805937373}
+  - component: {fileID: 3459002454789162067}
+  - component: {fileID: 7278500953353966507}
+  - component: {fileID: 5588320202930098388}
+  - component: {fileID: 2659499514811979158}
   m_Layer: 0
-  m_Name: plant
-  m_TagString: Untagged
+  m_Name: DigGround
+  m_TagString: DigGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7800060759961408974
+--- !u!4 &2109935242805937373
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907525975426009183}
+  m_GameObject: {fileID: 8100399945980816535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -0.825, y: 1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5475741097678122836
+--- !u!33 &3459002454789162067
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907525975426009183}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6213716798367349101
+  m_GameObject: {fileID: 8100399945980816535}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &7278500953353966507
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907525975426009183}
+  m_GameObject: {fileID: 8100399945980816535}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a025e1f4a8f2d546a60a6373799e7c4, type: 2}
+  - {fileID: 2100000, guid: 25c20bdcedca25b43880653ec36fd75a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,31 +79,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &-659632760799018594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907525975426009183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2adc82e53f73a42b2efb2c8306fae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isReady: 0
-  currentWater: 0
-  maxWater: 50
---- !u!65 &3248214211873944207
+--- !u!65 &5588320202930098388
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907525975426009183}
+  m_GameObject: {fileID: 8100399945980816535}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9999998, y: 1.7325444, z: 0.9999998}
-  m_Center: {x: 0, y: 0.36627263, z: 0}
+  m_Size: {x: 1, y: 1.0139568, z: 1}
+  m_Center: {x: 0, y: 0.0069783926, z: 0}
+--- !u!114 &2659499514811979158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100399945980816535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2518adcf2223049a3bbc0de8e55838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlanted: 0
+  ground: {fileID: 5143179005487311162, guid: 6059e73777c043d45a4630099bacab86, type: 3}
+  plant: {fileID: 5907525975426009183, guid: 6bc1531edee5326448aaa3b4e9a060fd, type: 3}

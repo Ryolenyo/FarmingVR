@@ -5,7 +5,9 @@ using UnityEngine;
 public class ChangeObject : MonoBehaviour
 {
     public bool isPlanted;
-    public GameObject Sphere;
+    public GameObject ground;
+    public GameObject plant;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,8 @@ public class ChangeObject : MonoBehaviour
     {
         if (isPlanted)
         {
-            Instantiate(Sphere, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(ground, new Vector3(transform.position.x, transform.position.y+0.1f, transform.position.z), Quaternion.identity);
+            Instantiate(plant, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
             Destroy(gameObject);
             isPlanted = false;
         }

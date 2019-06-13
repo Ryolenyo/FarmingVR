@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plant
+  - ground
+  - DigGround
   layers:
   - Default
   - TransparentFX

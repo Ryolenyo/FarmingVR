@@ -5,22 +5,28 @@ using UnityEngine;
 public class SpawnObjectFromTouch : MonoBehaviour
 {
     public bool isTouchedByStick;
-    public GameObject Sphere;
+    public bool isDug;
+    public GameObject DigGround;
 
     // Start is called before the first frame update
     void Start()
     {
         isTouchedByStick = false;
+        isDug = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isTouchedByStick)
+        if (!isDug)
         {
-            Debug.Log(transform.position.x);
-            Instantiate(Sphere, new Vector3(transform.position.x, transform.position.y + 3, transform.position.z), Quaternion.identity);
-            isTouchedByStick = false;
+            if (isTouchedByStick)
+            {
+                //Debug.Log(transform.position.x);
+                Instantiate(DigGround, new Vector3(transform.position.x, transform.position.y + 0.02f, transform.position.z), Quaternion.identity);
+                isTouchedByStick = false;
+                isDug = true;
+            }
         }
     }
 }

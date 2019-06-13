@@ -22,9 +22,9 @@ public class HoeBehavior : MonoBehaviour
     {
         if (collider.gameObject.tag == "ground")
         {
-            GameObject blueCube = collider.gameObject;
-            SpawnObjectFromTouch blueCubeVariable = blueCube.GetComponent<SpawnObjectFromTouch>();
-            blueCubeVariable.isTouchedByStick = true;
+            GameObject ground = collider.gameObject;
+            SpawnObjectFromTouch groundVariable = ground.GetComponent<SpawnObjectFromTouch>();
+            groundVariable.isTouchedByStick = true;
         }
     }
 }

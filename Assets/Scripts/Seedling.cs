@@ -5,8 +5,6 @@ using UnityEngine;
 public class Seedling : MonoBehaviour
 {
 
-    public GameObject Dirt;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +18,12 @@ public class Seedling : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "ground")
+        Debug.Log("Seed");
+        if (collider.gameObject.tag == "DigGround")
         {
-            GameObject blueCube = collider.gameObject;
-            Debug.Log(blueCube.transform.position.x);
-            ChangeObject blueCubeVariable = blueCube.GetComponent<ChangeObject>();
-            blueCubeVariable.isPlanted = true;
+            GameObject digGround = collider.gameObject;
+            ChangeObject groundVariable = digGround.GetComponent<ChangeObject>();
+            groundVariable.isPlanted = true;
 
             Destroy(gameObject);
         }
