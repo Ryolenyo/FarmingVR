@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class PlantGrowBehavior : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class PlantGrowBehavior : MonoBehaviour
     public bool isTimerRun = true;
     public int valuePlant;
 
+
     // Start is called before the first frame update
     void Start()
     {
-       
+        Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+        //rigidbody.isKinematic = true;
     }
 
     // Update is called once per frame
@@ -23,6 +26,18 @@ public class PlantGrowBehavior : MonoBehaviour
         {
             timer(targetTime);    
         }
+
+        Throwable throwable = GetComponent<Throwable>();
+        Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+
+            if (throwable.attached)
+            {
+                isTimerRun = false;
+                rigidbody.useGravity = true;
+                //rigidbody.isKinematic = false;
+            }
+
+
     }
 
     void timer(float time)
@@ -51,9 +66,11 @@ public class PlantGrowBehavior : MonoBehaviour
         newObject.transform.rotation = transform.rotation;
 
         Destroy(gameObject);
+       
 
     }
 
+    /*
     //Check harvesting and stop growing up
     void OnTriggerExit(Collider collider)
     {
@@ -63,4 +80,5 @@ public class PlantGrowBehavior : MonoBehaviour
             isTimerRun = false;
         }
     }
+    */
 }

@@ -39,7 +39,7 @@ namespace Valve.VR.InteractionSystem
         
 
 		protected VelocityEstimator velocityEstimator;
-        protected bool attached = false;
+        public bool attached = false; // protected -> public
         protected float attachTime;
         protected Vector3 attachPosition;
         protected Quaternion attachRotation;
@@ -151,6 +151,7 @@ namespace Valve.VR.InteractionSystem
             attachTime = Time.time;
             attachPosition = transform.position;
             attachRotation = transform.rotation;
+
         }
   
 
