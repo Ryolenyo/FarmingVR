@@ -27,7 +27,7 @@ public class Seedling : MonoBehaviour
             groundVariable.isPlanted = true;
             groundVariable.seedType = seedType;
 
-            digGround.tag = "planted";
+            digGround.tag = "Planted";
 
             Destroy(gameObject);
         }
