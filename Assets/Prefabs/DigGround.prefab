@@ -105,5 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlanted: 0
+  seedType: 0
   ground: {fileID: 5143179005487311162, guid: 6059e73777c043d45a4630099bacab86, type: 3}
-  plant: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
+  type1: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
+  type2: {fileID: 5716724724312440348, guid: 34e23f17f9112ce41ae286dcd9eef9b5, type: 3}

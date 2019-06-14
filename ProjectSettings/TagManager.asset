@@ -7,6 +7,9 @@ TagManager:
   - Plant
   - ground
   - DigGround
+  - Sapling
+  - AllGround
+  - Stalk
   layers:
   - Default
   - TransparentFX

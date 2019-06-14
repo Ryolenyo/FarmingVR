@@ -45,6 +45,20 @@ public class WaterCanBehavior : MonoBehaviour
             Debug.Log("watering: "+currentVolume);
         }
 
+        if (collider.gameObject.tag == "Stalk")
+        {
+            //Call plant variable
+            GameObject stalk = collider.gameObject;
+            StalkBehavior stalkVariable = stalk.GetComponent <StalkBehavior>();
+
+            if (currentVolume > 0)
+            {
+                currentVolume = currentVolume - 1;
+                stalkVariable.currentWater = stalkVariable.currentWater + 1;
+            }
+            Debug.Log("watering stalk: " + currentVolume);
+        }
+
         //Spill
         if (collider.gameObject.tag == "AllGround")
         {

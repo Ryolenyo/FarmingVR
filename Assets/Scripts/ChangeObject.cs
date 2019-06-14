@@ -5,8 +5,10 @@ using UnityEngine;
 public class ChangeObject : MonoBehaviour
 {
     public bool isPlanted;
+    public int seedType = 0; // 1 = mono , 2 = poly
     public GameObject ground;
-    public GameObject plant;
+    public GameObject type1;
+    public GameObject type2;
 
 
     // Start is called before the first frame update
@@ -20,8 +22,15 @@ public class ChangeObject : MonoBehaviour
     {
         if (isPlanted)
         {
-            //Instantiate(ground, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
-            Instantiate(plant, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
+            switch(seedType){
+                case 1:
+                    Instantiate(type1, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
+                    break;
+                case 2:
+                    Instantiate(type2, new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), Quaternion.identity);
+                    break;
+            } 
+           
             isPlanted = false;
         }
     }

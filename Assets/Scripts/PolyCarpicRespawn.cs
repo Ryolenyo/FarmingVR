@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PolyCarpicRespawn : MonoBehaviour
 {
+    public bool isReady = false;
     public bool isGrowUp = true;
     public GameObject fruitObject;
     public float growUpTime = 3.0f;
@@ -17,19 +18,20 @@ public class PolyCarpicRespawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (growUpTime <= 0.0f)
+        if (isReady)
         {
-            if (isGrowUp)
+            if (growUpTime <= 0.0f)
             {
-                GrowUp();
+                if (isGrowUp)
+                {
+                    GrowUp();
+                }
             }
-        }
-        else
-        {
-            growUpTime -= Time.deltaTime;
-        }
-
-        
+            else
+            {
+                growUpTime -= Time.deltaTime;
+            }
+        }        
         
     }
 
