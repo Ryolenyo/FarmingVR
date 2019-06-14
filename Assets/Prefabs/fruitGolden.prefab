@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6063599609726107814}
   m_Layer: 0
   m_Name: fruitGolden
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,3 +229,4 @@ MonoBehaviour:
   targetTime: 1
   isTimerRun: 1
   valuePlant: 30
+  fertilized: 0

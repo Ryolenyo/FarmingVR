@@ -29,8 +29,7 @@ public class FertilizerBehavior : MonoBehaviour
         {
             max--;
             groundQuality.fertilized = true;
-            Debug.Log("fertilizer remain: ");
-            Debug.Log(max);
+            Debug.Log("fertilizer remain: "+ max);
         }
     }
 }

@@ -17,6 +17,9 @@ public class PlantBehavior : MonoBehaviour
     public bool isTimerRun = false;
     public int valuePlant;
 
+    //FERTILIZE PART
+    public bool fertilized = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,10 @@ public class PlantBehavior : MonoBehaviour
             {
                 isReady = false;
                 isTimerRun = true;
+                if(gameObject.tag == "Sapling")
+                {
+                    gameObject.tag = "Plant";
+                }
             }
             else
             {

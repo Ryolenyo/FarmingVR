@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5326907243162454589}
   m_Layer: 0
   m_Name: fruitSapling
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,3 +230,4 @@ MonoBehaviour:
   targetTime: 3
   isTimerRun: 1
   valuePlant: 1
+  fertilized: 0

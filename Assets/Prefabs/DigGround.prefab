@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7278500953353966507}
   - component: {fileID: 5588320202930098388}
   - component: {fileID: 2659499514811979158}
+  - component: {fileID: 3522408181212100532}
   m_Layer: 0
   m_Name: DigGround
   m_TagString: DigGround
@@ -109,3 +110,18 @@ MonoBehaviour:
   ground: {fileID: 5143179005487311162, guid: 6059e73777c043d45a4630099bacab86, type: 3}
   type1: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
   type2: {fileID: 5716724724312440348, guid: 34e23f17f9112ce41ae286dcd9eef9b5, type: 3}
+--- !u!114 &3522408181212100532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100399945980816535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32d1bb85ac4b17489898ec7aecf6443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantDetection: {fileID: 5678012499950517617, guid: 0c5d165c96e9ee14696f5ce05daf6749,
+    type: 3}
+  fertilized: 0

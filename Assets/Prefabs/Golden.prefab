@@ -230,3 +230,4 @@ MonoBehaviour:
   targetTime: 2
   isTimerRun: 1
   valuePlant: 70
+  fertilized: 0
