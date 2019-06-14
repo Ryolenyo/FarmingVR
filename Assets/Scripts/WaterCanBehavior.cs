@@ -20,53 +20,54 @@ public class WaterCanBehavior : MonoBehaviour
 
     void OnTriggerStay(Collider collider)
     {
+        GameObject colObject = collider.gameObject;
+
         //Filling water can
-        if (collider.gameObject.name == "Well")
+        if (colObject.name == "Well")
         {
             if (currentVolume < maxVolume)
             {
                 currentVolume = currentVolume + 1;
             }
-            Debug.Log("filling : "+currentVolume);
-        }
-
-        //Watering plant
-        if (collider.gameObject.tag == "Sapling")
-        {
-            //Call plant variable
-            GameObject plant = collider.gameObject;
-            PlantBehavior plantVariable = plant.GetComponent<PlantBehavior>();
-
-            if (currentVolume > 0)
-            {
-                currentVolume = currentVolume - 1;
-                plantVariable.currentWater = plantVariable.currentWater + 1;
-            }
-            Debug.Log("watering: "+currentVolume);
-        }
-
-        if (collider.gameObject.tag == "Stalk")
-        {
-            //Call plant variable
-            GameObject stalk = collider.gameObject;
-            StalkBehavior stalkVariable = stalk.GetComponent <StalkBehavior>();
-
-            if (currentVolume > 0)
-            {
-                currentVolume = currentVolume - 1;
-                stalkVariable.currentWater = stalkVariable.currentWater + 1;
-            }
-            Debug.Log("watering stalk: " + currentVolume);
+            Debug.Log("filling : " + currentVolume);
         }
 
         //Spill
-        if (collider.gameObject.tag == "AllGround")
+/*        else if (collider.gameObject.tag == "AllGround")
         {
             if (currentVolume > 0)
             {
                 currentVolume = currentVolume - 1;
             }
             Debug.Log("spilling: " + currentVolume);
+        }
+*/
+        //Watering plant
+        else
+        {
+            if (currentVolume > 0)
+            {
+                //Watering
+                currentVolume = currentVolume - 1;
+
+                if (colObject.tag == "Sapling")
+                {
+                    PlantBehavior plantVariable = colObject.GetComponent<PlantBehavior>();
+                    plantVariable.currentWater = plantVariable.currentWater + 1;
+                }
+                else if (colObject.tag == "Stalk")
+                {
+                    StalkBehavior stalkVariable = colObject.GetComponent<StalkBehavior>();
+                    stalkVariable.currentWater = stalkVariable.currentWater + 1;
+
+                }
+                //Spilling
+                else if (colObject.tag == "AllGround")
+                {
+                    Debug.Log("spilling: " + currentVolume);
+                }
+            }
+            Debug.Log("watering: " + currentVolume);
         }
     }
 }
