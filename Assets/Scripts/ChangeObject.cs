@@ -20,9 +20,8 @@ public class ChangeObject : MonoBehaviour
     {
         if (isPlanted)
         {
-            Instantiate(ground, new Vector3(transform.position.x, transform.position.y+0.1f, transform.position.z), Quaternion.identity);
+            //Instantiate(ground, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
             Instantiate(plant, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
-            Destroy(gameObject);
             isPlanted = false;
         }
     }

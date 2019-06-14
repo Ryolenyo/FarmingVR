@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8203863076183077842}
   - component: {fileID: -1428187216506042045}
   - component: {fileID: 4209938033452403227}
-  - component: {fileID: -5105202857268708736}
+  - component: {fileID: 8567198479862705067}
   m_Layer: 0
   m_Name: Wilt
   m_TagString: Plant
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 5837977761638657962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1.5, z: 1}
-  m_LocalScale: {x: 0.8153541, y: 0.8153541, z: 0.8153541}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   harvastablePlant: {fileID: 0}
   interactable: {fileID: 0}
---- !u!114 &-5105202857268708736
+--- !u!114 &8567198479862705067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,11 +219,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5837977761638657962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4096dd9a40427e46a5024987e73769c, type: 3}
+  m_Script: {fileID: 11500000, guid: ff2adc82e53f73a42b2efb2c8306fae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isReady: 0
+  currentWater: 0
+  maxWater: 50
   nextObject: {fileID: 0}
   targetTime: 0
   isTimerRun: 0
-  isNotTouch: 1
   valuePlant: 20

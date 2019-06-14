@@ -106,4 +106,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlanted: 0
   ground: {fileID: 5143179005487311162, guid: 6059e73777c043d45a4630099bacab86, type: 3}
-  plant: {fileID: 5907525975426009183, guid: 6bc1531edee5326448aaa3b4e9a060fd, type: 3}
+  plant: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
