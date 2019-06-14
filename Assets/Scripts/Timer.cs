@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
-    float currentTime = 0f;
-    float startingTime = 10f;
+    private float currentTime = 0f;
+    private float startingTime = 10f;
+
+    [SerializeField]
+    private string sceneNameToLoad;
 
     [SerializeField] Text timerText;
 
@@ -27,6 +30,7 @@ public class Timer : MonoBehaviour
         if(currentTime <= 0)
         {
             currentTime = 0;
+            SceneManager.LoadScene(sceneNameToLoad);
         }
     }
 }
