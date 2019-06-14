@@ -64,10 +64,10 @@ public class WaterCanBehavior : MonoBehaviour
                 //Spilling
                 else if (colObject.tag == "AllGround")
                 {
-                    Debug.Log("spilling: " + currentVolume);
+                    //Debug.Log("spilling: " + currentVolume);
                 }
             }
-            Debug.Log("watering: " + currentVolume);
+            //Debug.Log("watering: " + currentVolume);
         }
     }
 }

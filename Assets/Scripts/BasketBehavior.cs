@@ -22,9 +22,10 @@ public class BasketBehavior : MonoBehaviour
         if (collider.gameObject.tag == "Plant")
         {
             GameObject plant = collider.gameObject;
-            PlantGrowBehavior plantVariable = plant.GetComponent<PlantGrowBehavior>();
-
+            PlantBehavior plantVariable = plant.GetComponent<PlantBehavior>();
+            Debug.Log("Yo");
             GameObject player = GameObject.Find("Player");
+            Debug.Log("player's found");
             PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
             playerVariable.money += plantVariable.valuePlant;
 

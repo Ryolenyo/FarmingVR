@@ -10,6 +10,7 @@ TagManager:
   - Sapling
   - AllGround
   - Stalk
+  - Planted
   layers:
   - Default
   - TransparentFX
