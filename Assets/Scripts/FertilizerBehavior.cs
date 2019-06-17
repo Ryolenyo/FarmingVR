@@ -25,7 +25,7 @@ public class FertilizerBehavior : MonoBehaviour
         GameObject ground = other.gameObject;
         Fertilized groundQuality = ground.GetComponent<Fertilized>();
 
-        if(ground.tag == "Planted" && !groundQuality.fertilized && max > 0 && fertilizerBag.transform.position.y > minHeight)
+        if((ground.tag == "Planted" || ground.tag == "DigGround") && !groundQuality.fertilized && max > 0 && fertilizerBag.transform.position.y > minHeight)
         {
             max--;
             groundQuality.fertilized = true;
