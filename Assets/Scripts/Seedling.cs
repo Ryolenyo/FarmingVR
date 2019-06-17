@@ -19,7 +19,6 @@ public class Seedling : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Seed");
         if (collider.gameObject.tag == "DigGround")
         {
             GameObject digGround = collider.gameObject;
