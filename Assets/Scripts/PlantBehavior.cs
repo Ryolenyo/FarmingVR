@@ -59,12 +59,14 @@ public class PlantBehavior : MonoBehaviour
         }
 
         Throwable throwable = GetComponent<Throwable>();
+        Collider collider = GetComponent<Collider>();
         Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
 
         if (throwable.attached)
         {
             isTimerRun = false;
             rigidbody.useGravity = true;
+            collider.isTrigger = false;
             //rigidbody.isKinematic = false;
         }
 
