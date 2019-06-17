@@ -106,11 +106,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTouchedByStick: 0
   isDug: 0
+  isWatered: 0
+  isFer: 0
   isPlanted: 0
   seedType: 0
   type1: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
   type2: {fileID: 5716724724312440348, guid: 34e23f17f9112ce41ae286dcd9eef9b5, type: 3}
   gDig: {fileID: 2100000, guid: 25c20bdcedca25b43880653ec36fd75a, type: 2}
-  gWater: {fileID: 0}
+  gWater: {fileID: 2100000, guid: a3e6d6a77ea41fa42b52af13b143c6d2, type: 2}
   gFer: {fileID: 0}
   gWaterFer: {fileID: 0}
+  volume: 0
+  maxVolume: 50

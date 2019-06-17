@@ -91,10 +91,6 @@ public class PlantBehavior : MonoBehaviour
 
             targetTime = 3.0f;
             Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-/*            newObject = (GameObject)EditorUtility.InstantiatePrefab(nextObject);
-            newObject.transform.position = transform.position;
-            newObject.transform.rotation = transform.rotation;
-*/
             Destroy(gameObject);
 
         }
