@@ -20,12 +20,14 @@ public class WaterMeter : MonoBehaviour
         WaterCanBehavior canVariable = can.GetComponent<WaterCanBehavior>();
         if (preHeight < canVariable.currentVolume || inc)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 0.0004f, transform.position.z);
+            //transform.position = new Vector3(transform.position.x, transform.position.y + 0.0004f, transform.position.z);
+            transform.Translate(0, 0.0004f, 0);
             preHeight = canVariable.currentVolume;
         }
         else if (preHeight > canVariable.currentVolume || dec)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - 0.0004f, transform.position.z);
+            //transform.position = new Vector3(transform.position.x, transform.position.y - 0.0004f, transform.position.z);
+            transform.Translate(0, -0.0004f, 0);
             preHeight = canVariable.currentVolume;
         }
     }
