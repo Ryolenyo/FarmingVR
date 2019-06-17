@@ -54,20 +54,21 @@ public class WaterCanBehavior : MonoBehaviour
                 {
                     PlantBehavior plantVariable = colObject.GetComponent<PlantBehavior>();
                     plantVariable.currentWater = plantVariable.currentWater + 1;
+                    Debug.Log("watering: " + currentVolume);
                 }
                 else if (colObject.tag == "Stalk")
                 {
                     StalkBehavior stalkVariable = colObject.GetComponent<StalkBehavior>();
                     stalkVariable.currentWater = stalkVariable.currentWater + 1;
+                    Debug.Log("watering: " + currentVolume);
 
                 }
                 //Spilling
                 else if (colObject.tag == "AllGround")
                 {
-                    //Debug.Log("spilling: " + currentVolume);
+                    Debug.Log("spilling: " + currentVolume);
                 }
             }
-            //Debug.Log("watering: " + currentVolume);
         }
     }
 }
