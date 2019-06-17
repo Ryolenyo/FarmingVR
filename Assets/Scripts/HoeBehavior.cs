@@ -27,7 +27,7 @@ public class HoeBehavior : MonoBehaviour
         if (collider.gameObject.tag == "ground" && isReady)
         {
             GameObject ground = collider.gameObject;
-            SpawnObjectFromTouch groundVariable = ground.GetComponent<SpawnObjectFromTouch>();
+            GroundBehavior groundVariable = ground.GetComponent<GroundBehavior>();
             groundVariable.isTouchedByStick = true;
             isReady = false;
         }

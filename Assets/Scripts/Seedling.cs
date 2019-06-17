@@ -22,7 +22,7 @@ public class Seedling : MonoBehaviour
         if (collider.gameObject.tag == "DigGround")
         {
             GameObject digGround = collider.gameObject;
-            ChangeObject groundVariable = digGround.GetComponent<ChangeObject>();
+            GroundBehavior groundVariable = digGround.GetComponent<GroundBehavior>();
             groundVariable.isPlanted = true;
             groundVariable.seedType = seedType;
 

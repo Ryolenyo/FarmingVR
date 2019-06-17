@@ -10,7 +10,7 @@ public class PlantBehavior : MonoBehaviour
     public bool isReady = false;
     public float currentWater = 0;
     public float maxWater = 50;
-
+    
     //GROWING PART
     public GameObject nextObject; // Next state of plant
     public float targetTime;
@@ -96,6 +96,8 @@ public class PlantBehavior : MonoBehaviour
             Destroy(gameObject);
 
         }
+
+
 
     }
 }
