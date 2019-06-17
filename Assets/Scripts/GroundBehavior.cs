@@ -19,6 +19,9 @@ public class GroundBehavior : MonoBehaviour
     public Material gFer;
     public Material gWaterFer;
 
+    public float volume;
+    public float maxVolume = 50;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,11 +62,21 @@ public class GroundBehavior : MonoBehaviour
 
             isPlanted = false;
         }
+        //Check water volume
+        if (volume > maxVolume)
+        {
+            isWatered = true;
+        }
+        else
+        {
+            isWatered = false;
+        }
+
 
         //Watered Ground
         if (isWatered && !isFer)
         {
-
+            gameObject.GetComponent<Renderer>().material = gWater;
         }
         else if (isFer && isWatered)
         {
@@ -72,6 +85,23 @@ public class GroundBehavior : MonoBehaviour
         else if (isWatered && isFer)
         {
 
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (isWatered)
+        {
+            if (other.tag == "Sapling")
+            {
+                PlantBehavior plantVariable = other.GetComponent<PlantBehavior>();
+                plantVariable.currentWater += 1;
+            }
+            else if (other.tag == "Stalk")
+            {
+                StalkBehavior stalkVariable = other.GetComponent<StalkBehavior>();
+                stalkVariable.currentWater += 1;
+            }
         }
     }
 }
