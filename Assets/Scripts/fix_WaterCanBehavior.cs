@@ -44,12 +44,12 @@ public class fix_WaterCanBehavior : MonoBehaviour
                     currentVolume = currentVolume - 1;
                     GroundBehavior groundVariable = colObject.GetComponent<GroundBehavior>();
                     groundVariable.volume = groundVariable.volume + 1;
-                    Debug.Log("watering: " + currentVolume);
+                    //Debug.Log("watering: " + currentVolume);
                 }
                 else if (colObject.tag == "AllGround")
                 {
                     currentVolume = currentVolume - 1;
-                    Debug.Log("spilling: " + currentVolume);
+                    //Debug.Log("spilling: " + currentVolume);
                 }
             }
         }

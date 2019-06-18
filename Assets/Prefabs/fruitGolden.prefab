@@ -225,7 +225,8 @@ MonoBehaviour:
   isReady: 0
   currentWater: 0
   maxWater: 50
-  nextObject: {fileID: 0}
+  nextObject: {fileID: 8294433065010724548, guid: fa29b92ce11082d46978c21af5b6df69,
+    type: 3}
   targetTime: 1
   isTimerRun: 1
   valuePlant: 30

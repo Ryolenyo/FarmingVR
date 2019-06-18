@@ -17,17 +17,18 @@ public class WaterMeter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WaterCanBehavior canVariable = can.GetComponent<WaterCanBehavior>();
-        if (preHeight < canVariable.currentVolume || inc)
+        fix_WaterCanBehavior canVariable = can.GetComponent<fix_WaterCanBehavior>();
+        float currentHeight = canVariable.currentVolume;
+        if (preHeight < currentHeight || inc)
         {
-            //transform.position = new Vector3(transform.position.x, transform.position.y + 0.0004f, transform.position.z);
-            transform.Translate(0, 0.0004f, 0);
+            float dif = (currentHeight - preHeight) / 2500;
+            transform.Translate(0, dif, 0);
             preHeight = canVariable.currentVolume;
         }
-        else if (preHeight > canVariable.currentVolume || dec)
+        else if (preHeight > currentHeight || dec)
         {
-            //transform.position = new Vector3(transform.position.x, transform.position.y - 0.0004f, transform.position.z);
-            transform.Translate(0, -0.0004f, 0);
+            float dif = -(preHeight - currentHeight) / 2500;
+            transform.Translate(0, dif, 0);
             preHeight = canVariable.currentVolume;
         }
     }

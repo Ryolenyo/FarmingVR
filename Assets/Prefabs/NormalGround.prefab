@@ -90,8 +90,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7628559, y: 1.015326, z: 0.7530812}
-  m_Center: {x: -0.13731325, y: 0.0076630116, z: 0.13859993}
+  m_Size: {x: 0.7628559, y: 1.0486672, z: 0.7530812}
+  m_Center: {x: -0.13731325, y: 0.024333596, z: 0.13859993}
 --- !u!114 &-9083025262919704915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,12 +106,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTouchedByStick: 0
   isDug: 0
+  isPlanted: 0
   isWatered: 0
   isFer: 0
-  isPlanted: 0
   seedType: 0
   type1: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
   type2: {fileID: 5716724724312440348, guid: 34e23f17f9112ce41ae286dcd9eef9b5, type: 3}
+  gNormal: {fileID: 2100000, guid: 1fba8b3296196b144abc53fafd0269f4, type: 2}
   gDig: {fileID: 2100000, guid: 25c20bdcedca25b43880653ec36fd75a, type: 2}
   gWater: {fileID: 2100000, guid: a3e6d6a77ea41fa42b52af13b143c6d2, type: 2}
   gFer: {fileID: 0}

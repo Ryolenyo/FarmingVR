@@ -4,31 +4,43 @@ using UnityEngine;
 
 public class GroundBehavior : MonoBehaviour
 {
-    public bool isTouchedByStick;
-    public bool isDug;
-    public bool isWatered;
-    public bool isFer;
+    public bool isTouchedByStick = false;
+    public bool isDug = false;
+    public bool isPlanted = false;
+    public bool isWatered = false;
+    public bool isFer = false;
 
-    public bool isPlanted;
     public int seedType = 0; // 1 = mono , 2 = poly
     public GameObject type1;
     public GameObject type2;
 
+    public Material gNormal;
     public Material gDig;
     public Material gWater;
     public Material gFer;
     public Material gWaterFer;
 
-    public float volume;
+    public float volume = 0;
     public float maxVolume = 50;
 
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    void Reset()
+    {
         isTouchedByStick = false;
         isDug = false;
-
         isPlanted = false;
+        isWatered = false;
+        isFer = false;
+        volume = 0;
+
+        gameObject.GetComponent<Renderer>().material = gNormal;
+
+        gameObject.tag = "ground";
     }
 
     // Update is called once per frame
@@ -102,6 +114,14 @@ public class GroundBehavior : MonoBehaviour
                 StalkBehavior stalkVariable = other.GetComponent<StalkBehavior>();
                 stalkVariable.currentWater += 1;
             }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Plant")
+        {
+            Reset();
         }
     }
 }
