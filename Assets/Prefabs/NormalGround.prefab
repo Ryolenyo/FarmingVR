@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1452121329768090159}
   - component: {fileID: 4371065835172694352}
   - component: {fileID: -9083025262919704915}
+  - component: {fileID: 4202091275344276091}
   m_Layer: 0
   m_Name: NormalGround
   m_TagString: ground
@@ -118,3 +119,15 @@ MonoBehaviour:
   gWaterFer: {fileID: 0}
   volume: 0
   maxVolume: 50
+--- !u!114 &4202091275344276091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94277071938696467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024315f5ac999fa4da72f46fefece673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

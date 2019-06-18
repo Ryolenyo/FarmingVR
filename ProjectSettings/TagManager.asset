@@ -12,6 +12,7 @@ TagManager:
   - Stalk
   - Planted
   - Can
+  - Tools
   layers:
   - Default
   - TransparentFX
