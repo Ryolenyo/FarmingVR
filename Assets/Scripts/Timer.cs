@@ -6,31 +6,49 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
+    private float startTime;
 
-    private float currentTime = 0f;
-    private float startingTime = 10f;
+    private string textTime;
 
-    [SerializeField]
-    private string sceneNameToLoad;
+    private float guiTime;
+    //The gui-Time is the difference between the actual time and the start time.
+    private int minutes;
+    private int seconds;
+    private int fraction;
 
-    [SerializeField] Text timerText;
+    //Create a reference for the textfield
 
-    // Start is called before the first frame update
+    public Text textField;
+    public string sceneNameToLoad;
+
+    // Use this for initialization
     void Start()
     {
-        currentTime = startingTime;
+        startTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentTime -= 1 * Time.deltaTime;
-        timerText.text = currentTime.ToString("0");
 
-        if (currentTime <= 0)
+        guiTime = Time.time - startTime;
+        //The gui-Time is the difference between the actual time and the start time.
+        minutes = (int)guiTime / 60; //Divide the guiTime by sixty to get the minutes.
+        seconds = (int)guiTime % 60;//Use the euclidean division for the seconds.
+        fraction = (int)(guiTime * 100) % 100;
+        textTime = string.Format("{0:00}:{1:00}", minutes, seconds, fraction);
+        //text.Time is the time that will be displayed.
+        if (minutes >= 1)
         {
-            currentTime = 0;
+            textField.text = "TIMES UP";
             SceneManager.LoadScene(sceneNameToLoad);
+
         }
+        else
+        {
+            textField.text = textTime;
+        }
+
+
     }
 }
