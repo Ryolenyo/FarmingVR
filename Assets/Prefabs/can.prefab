@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 6951569302549135038}
   m_Layer: 0
   m_Name: Mouth
-  m_TagString: Can
+  m_TagString: Tools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
