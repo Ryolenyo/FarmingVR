@@ -10,6 +10,10 @@ public class GroundBehavior : MonoBehaviour
     public bool isWatered = false;
     public bool isFer = false;
 
+    public bool isChange = true;
+    public bool isStalk = false;
+    public bool isStalkGrow = true;
+
     public int seedType = 0; // 1 = mono , 2 = poly
     public GameObject type1;
     public GameObject type2;
@@ -22,6 +26,7 @@ public class GroundBehavior : MonoBehaviour
 
     public float volume = 0;
     public float maxVolume = 50;
+    public float consume = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +34,15 @@ public class GroundBehavior : MonoBehaviour
 
     }
 
-    void Reset()
+    //Be called when plant is harvested
+    void ResetGround()
     {
         isTouchedByStick = false;
         isDug = false;
         isPlanted = false;
         isWatered = false;
         isFer = false;
+        isChange = true;
         volume = 0;
 
         gameObject.GetComponent<Renderer>().material = gNormal;
@@ -55,7 +62,7 @@ public class GroundBehavior : MonoBehaviour
                 isTouchedByStick = false;
                 isDug = true;
                 gameObject.tag = "DigGround";
-
+                Debug.Log("Hey");
             }
         }
 
@@ -74,29 +81,33 @@ public class GroundBehavior : MonoBehaviour
 
             isPlanted = false;
         }
+
         //Check water volume
-        if (volume > maxVolume)
+        if (isDug)
         {
-            isWatered = true;
-        }
-        else
-        {
-            isWatered = false;
-        }
-
-
-        //Watered Ground
-        if (isWatered && !isFer)
-        {
-            gameObject.GetComponent<Renderer>().material = gWater;
-        }
-        else if (isFer && isWatered)
-        {
-
-        }
-        else if (isWatered && isFer)
-        {
-
+            if (volume > maxVolume)
+            {
+                isWatered = true;
+                isStalkGrow = true;
+                if (isChange)
+                {
+                    gameObject.GetComponent<Renderer>().material = gWater;
+                    isChange = false;
+                }
+            }
+            else
+            {
+                if (!isChange)
+                {
+                    volume -= 0.001f; //plant consume water
+                    if (volume <= 0)
+                    {
+                        gameObject.GetComponent<Renderer>().material = gDig;
+                        isChange = true;
+                        isStalkGrow = false;
+                    }
+                }
+            }
         }
     }
 
@@ -107,21 +118,36 @@ public class GroundBehavior : MonoBehaviour
             if (other.tag == "Sapling")
             {
                 PlantBehavior plantVariable = other.GetComponent<PlantBehavior>();
-                plantVariable.currentWater += 1;
+                plantVariable.isReady = true;
+                volume -= maxVolume;
+                isWatered = false;
             }
             else if (other.tag == "Stalk")
             {
                 StalkBehavior stalkVariable = other.GetComponent<StalkBehavior>();
-                stalkVariable.currentWater += 1;
+                stalkVariable.isReady = true;
+                volume -= maxVolume;
+                isWatered = false;
+                isStalk = true;
+
+            }
+        }
+
+        if (isStalk)
+        {
+            if (!isStalkGrow)
+            {
+                StalkBehavior stalkVariable = other.GetComponent<StalkBehavior>();
+                stalkVariable.isReady = false;
             }
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Plant")
+        if (other.tag == "Plant" || other.tag == "Stalk")
         {
-            Reset();
+            ResetGround();
         }
     }
 }

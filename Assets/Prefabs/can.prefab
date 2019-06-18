@@ -408,7 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6951569302549135039}
   - component: {fileID: 6951569302549135033}
-  - component: {fileID: 6951569302549135038}
+  - component: {fileID: 7521394031073152391}
   m_Layer: 0
   m_Name: Mouth
   m_TagString: Tools
@@ -443,7 +443,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.033699304, y: 0.032161206, z: 0.078932345}
   m_Center: {x: 0.0012648553, y: 0.0002239123, z: 0.023009129}
---- !u!114 &6951569302549135038
+--- !u!114 &7521394031073152391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6951569302549135036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 453c8ea0db0ab514e910b742970ca146, type: 3}
+  m_Script: {fileID: 11500000, guid: e3e66b90e5fd08a4da7de514f32f2421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentVolume: 0

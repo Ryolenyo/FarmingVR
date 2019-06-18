@@ -91,8 +91,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7628559, y: 1.0486672, z: 0.7530812}
-  m_Center: {x: -0.13731325, y: 0.024333596, z: 0.13859993}
+  m_Size: {x: 0.7628559, y: 0.82230115, z: 0.7530812}
+  m_Center: {x: -0.13731325, y: -0.088849425, z: 0.13859993}
 --- !u!114 &-9083025262919704915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +110,9 @@ MonoBehaviour:
   isPlanted: 0
   isWatered: 0
   isFer: 0
+  isChange: 1
+  isStalk: 0
+  isStalkGrow: 1
   seedType: 0
   type1: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
   type2: {fileID: 5716724724312440348, guid: 34e23f17f9112ce41ae286dcd9eef9b5, type: 3}
@@ -120,6 +123,7 @@ MonoBehaviour:
   gWaterFer: {fileID: 0}
   volume: 0
   maxVolume: 50
+  consume: 1
 --- !u!114 &4202091275344276091
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ public class StalkBehavior : MonoBehaviour
     public bool isReady = false;
     public float currentWater = 0;
     public float maxWater = 50;
+
+    public bool stopGrow = false;
+
     public GameObject fruitRespawn1;
     public GameObject fruitRespawn2;
     public GameObject fruitRespawn3;
@@ -24,28 +27,40 @@ public class StalkBehavior : MonoBehaviour
     void Update()
     {
         //WATERTING PART
+        /*
         if (currentWater > maxWater)
         {
             isReady = true;
         }
+        */
+
+        PolyCarpicRespawn fruitVariable1 = fruitRespawn1.GetComponent<PolyCarpicRespawn>();
+        PolyCarpicRespawn fruitVariable2 = fruitRespawn2.GetComponent<PolyCarpicRespawn>();
+        PolyCarpicRespawn fruitVariable3 = fruitRespawn3.GetComponent<PolyCarpicRespawn>();
 
         if (isReady)
         {
-            if (transform.position.y > 0.75)
+            if (!stopGrow)
             {
-                isReady = false;
-                PolyCarpicRespawn fruitVariable1 = fruitRespawn1.GetComponent<PolyCarpicRespawn>();
-                PolyCarpicRespawn fruitVariable2 = fruitRespawn2.GetComponent<PolyCarpicRespawn>();
-                PolyCarpicRespawn fruitVariable3 = fruitRespawn3.GetComponent<PolyCarpicRespawn>();
-                fruitVariable1.isReady = true;
-                fruitVariable2.isReady = true;
-                fruitVariable3.isReady = true;
-
+                if (transform.position.y > 0.75)
+                {
+                    stopGrow = true;
+                }
+                else
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 0.01f, transform.position.z);
+                }
             }
-            else
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y + 0.01f, transform.position.z);
-            }
+            
+            fruitVariable1.isReady = true;
+            fruitVariable2.isReady = true;
+            fruitVariable3.isReady = true;
+        }
+        else
+        {
+            fruitVariable1.isReady = false;
+            fruitVariable2.isReady = false;
+            fruitVariable3.isReady = false;
         }
        
 

@@ -30,10 +30,13 @@ public class PlantBehavior : MonoBehaviour
     void Update()
     {
         //WATERTING PART
+
+        /*
         if (currentWater > maxWater)
         {
             isReady = true;
         }
+        */
 
         if (isReady)
         {
@@ -48,7 +51,7 @@ public class PlantBehavior : MonoBehaviour
             }
             else
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y + 0.01f, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.005f, transform.position.z);
             }
         }
 
