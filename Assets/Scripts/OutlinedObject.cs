@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OutlinedObject : MonoBehaviour
 {
+    //public GameObject gameObject;
     Shader standard;
     Shader outline;
     Renderer rend;
@@ -11,7 +12,7 @@ public class OutlinedObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = GetComponentInParent<Renderer>();
         standard = Shader.Find("Standard");
         outline = Shader.Find("Outlined/UltimateOutline");
 

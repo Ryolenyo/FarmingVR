@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &194953753640093376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3438075993022716514}
+  - component: {fileID: 4941342683236568169}
+  m_Layer: 0
+  m_Name: GroundDetector (1)
+  m_TagString: Tools
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3438075993022716514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194953753640093376}
+  m_LocalRotation: {x: 0.35001114, y: 0.9367455, z: 0, w: 0}
+  m_LocalPosition: {x: -0.00372, y: 0.00402, z: -0.00006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2263206133376642931}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 40.976}
+--- !u!65 &4941342683236568169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194953753640093376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.028635068, y: 0, z: 0}
+  m_Center: {x: -0.011085025, y: 0.00837174, z: -0.0000034179707}
 --- !u!1 &324921360874569648
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,11 +74,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324921360874569648}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.23526e-10, y: 0.0026625106, z: -2.489}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3472871211697612830}
+  - {fileID: 2106765550243848641}
+  - {fileID: 3438075993022716514}
+  - {fileID: 5969789441509995725}
+  - {fileID: 8722572059369681096}
   m_Father: {fileID: 8451190764016387244}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -271,6 +319,50 @@ Transform:
   m_Father: {fileID: 432559630811118896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1580844801287402780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8722572059369681096}
+  - component: {fileID: 8201646967536794501}
+  m_Layer: 0
+  m_Name: GroundDetector (3)
+  m_TagString: Tools
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8722572059369681096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580844801287402780}
+  m_LocalRotation: {x: -0.24749523, y: -0.66237915, z: 0.24749523, w: 0.66237915}
+  m_LocalPosition: {x: 0.0001, y: 0.0041, z: 0.0031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2263206133376642931}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 40.976}
+--- !u!65 &8201646967536794501
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580844801287402780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.028635021, y: 0, z: 0}
+  m_Center: {x: -0.011085058, y: 0.008609591, z: -0.0000068734603}
 --- !u!1 &2309253908096032037
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +394,50 @@ Transform:
   m_Father: {fileID: 8451190764016387244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2602271422882296432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5969789441509995725}
+  - component: {fileID: 7549191645298994583}
+  m_Layer: 0
+  m_Name: GroundDetector (2)
+  m_TagString: Tools
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5969789441509995725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2602271422882296432}
+  m_LocalRotation: {x: 0.24749523, y: 0.66237915, z: 0.24749523, w: 0.66237915}
+  m_LocalPosition: {x: 0.00032, y: 0.0042, z: -0.0035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2263206133376642931}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 40.976}
+--- !u!65 &7549191645298994583
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2602271422882296432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.028635021, y: 0, z: 0}
+  m_Center: {x: -0.011085059, y: 0.008309794, z: -0.00040813477}
 --- !u!1 &3472871211697612831
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,8 +450,8 @@ GameObject:
   - component: {fileID: 3472871211697612828}
   - component: {fileID: 3472871211697612829}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Tools
+  m_Name: ActionDetector
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,8 +494,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.005414286, y: 0.0068188924, z: 0.005407895}
-  m_Center: {x: 0.0005253367, y: 0.009699367, z: 0.00030954828}
+  m_Size: {x: 0.006355185, y: 0.006632616, z: 0.0060432893}
+  m_Center: {x: 0.000054877873, y: 0.009606232, z: -0.000008140564}
 --- !u!1 &4833471677844469439
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +529,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 93.929}
+--- !u!1 &5532838154386105571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2106765550243848641}
+  - component: {fileID: 1995586971480447961}
+  m_Layer: 0
+  m_Name: GroundDetector
+  m_TagString: Tools
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2106765550243848641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5532838154386105571}
+  m_LocalRotation: {x: -0, y: -0, z: 0.35001072, w: 0.93674576}
+  m_LocalPosition: {x: 0.00347, y: 0.00392, z: 0.00061}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2263206133376642931}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 40.976}
+--- !u!65 &1995586971480447961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5532838154386105571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.028635021, y: 0, z: 0}
+  m_Center: {x: -0.011085057, y: 0.008668146, z: -0.00040814106}
 --- !u!1 &7449386972498644646
 GameObject:
   m_ObjectHideFlags: 0

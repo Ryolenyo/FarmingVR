@@ -23,13 +23,13 @@ public class BasketBehavior : MonoBehaviour
         {
             GameObject plant = collider.gameObject;
             PlantBehavior plantVariable = plant.GetComponent<PlantBehavior>();
-            Debug.Log("Yo");
             GameObject player = GameObject.Find("Player");
-            Debug.Log("player's found");
             PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
             playerVariable.money += plantVariable.valuePlant;
 
             Debug.Log(playerVariable.money);
+
+            Destroy(collider);
         }
     }
 }
