@@ -99,7 +99,7 @@ public class GroundBehavior : MonoBehaviour
             {
                 if (!isChange)
                 {
-                    volume -= 0.001f; //plant consume water
+                    volume -= 0.01f; //plant consume water
                     if (volume <= 0)
                     {
                         gameObject.GetComponent<Renderer>().material = gDig;

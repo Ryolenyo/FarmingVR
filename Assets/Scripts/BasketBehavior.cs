@@ -29,7 +29,7 @@ public class BasketBehavior : MonoBehaviour
 
             Debug.Log(playerVariable.money);
 
-            Destroy(collider);
+            Destroy(collider.gameObject);
         }
     }
 }
