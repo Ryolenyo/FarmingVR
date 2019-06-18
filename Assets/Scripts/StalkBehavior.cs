@@ -62,8 +62,24 @@ public class StalkBehavior : MonoBehaviour
             fruitVariable2.isReady = false;
             fruitVariable3.isReady = false;
         }
-       
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        GameObject otherObject = other.gameObject;
+        if (otherObject.tag == "Planted")
+        {
+            GroundBehavior ground = otherObject.GetComponent<GroundBehavior>();
+            if (ground.isWatered)
+            {
+                isReady = true;
+                //ground.volume -= ground.maxVolume;
+            }
+            else
+            {
+                isReady = false;
+            }
+        }
     }
 }
 

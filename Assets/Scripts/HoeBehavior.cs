@@ -28,7 +28,7 @@ public class HoeBehavior : MonoBehaviour
         {
             GameObject ground = collider.gameObject;
             GroundBehavior groundVariable = ground.GetComponent<GroundBehavior>();
-            groundVariable.isTouchedByStick = true;
+            groundVariable.isDug = true;
             isReady = false;
         }
     }

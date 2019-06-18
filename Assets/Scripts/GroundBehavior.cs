@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class GroundBehavior : MonoBehaviour
 {
-    public bool isTouchedByStick = false;
-    public bool isDug = false;
-    public bool isPlanted = false;
-    public bool isWatered = false;
-    public bool isFer = false;
+    public bool isTouchedByStick;
+    public bool isDug;
+    public bool isPlanted;
+    public bool isWatered;
+    public bool isDraining;
+    public bool isFer;
 
-    public bool isChange = true;
-    public bool isStalk = false;
-    public bool isStalkGrow = true;
+    public bool isChange;
+    public bool isStalk;
+    public bool isGrow;
 
-    public int seedType = 0; // 1 = mono , 2 = poly
+    /*public int seedType = 0; // 1 = mono , 2 = poly
     public GameObject type1;
     public GameObject type2;
-
+    */
     public Material gNormal;
     public Material gDig;
     public Material gWater;
@@ -31,8 +32,17 @@ public class GroundBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isTouchedByStick = false;
+        isDug = false;
+        isPlanted = false;
+        isWatered = false;
+        isDraining = false;
+        isFer = false;
 
-    }
+        isChange = true;
+        isStalk = false;
+        isGrow = true;
+}
 
     //Be called when plant is harvested
     void ResetGround()
@@ -41,6 +51,7 @@ public class GroundBehavior : MonoBehaviour
         isDug = false;
         isPlanted = false;
         isWatered = false;
+        isDraining = false;
         isFer = false;
         isChange = true;
         volume = 0;
@@ -54,18 +65,13 @@ public class GroundBehavior : MonoBehaviour
     void Update()
     {
         //Normal Ground
-        if (!isDug)
+        if (isDug)
         {
-            if (isTouchedByStick)
-            {
-                gameObject.GetComponent<Renderer>().material = gDig;
-                isTouchedByStick = false;
-                isDug = true;
-                gameObject.tag = "DigGround";
-                Debug.Log("Hey");
-            }
+            gameObject.GetComponent<Renderer>().material = gDig;
+            isDug = false;
+            gameObject.tag = "DigGround";
         }
-
+        /*
         //Dug Ground
         if (isPlanted)
         {
@@ -80,10 +86,33 @@ public class GroundBehavior : MonoBehaviour
             }
 
             isPlanted = false;
+        }*/
+
+        if(isPlanted)
+        {
+            gameObject.tag = "Planted";
+        }
+        
+        //Check water volume
+        if (isWatered && !isDraining)
+        {
+            gameObject.GetComponent<Renderer>().material = gWater;
+            isDraining = true;
         }
 
-        //Check water volume
-        if (isDug)
+        if (isDraining)
+        {
+            if (volume > 0)
+            {
+                volume -= 0.1f;
+            }
+            else
+            {
+                gameObject.GetComponent<Renderer>().material = gDig;
+                isWatered = false;
+            }
+        }
+        /*else if (isDug)
         {
             if (volume > maxVolume)
             {
@@ -108,10 +137,10 @@ public class GroundBehavior : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
     }
 
-    void OnTriggerStay(Collider other)
+    /*void OnTriggerStay(Collider other)
     {
         if (isWatered)
         {
@@ -141,13 +170,13 @@ public class GroundBehavior : MonoBehaviour
                 stalkVariable.isReady = false;
             }
         }
-    }
+    }*/
 
-    void OnTriggerExit(Collider other)
+    /*void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Plant" || other.tag == "Stalk")
+        if (other.gameObject.tag == "Plant" || other.gameObject.tag == "Stalk")
         {
             ResetGround();
         }
-    }
+    }*/
 }

@@ -72,33 +72,44 @@ public class PlantBehavior : MonoBehaviour
             collider.isTrigger = false;
             //rigidbody.isKinematic = false;
         }
+    }
 
-        void timer(float time)
+    void timer(float time)
+    {
+
+        if (targetTime <= 0.0f)
         {
-
-            if (targetTime <= 0.0f)
-            {
-                isTimerRun = false;
-                changeState();
-            }
-            else
-            {
-                targetTime -= Time.deltaTime;
-            }
-
+            isTimerRun = false;
+            changeState();
+        }
+        else
+        {
+            targetTime -= Time.deltaTime;
         }
 
-        void changeState()
+    }
+
+    void changeState()
+    {
+        //Debug.Log("CHANGING...");
+
+        targetTime = 3.0f;
+        Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        Destroy(gameObject);
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        GameObject otherObject = other.gameObject;
+        if (otherObject.tag == "Planted")
         {
-            //Debug.Log("CHANGING...");
-
-            targetTime = 3.0f;
-            Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            Destroy(gameObject);
-
+            GroundBehavior ground = otherObject.GetComponent<GroundBehavior>();
+            if(ground.isWatered)
+            {
+                isReady = true;
+                //ground.volume -= ground.maxVolume;
+            }
         }
-
-
-
     }
 }

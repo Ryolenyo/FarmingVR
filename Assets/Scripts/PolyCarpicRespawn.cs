@@ -35,7 +35,6 @@ public class PolyCarpicRespawn : MonoBehaviour
         
     }
 
-
     void GrowUp()
     {
         GameObject fruit;

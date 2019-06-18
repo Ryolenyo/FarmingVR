@@ -13,6 +13,9 @@ TagManager:
   - Planted
   - Can
   - Tools
+  - Seed
+  - Hoe
+  - Fertilizer
   layers:
   - Default
   - TransparentFX

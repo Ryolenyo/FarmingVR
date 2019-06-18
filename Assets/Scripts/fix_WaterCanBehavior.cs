@@ -38,17 +38,21 @@ public class fix_WaterCanBehavior : MonoBehaviour
         {
             if (currentVolume > 0)
             {
+                currentVolume = currentVolume - 1;
                 //Watering
                 if (colObject.tag == "DigGround" || colObject.tag == "Planted")
                 {
-                    currentVolume = currentVolume - 1;
                     GroundBehavior groundVariable = colObject.GetComponent<GroundBehavior>();
                     groundVariable.volume = groundVariable.volume + 1;
+
+                    if(groundVariable.volume > groundVariable.maxVolume)
+                    {
+                        groundVariable.isWatered = true;
+                    }
                     //Debug.Log("watering: " + currentVolume);
                 }
                 else if (colObject.tag == "AllGround")
                 {
-                    currentVolume = currentVolume - 1;
                     //Debug.Log("spilling: " + currentVolume);
                 }
             }
