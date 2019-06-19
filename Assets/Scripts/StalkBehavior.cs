@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
 
 public class StalkBehavior : MonoBehaviour
 {
