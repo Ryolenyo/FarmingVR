@@ -37,10 +37,7 @@ public class PolyCarpicRespawn : MonoBehaviour
 
     void GrowUp()
     {
-        GameObject fruit;
-        fruit = (GameObject)EditorUtility.InstantiatePrefab(fruitObject);
-        fruit.transform.position = transform.position;
-        fruit.transform.rotation = transform.rotation;
+        Instantiate(fruitObject, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
         isGrowUp = false;
     }
 

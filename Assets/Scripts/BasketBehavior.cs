@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BasketBehavior : MonoBehaviour
 {
-    private int totalScore = 0;
     // Start is called before the first frame update
     void Start()
     {
