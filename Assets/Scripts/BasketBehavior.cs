@@ -27,8 +27,8 @@ public class BasketBehavior : MonoBehaviour
             PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
             playerVariable.money += plantVariable.valuePlant;
 
-            Debug.Log(playerVariable.money);
-
+            //Debug.Log(playerVariable.money);
+            
             Destroy(collider.gameObject);
         }
     }
