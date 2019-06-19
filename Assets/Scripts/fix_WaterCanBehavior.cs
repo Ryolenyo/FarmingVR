@@ -6,7 +6,7 @@ public class fix_WaterCanBehavior : MonoBehaviour
 {
 
     public float currentVolume = 0;
-    public float maxVolume = 500;
+    public float maxVolume = 1000;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class fix_WaterCanBehavior : MonoBehaviour
         {
             if (currentVolume < maxVolume)
             {
-                currentVolume = currentVolume + 1;
+                currentVolume = currentVolume + 5;
             }
             Debug.Log("filling : " + currentVolume);
         }
@@ -38,10 +38,10 @@ public class fix_WaterCanBehavior : MonoBehaviour
         {
             if (currentVolume > 0)
             {
-                currentVolume = currentVolume - 1;
                 //Watering
                 if (colObject.tag == "DigGround" || colObject.tag == "Planted")
                 {
+                    currentVolume = currentVolume - 1;
                     GroundBehavior groundVariable = colObject.GetComponent<GroundBehavior>();
                     groundVariable.volume = groundVariable.volume + 1;
 
@@ -53,6 +53,7 @@ public class fix_WaterCanBehavior : MonoBehaviour
                 }
                 else if (colObject.tag == "AllGround")
                 {
+                    currentVolume = currentVolume - 1;
                     //Debug.Log("spilling: " + currentVolume);
                 }
             }
