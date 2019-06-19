@@ -6,7 +6,7 @@ public class SeedBagBehavior : MonoBehaviour
 {
     public GameObject seed;
     private bool isSeedOut = true;
-    private float spawnTime = 1;
+    private float spawnTime = 0.7f;
     private float time = 0;
     private int numberOfSeed = 10;
     private int outSeed = 0;

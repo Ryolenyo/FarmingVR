@@ -109,7 +109,7 @@ public class GroundBehavior : MonoBehaviour
         {
             if (volume > 0)
             {
-                volume -= 0.1f;
+                volume -= 0.0001f;
             }
             else
             {

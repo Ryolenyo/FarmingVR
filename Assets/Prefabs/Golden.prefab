@@ -197,7 +197,6 @@ MonoBehaviour:
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
   restoreOriginalParent: 0
-  attached: 0
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
@@ -227,7 +226,7 @@ MonoBehaviour:
   maxWater: 50
   nextObject: {fileID: 5837977761638657962, guid: 46de3c3bfad578c44a2a4431331df7d0,
     type: 3}
-  targetTime: 2
+  targetTime: 10
   isTimerRun: 1
   valuePlant: 70
   fertilized: 0

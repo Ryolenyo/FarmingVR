@@ -16,6 +16,8 @@ public class Timer : MonoBehaviour
     private int seconds;
     private int fraction;
 
+    public int lim;
+
     //Create a reference for the textfield
 
     public Text textField;
@@ -31,14 +33,14 @@ public class Timer : MonoBehaviour
     void Update()
     {
 
-        guiTime = Time.time - startTime;
+        guiTime = lim - (Time.time - startTime);
         //The gui-Time is the difference between the actual time and the start time.
         minutes = (int)guiTime / 60; //Divide the guiTime by sixty to get the minutes.
         seconds = (int)guiTime % 60;//Use the euclidean division for the seconds.
         fraction = (int)(guiTime * 100) % 100;
         textTime = string.Format("{0:00}:{1:00}", minutes, seconds, fraction);
         //text.Time is the time that will be displayed.
-        if (minutes >= 2)
+        if (guiTime <= 0)
         {
             textField.text = "TIMES UP";
             SceneManager.LoadScene(sceneNameToLoad);

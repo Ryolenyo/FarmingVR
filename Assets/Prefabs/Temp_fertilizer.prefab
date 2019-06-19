@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 5833583252705549075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.92806584, y: 1.3197081, z: 1.6546881}
-  m_LocalScale: {x: 0.6136502, y: 0.71586764, z: 0.2143882}
+  m_LocalScale: {x: 0.4, y: 0.5, z: 0.2}
   m_Children:
   - {fileID: 5833583252832676482}
   m_Father: {fileID: 0}
@@ -198,7 +198,6 @@ MonoBehaviour:
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
   restoreOriginalParent: 0
-  attached: 0
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
@@ -238,7 +237,7 @@ GameObject:
   - component: {fileID: 5833583252832676483}
   - component: {fileID: 5833583252832676480}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Detector
   m_TagString: Tools
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
