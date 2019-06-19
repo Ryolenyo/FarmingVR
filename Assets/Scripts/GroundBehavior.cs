@@ -114,6 +114,7 @@ public class GroundBehavior : MonoBehaviour
             else
             {
                 isDug = true;
+                isDraining = false;
                 isWatered = false;
             }
         }
