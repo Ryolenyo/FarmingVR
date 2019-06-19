@@ -11,6 +11,7 @@ public class StalkBehavior : MonoBehaviour
     public float maxWater = 50;
 
     public bool stopGrow = false;
+    public bool isFertilized = false;
 
     public GameObject fruitRespawn1;
     public GameObject fruitRespawn2;
@@ -61,6 +62,19 @@ public class StalkBehavior : MonoBehaviour
             fruitVariable2.isReady = false;
             fruitVariable3.isReady = false;
         }
+
+        if (isFertilized)
+        {
+            fruitVariable1.isFertilized = true;
+            fruitVariable2.isFertilized = true;
+            fruitVariable3.isFertilized = true;
+        }
+        else
+        {
+            fruitVariable1.isFertilized = false;
+            fruitVariable2.isFertilized = false;
+            fruitVariable3.isFertilized = false;
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -77,6 +91,15 @@ public class StalkBehavior : MonoBehaviour
             else
             {
                 isReady = false;
+            }
+
+            if (ground.isFertilized)
+            {
+                isFertilized = true;
+            }
+            else
+            {
+                isFertilized = false;
             }
         }
     }

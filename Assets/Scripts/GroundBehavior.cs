@@ -9,7 +9,8 @@ public class GroundBehavior : MonoBehaviour
     public bool isPlanted;
     public bool isWatered;
     public bool isDraining;
-    public bool isFer;
+    public bool isFertilized;
+    public bool isDeclining;
 
     public bool isChange;
     public bool isStalk;
@@ -22,14 +23,14 @@ public class GroundBehavior : MonoBehaviour
     public GameObject type2;
     */
     public Material gNormal;
-    public Material gDig;
-    public Material gWater;
-    public Material gFer;
-    public Material gWaterFer;
+    public Material gDug;
+    public Material gWatered;
+    public Material gFertilized;
+    public Material gWateredFertilized;
 
-    public float volume = 0;
-    public float maxVolume = 50;
-    public float consume = 1;
+    public float volume;
+    public float maxVolume;
+    private float remainFertilizer;
 
     // Start is called before the first frame update
     void Start()
@@ -39,13 +40,17 @@ public class GroundBehavior : MonoBehaviour
         isPlanted = false;
         isWatered = false;
         isDraining = false;
-        isFer = false;
+        isFertilized = false;
+        isDeclining = false;
 
         isChange = true;
         isStalk = false;
         isGrow = true;
 
         isReset = false;
+
+        volume = 0;
+        remainFertilizer = 0;
 }
 
     //Be called when plant is harvested
@@ -56,7 +61,7 @@ public class GroundBehavior : MonoBehaviour
         isPlanted = false;
         isWatered = false;
         isDraining = false;
-        isFer = false;
+        isFertilized = false;
         isReset = false;
         isChange = true;
         volume = 0;
@@ -70,9 +75,9 @@ public class GroundBehavior : MonoBehaviour
     void Update()
     {
         //Normal Ground
-        if (isDug)
+        if (isDug && !isFertilized)
         {
-            gameObject.GetComponent<Renderer>().material = gDig;
+            gameObject.GetComponent<Renderer>().material = gDug;
             isDug = false;
             gameObject.tag = "DigGround";
         }
@@ -93,15 +98,23 @@ public class GroundBehavior : MonoBehaviour
             isPlanted = false;
         }*/
 
-        if(isPlanted)
+        if (isPlanted)
         {
             gameObject.tag = "Planted";
         }
-        
+
         //Check water volume
-        if (isWatered && !isDraining)
+        if (isWatered  && !isDraining)
         {
-            gameObject.GetComponent<Renderer>().material = gWater;
+            if (isFertilized)
+            {
+                gameObject.GetComponent<Renderer>().material = gWateredFertilized;
+            }
+            else
+            {
+                gameObject.GetComponent<Renderer>().material = gWatered;
+            }
+            volume -= maxVolume;
             isDraining = true;
         }
 
@@ -109,7 +122,7 @@ public class GroundBehavior : MonoBehaviour
         {
             if (volume > 0)
             {
-                volume -= 0.0001f;
+                volume -= 0.01f;
             }
             else
             {
@@ -117,6 +130,35 @@ public class GroundBehavior : MonoBehaviour
                 isDraining = false;
                 isWatered = false;
             }
+        }
+
+        if (isFertilized && !isDeclining)
+        {
+            if (isWatered)
+            {
+                gameObject.GetComponent<Renderer>().material = gWateredFertilized;
+            }
+            else
+            {
+                gameObject.GetComponent<Renderer>().material = gFertilized;
+            }
+            remainFertilizer = 50;
+            isDeclining = true;
+        }
+
+        if(isDeclining)
+        {
+            if(remainFertilizer > 0)
+            {
+                remainFertilizer -= 0.01f;
+            }
+            else
+            {
+                isDeclining = false;
+                isFertilized = false;
+            }
+
+
         }
 
         if (isReset)

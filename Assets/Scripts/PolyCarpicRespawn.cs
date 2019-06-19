@@ -7,7 +7,10 @@ public class PolyCarpicRespawn : MonoBehaviour
 {
     public bool isReady = false;
     public bool isGrowUp = true;
+    public bool isFertilized = false;
+
     public GameObject fruitObject;
+
     public float growUpTime = 3.0f;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +40,7 @@ public class PolyCarpicRespawn : MonoBehaviour
 
     void GrowUp()
     {
-        Instantiate(fruitObject, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
+        Instantiate(fruitObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         isGrowUp = false;
     }
 

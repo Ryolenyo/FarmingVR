@@ -110,18 +110,19 @@ MonoBehaviour:
   isPlanted: 0
   isWatered: 0
   isDraining: 0
-  isFer: 0
+  isFertilized: 0
+  isDeclining: 0
   isChange: 1
   isStalk: 0
-  isStalkGrow: 1
+  isGrow: 0
+  isReset: 0
   gNormal: {fileID: 2100000, guid: 1fba8b3296196b144abc53fafd0269f4, type: 2}
-  gDig: {fileID: 2100000, guid: 25c20bdcedca25b43880653ec36fd75a, type: 2}
-  gWater: {fileID: 2100000, guid: a3e6d6a77ea41fa42b52af13b143c6d2, type: 2}
-  gFer: {fileID: 0}
-  gWaterFer: {fileID: 0}
+  gDug: {fileID: 2100000, guid: 25c20bdcedca25b43880653ec36fd75a, type: 2}
+  gWatered: {fileID: 2100000, guid: a3e6d6a77ea41fa42b52af13b143c6d2, type: 2}
+  gFertilized: {fileID: 2100000, guid: 4fa45b78d6e61454f84a98a23cf8c0e3, type: 2}
+  gWateredFertilized: {fileID: 2100000, guid: 3afae5afbf6c04644bc813d55f462fde, type: 2}
   volume: 0
   maxVolume: 50
-  consume: 1
 --- !u!1 &6348273096457226210
 GameObject:
   m_ObjectHideFlags: 0

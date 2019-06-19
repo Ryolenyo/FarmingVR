@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlantBehavior : MonoBehaviour
 {
+    public int valuePlant;
+
     //WATERING PART
     public bool isReady = false;
     public float currentWater = 0;
@@ -12,12 +14,11 @@ public class PlantBehavior : MonoBehaviour
 
     //GROWING PART
     public GameObject nextObject; // Next state of plant
-    public float targetTime;
     public bool isTimerRun = false;
-    public int valuePlant;
+    public float targetTime;
 
     //FERTILIZE PART
-    public bool fertilized = false;
+    public bool isFertilized = false;
 
     //private GroundBehavior ground;
     private bool isPicked = false;
@@ -97,6 +98,9 @@ public class PlantBehavior : MonoBehaviour
 
         targetTime = 3.0f;
         Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        PlantBehavior nextVariable = nextObject.GetComponent<PlantBehavior>();
+        nextVariable.isFertilized = isFertilized;
+
         Destroy(gameObject);
 
     }
@@ -111,6 +115,21 @@ public class PlantBehavior : MonoBehaviour
             {
                 isReady = true;
                 //ground.volume -= ground.maxVolume;
+            }
+
+            if (ground.isFertilized && !isFertilized)
+            {
+                isFertilized = true;
+                valuePlant += valuePlant * 10 / 100;
+            }
+        }
+        else if (otherObject.tag == "SpawnPoint")
+        {
+            PolyCarpicRespawn spawnPoint = otherObject.GetComponent<PolyCarpicRespawn>();
+            if (spawnPoint.isFertilized && !isFertilized)
+            {
+                isFertilized = true;
+                valuePlant += valuePlant * 10 / 100;
             }
         }
     }

@@ -23,12 +23,14 @@ public class FertilizerBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         GameObject ground = other.gameObject;
-        Fertilized groundQuality = ground.GetComponent<Fertilized>();
+        GroundBehavior groundVariable = ground.GetComponent<GroundBehavior>();
+        //Fertilized groundQuality = ground.GetComponent<Fertilized>();
 
-        if((ground.tag == "Planted" || ground.tag == "DigGround") && !groundQuality.fertilized && max > 0 && fertilizerBag.transform.position.y > minHeight)
+        if((ground.tag == "Planted" || ground.tag == "DigGround") && !groundVariable.isFertilized && max > 0 && fertilizerBag.transform.position.y > minHeight)
         {
             max--;
-            groundQuality.fertilized = true;
+            groundVariable.isFertilized = true;
+            //groundQuality.fertilized = true;
             Debug.Log("fertilizer remain: "+ max);
         }
     }
