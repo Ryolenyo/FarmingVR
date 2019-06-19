@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -8774712356415416721}
   m_Layer: 0
   m_Name: SeedStalk
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 489575941998142436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.022, y: 0.674, z: 0.204}
-  m_LocalScale: {x: 0.070269, y: 0.070269, z: 0.070269}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children:
   - {fileID: 3866803461032377590}
   m_Father: {fileID: 0}
@@ -214,7 +214,6 @@ MonoBehaviour:
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
   restoreOriginalParent: 0
-  attached: 0
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
