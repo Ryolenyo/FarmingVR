@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
 
 public class PlantBehavior : MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class PlantBehavior : MonoBehaviour
     public bool isReady = false;
     public float currentWater = 0;
     public float maxWater = 50;
-    
+
     //GROWING PART
     public GameObject nextObject; // Next state of plant
     public float targetTime;
@@ -20,10 +19,13 @@ public class PlantBehavior : MonoBehaviour
     //FERTILIZE PART
     public bool fertilized = false;
 
+    //private GroundBehavior ground;
+    private bool isPicked = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+        //Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class PlantBehavior : MonoBehaviour
             {
                 isReady = false;
                 isTimerRun = true;
-                if(gameObject.tag == "Sapling")
+                if (gameObject.tag == "Sapling")
                 {
                     gameObject.tag = "Plant";
                 }
@@ -61,7 +63,7 @@ public class PlantBehavior : MonoBehaviour
             timer(targetTime);
         }
 
-        Throwable throwable = GetComponent<Throwable>();
+        /*Throwable throwable = GetComponent<Throwable>();
         Collider collider = GetComponent<Collider>();
         Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
 
@@ -70,8 +72,8 @@ public class PlantBehavior : MonoBehaviour
             isTimerRun = false;
             rigidbody.useGravity = true;
             collider.isTrigger = false;
-            //rigidbody.isKinematic = false;
-        }
+            ground.isReset = true;
+        }*/
     }
 
     void timer(float time)
@@ -105,11 +107,32 @@ public class PlantBehavior : MonoBehaviour
         if (otherObject.tag == "Planted")
         {
             GroundBehavior ground = otherObject.GetComponent<GroundBehavior>();
-            if(ground.isWatered)
+            if (ground.isWatered)
             {
                 isReady = true;
                 //ground.volume -= ground.maxVolume;
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GameObject otherObject = other.gameObject;
+        if (otherObject.tag == "Planted" || otherObject.tag == "SpawnPoint")
+        {
+            Collider collider = GetComponent<Collider>();
+            Rigidbody rigidbody = GetComponent<Rigidbody>();
+
+            isTimerRun = false;
+            rigidbody.useGravity = true;
+            collider.isTrigger = false;
+
+            if (otherObject.tag == "Planted" && !isPicked)
+            {
+                GroundBehavior ground = otherObject.GetComponent<GroundBehavior>();
+                ground.isReset = true;
+            }
+            isPicked = true;
         }
     }
 }

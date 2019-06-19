@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour
         fraction = (int)(guiTime * 100) % 100;
         textTime = string.Format("{0:00}:{1:00}", minutes, seconds, fraction);
         //text.Time is the time that will be displayed.
-        if (minutes >= 1)
+        if (minutes >= 2)
         {
             textField.text = "TIMES UP";
             SceneManager.LoadScene(sceneNameToLoad);

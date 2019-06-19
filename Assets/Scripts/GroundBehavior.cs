@@ -15,6 +15,8 @@ public class GroundBehavior : MonoBehaviour
     public bool isStalk;
     public bool isGrow;
 
+    public bool isReset;
+
     /*public int seedType = 0; // 1 = mono , 2 = poly
     public GameObject type1;
     public GameObject type2;
@@ -42,6 +44,8 @@ public class GroundBehavior : MonoBehaviour
         isChange = true;
         isStalk = false;
         isGrow = true;
+
+        isReset = false;
 }
 
     //Be called when plant is harvested
@@ -53,6 +57,7 @@ public class GroundBehavior : MonoBehaviour
         isWatered = false;
         isDraining = false;
         isFer = false;
+        isReset = false;
         isChange = true;
         volume = 0;
 
@@ -108,9 +113,14 @@ public class GroundBehavior : MonoBehaviour
             }
             else
             {
-                gameObject.GetComponent<Renderer>().material = gDig;
+                isDug = true;
                 isWatered = false;
             }
+        }
+
+        if (isReset)
+        {
+            ResetGround();
         }
         /*else if (isDug)
         {
@@ -174,7 +184,7 @@ public class GroundBehavior : MonoBehaviour
 
     /*void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Plant" || other.gameObject.tag == "Stalk")
+        if (other.gameObject.tag == "Plant")
         {
             ResetGround();
         }
