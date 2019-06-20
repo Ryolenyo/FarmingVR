@@ -11,6 +11,7 @@ public class GroundBehavior : MonoBehaviour
     public bool isDraining;
     public bool isFertilized;
     public bool isDeclining;
+    public bool isFertile;
 
     public bool isChange;
     public bool isStalk;
@@ -42,6 +43,7 @@ public class GroundBehavior : MonoBehaviour
         isDraining = false;
         isFertilized = false;
         isDeclining = false;
+        isFertile = false;
 
         isChange = true;
         isStalk = false;
@@ -62,6 +64,8 @@ public class GroundBehavior : MonoBehaviour
         isWatered = false;
         isDraining = false;
         isFertilized = false;
+        isDeclining = false;
+        isFertile = false;
         isReset = false;
         isChange = true;
         volume = 0;
@@ -120,6 +124,7 @@ public class GroundBehavior : MonoBehaviour
                 remainFertilizer = 50;
                 isDeclining = true;
             }
+            isFertile = true;
         }
         else if (isWatered && !isFertilized)
         {
@@ -138,6 +143,7 @@ public class GroundBehavior : MonoBehaviour
                 remainFertilizer = 50;
                 isDeclining = true;
             }
+            isFertile = true;
         }
 
         if (isDraining)

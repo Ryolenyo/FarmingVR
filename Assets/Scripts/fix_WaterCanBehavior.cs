@@ -30,7 +30,7 @@ public class fix_WaterCanBehavior : MonoBehaviour
             {
                 currentVolume = currentVolume + 5;
             }
-            Debug.Log("filling : " + currentVolume);
+            //Debug.Log("filling : " + currentVolume);
         }
 
         //Watering ground

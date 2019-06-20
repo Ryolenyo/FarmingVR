@@ -99,7 +99,6 @@ public class PlantBehavior : MonoBehaviour
         targetTime = 3.0f;
         Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         PlantBehavior nextVariable = nextObject.GetComponent<PlantBehavior>();
-        nextVariable.isFertilized = isFertilized;
 
         Destroy(gameObject);
 
@@ -117,19 +116,19 @@ public class PlantBehavior : MonoBehaviour
                 //ground.volume -= ground.maxVolume;
             }
 
-            if (ground.isFertilized && !isFertilized)
+            if (ground.isFertile && !isFertilized)
             {
-                isFertilized = true;
                 valuePlant += valuePlant * 10 / 100;
+                isFertilized = true;
             }
         }
         else if (otherObject.tag == "SpawnPoint")
         {
             PolyCarpicRespawn spawnPoint = otherObject.GetComponent<PolyCarpicRespawn>();
-            if (spawnPoint.isFertilized && !isFertilized)
+            if (spawnPoint.isFertile && !isFertilized)
             {
-                isFertilized = true;
                 valuePlant += valuePlant * 10 / 100;
+                isFertilized = true;
             }
         }
     }
@@ -150,6 +149,11 @@ public class PlantBehavior : MonoBehaviour
             {
                 GroundBehavior ground = otherObject.GetComponent<GroundBehavior>();
                 ground.isReset = true;
+            }
+            else if (otherObject.tag == "SpawnPoint" && !isPicked)
+            {
+                PolyCarpicRespawn spawnPoint = otherObject.GetComponent<PolyCarpicRespawn>();
+                spawnPoint.isFertile = false;
             }
             isPicked = true;
         }
