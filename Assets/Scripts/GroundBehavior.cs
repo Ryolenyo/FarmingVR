@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GroundBehavior : MonoBehaviour
 {
-    public bool isTouchedByStick;
     public bool isDug;
     public bool isPlanted;
     public bool isWatered;
@@ -13,16 +12,8 @@ public class GroundBehavior : MonoBehaviour
     public bool isDeclining;
     public bool isFertile;
 
-    public bool isChange;
-    public bool isStalk;
-    public bool isGrow;
-
     public bool isReset;
 
-    /*public int seedType = 0; // 1 = mono , 2 = poly
-    public GameObject type1;
-    public GameObject type2;
-    */
     public Material gNormal;
     public Material gDug;
     public Material gWatered;
@@ -36,7 +27,6 @@ public class GroundBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isTouchedByStick = false;
         isDug = false;
         isPlanted = false;
         isWatered = false;
@@ -44,10 +34,6 @@ public class GroundBehavior : MonoBehaviour
         isFertilized = false;
         isDeclining = false;
         isFertile = false;
-
-        isChange = true;
-        isStalk = false;
-        isGrow = true;
 
         isReset = false;
 
@@ -58,7 +44,6 @@ public class GroundBehavior : MonoBehaviour
     //Be called when plant is harvested
     void ResetGround()
     {
-        isTouchedByStick = false;
         isDug = false;
         isPlanted = false;
         isWatered = false;
@@ -66,8 +51,9 @@ public class GroundBehavior : MonoBehaviour
         isFertilized = false;
         isDeclining = false;
         isFertile = false;
+
         isReset = false;
-        isChange = true;
+
         volume = 0;
 
         gameObject.GetComponent<Renderer>().material = gNormal;
@@ -85,22 +71,6 @@ public class GroundBehavior : MonoBehaviour
             isDug = false;
             gameObject.tag = "DigGround";
         }
-        /*
-        //Dug Ground
-        if (isPlanted)
-        {
-            switch (seedType)
-            {
-                case 1:
-                    Instantiate(type1, new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
-                    break;
-                case 2:
-                    Instantiate(type2, new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), Quaternion.identity);
-                    break;
-            }
-
-            isPlanted = false;
-        }*/
 
         if (isPlanted)
         {
@@ -186,71 +156,5 @@ public class GroundBehavior : MonoBehaviour
         {
             ResetGround();
         }
-        /*else if (isDug)
-        {
-            if (volume > maxVolume)
-            {
-                isWatered = true;
-                isStalkGrow = true;
-                if (isChange)
-                {
-                    gameObject.GetComponent<Renderer>().material = gWater;
-                    isChange = false;
-                }
-            }
-            else
-            {
-                if (!isChange)
-                {
-                    volume -= 0.01f; //plant consume water
-                    if (volume <= 0)
-                    {
-                        gameObject.GetComponent<Renderer>().material = gDig;
-                        isChange = true;
-                        isStalkGrow = false;
-                    }
-                }
-            }
-        }*/
     }
-
-    /*void OnTriggerStay(Collider other)
-    {
-        if (isWatered)
-        {
-            if (other.tag == "Sapling")
-            {
-                PlantBehavior plantVariable = other.GetComponent<PlantBehavior>();
-                plantVariable.isReady = true;
-                volume -= maxVolume;
-                isWatered = false;
-            }
-            else if (other.tag == "Stalk")
-            {
-                StalkBehavior stalkVariable = other.GetComponent<StalkBehavior>();
-                stalkVariable.isReady = true;
-                volume -= maxVolume;
-                isWatered = false;
-                isStalk = true;
-
-            }
-        }
-
-        if (isStalk)
-        {
-            if (!isStalkGrow)
-            {
-                StalkBehavior stalkVariable = other.GetComponent<StalkBehavior>();
-                stalkVariable.isReady = false;
-            }
-        }
-    }*/
-
-    /*void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Plant")
-        {
-            ResetGround();
-        }
-    }*/
 }

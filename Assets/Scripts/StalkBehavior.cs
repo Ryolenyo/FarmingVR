@@ -26,14 +26,6 @@ public class StalkBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //WATERTING PART
-        /*
-        if (currentWater > maxWater)
-        {
-            isReady = true;
-        }
-        */
-
         PolyCarpicRespawn fruitVariable1 = fruitRespawn1.GetComponent<PolyCarpicRespawn>();
         PolyCarpicRespawn fruitVariable2 = fruitRespawn2.GetComponent<PolyCarpicRespawn>();
         PolyCarpicRespawn fruitVariable3 = fruitRespawn3.GetComponent<PolyCarpicRespawn>();

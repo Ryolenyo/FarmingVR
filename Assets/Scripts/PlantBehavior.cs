@@ -20,27 +20,17 @@ public class PlantBehavior : MonoBehaviour
     //FERTILIZE PART
     public bool isFertilized = false;
 
-    //private GroundBehavior ground;
     private bool isPicked = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //WATERTING PART
-
-        /*
-        if (currentWater > maxWater)
-        {
-            isReady = true;
-        }
-        */
-
         if (isReady)
         {
             if (transform.position.y > 0.75)
@@ -63,18 +53,6 @@ public class PlantBehavior : MonoBehaviour
         {
             timer(targetTime);
         }
-
-        /*Throwable throwable = GetComponent<Throwable>();
-        Collider collider = GetComponent<Collider>();
-        Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
-
-        if (throwable.attached)
-        {
-            isTimerRun = false;
-            rigidbody.useGravity = true;
-            collider.isTrigger = false;
-            ground.isReset = true;
-        }*/
     }
 
     void timer(float time)
@@ -95,7 +73,6 @@ public class PlantBehavior : MonoBehaviour
     void changeState()
     {
         //Debug.Log("CHANGING...");
-
         targetTime = 3.0f;
         Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         PlantBehavior nextVariable = nextObject.GetComponent<PlantBehavior>();
@@ -113,7 +90,6 @@ public class PlantBehavior : MonoBehaviour
             if (ground.isWatered)
             {
                 isReady = true;
-                //ground.volume -= ground.maxVolume;
             }
 
             if (ground.isFertile && !isFertilized)
