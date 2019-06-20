@@ -18,6 +18,7 @@ TagManager:
   - Fertilizer
   - SpawnPoint
   - Wall
+  - Mole
   layers:
   - Default
   - TransparentFX

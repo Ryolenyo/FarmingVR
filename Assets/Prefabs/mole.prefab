@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 2249605710929184310}
   m_Layer: 0
   m_Name: mole
-  m_TagString: Untagged
+  m_TagString: Mole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  randomGround: 0
+  randomGround: 5
   speed: 0.01
 --- !u!114 &5070283235965251355
 MonoBehaviour:
@@ -333,8 +333,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02219711, y: 0.034215927, z: 0.022144895}
-  m_Center: {x: -0.0013731406, y: 0.023748685, z: 0.0010442425}
+  m_Size: {x: 0.02219711, y: 0.031111253, z: 0.019886913}
+  m_Center: {x: -0.0013731406, y: 0.024736566, z: -0.000084745145}
 --- !u!1 &2559729177824418977
 GameObject:
   m_ObjectHideFlags: 0

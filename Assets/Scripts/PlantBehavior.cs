@@ -53,6 +53,12 @@ public class PlantBehavior : MonoBehaviour
         {
             timer(targetTime);
         }
+
+        //BE STOLEN
+        if (transform.position.y < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void timer(float time)
@@ -107,6 +113,14 @@ public class PlantBehavior : MonoBehaviour
                 isFertilized = true;
             }
         }
+
+        else if (otherObject.tag == "Mole")
+        {
+            Transform molePos = otherObject.GetComponent<Transform>();
+            transform.position = new Vector3(transform.position.x, molePos.transform.position.y + 0.28f, transform.position.z);
+            Debug.Log("TOUCH");
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -125,7 +139,7 @@ public class PlantBehavior : MonoBehaviour
             {
                 GroundBehavior ground = otherObject.GetComponent<GroundBehavior>();
                 ground.isReset = true;
-            }
+            }y
             else if (otherObject.tag == "SpawnPoint" && !isPicked)
             {
                 PolyCarpicRespawn spawnPoint = otherObject.GetComponent<PolyCarpicRespawn>();

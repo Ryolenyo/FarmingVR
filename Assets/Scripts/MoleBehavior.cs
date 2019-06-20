@@ -13,13 +13,13 @@ public class MoleBehavior : MonoBehaviour
     public float currentTime = 0;
 
     public GameObject[] target;
-    public int randomGround = 0;
+    public int randomGround = 15;
     public float speed = 0.01f;
 
     // Start is called before the first frame update
     void Start()
     {
-        eatTime = Random.Range(5.0f, 15.0f);
+        eatTime = Random.Range(5.0f, 10.0f);
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class MoleBehavior : MonoBehaviour
                 if (currentTime > eatTime)
                 {
                     eatTime = Random.Range(5.0f, 15.0f);
-                    randomGround = Random.Range(0, 17);
+                    //randomGround = Random.Range(0, 17);
                     //GO TO TARGET POSITION
                     currentTime = 0;
                     transform.position = new Vector3(target[randomGround].transform.position.x, target[randomGround].transform.position.y - 0.1f, target[randomGround].transform.position.z);
@@ -64,7 +64,7 @@ public class MoleBehavior : MonoBehaviour
                     if (currentTime > escapeTime)
                     {
                         //GoDown
-                        if (transform.position.y > 0)
+                        if (transform.position.y > -0.5)
                         {
                             transform.position = new Vector3(transform.position.x, transform.position.y - 0.005f, transform.position.z);
                         }
