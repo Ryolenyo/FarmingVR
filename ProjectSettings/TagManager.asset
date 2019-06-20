@@ -17,6 +17,7 @@ TagManager:
   - Hoe
   - Fertilizer
   - SpawnPoint
+  - Wall
   layers:
   - Default
   - TransparentFX
