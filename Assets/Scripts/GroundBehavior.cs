@@ -30,7 +30,7 @@ public class GroundBehavior : MonoBehaviour
 
     public float volume;
     public float maxVolume;
-    private float remainFertilizer;
+    public float remainFertilizer;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +75,7 @@ public class GroundBehavior : MonoBehaviour
     void Update()
     {
         //Normal Ground
-        if (isDug && !isFertilized)
+        if (isDug)
         {
             gameObject.GetComponent<Renderer>().material = gDug;
             isDug = false;
@@ -104,18 +104,40 @@ public class GroundBehavior : MonoBehaviour
         }
 
         //Check water volume
-        if (isWatered  && !isDraining)
+
+        if (isWatered && isFertilized)
         {
-            if (isFertilized)
+            gameObject.GetComponent<Renderer>().material = gWateredFertilized;
+
+            if (!isDraining)
             {
-                gameObject.GetComponent<Renderer>().material = gWateredFertilized;
+                volume -= maxVolume;
+                isDraining = true;
             }
-            else
+
+            if (!isDeclining)
             {
-                gameObject.GetComponent<Renderer>().material = gWatered;
+                remainFertilizer = 50;
+                isDeclining = true;
             }
-            volume -= maxVolume;
-            isDraining = true;
+        }
+        else if (isWatered && !isFertilized)
+        {
+            gameObject.GetComponent<Renderer>().material = gWatered;
+            if (!isDraining)
+            {
+                volume -= maxVolume;
+                isDraining = true;
+            }
+        }
+        else if (!isWatered && isFertilized)
+        {
+            gameObject.GetComponent<Renderer>().material = gFertilized;
+            if (!isDeclining)
+            {
+                remainFertilizer = 50;
+                isDeclining = true;
+            }
         }
 
         if (isDraining)
@@ -126,27 +148,16 @@ public class GroundBehavior : MonoBehaviour
             }
             else
             {
-                isDug = true;
+                if (!isFertilized)
+                {
+                    isDug = true;
+                }
                 isDraining = false;
                 isWatered = false;
             }
         }
 
-        if (isFertilized && !isDeclining)
-        {
-            if (isWatered)
-            {
-                gameObject.GetComponent<Renderer>().material = gWateredFertilized;
-            }
-            else
-            {
-                gameObject.GetComponent<Renderer>().material = gFertilized;
-            }
-            remainFertilizer = 50;
-            isDeclining = true;
-        }
-
-        if(isDeclining)
+        if (isDeclining)
         {
             if(remainFertilizer > 0)
             {
@@ -154,6 +165,10 @@ public class GroundBehavior : MonoBehaviour
             }
             else
             {
+                if (!isWatered)
+                {
+                    isDug = true;
+                }
                 isDeclining = false;
                 isFertilized = false;
             }
