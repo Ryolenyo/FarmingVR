@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 6551658330587361369}
   - component: {fileID: 6551658330587361370}
   m_Layer: 0
-  m_Name: TempHoe 1
+  m_Name: TempHoe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,7 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6551658331520817247}
   m_Layer: 0
-  m_Name: Hoe's attachment position
+  m_Name: Hoe's holding position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
