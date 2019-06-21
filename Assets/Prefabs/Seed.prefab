@@ -199,7 +199,6 @@ MonoBehaviour:
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
   restoreOriginalParent: 0
-  attached: 0
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
@@ -225,8 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seedType: 1
-  type1: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
-  type2: {fileID: 5716724724312440348, guid: 34e23f17f9112ce41ae286dcd9eef9b5, type: 3}
+  sapling: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
 --- !u!1 &7248712752910830636
 GameObject:
   m_ObjectHideFlags: 0

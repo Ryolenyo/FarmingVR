@@ -43,6 +43,7 @@ public class SeedBagBehavior : MonoBehaviour
         if (other.tag == "Seed")
         {
             isSeedOut = true;
+            other.gameObject.transform.parent = null;
         }
     }
 }
