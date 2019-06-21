@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public class MoleBehavior : MonoBehaviour
 {
-    public bool isCatch = false;
+    private bool isCatch = true;
     private bool isEat = false;
     private bool isGoUp = false;
 
@@ -14,13 +14,13 @@ public class MoleBehavior : MonoBehaviour
     public float comebackTime = 15;
 
     public GameObject[] target;
-    public int randomGround = 15;
+    private int randomGround = 15;
     private float speed = 0.01f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //eatTime = Random.Range(5.0f, 10.0f);
+
     }
 
     bool Timer(float startTime, float time)

@@ -2002,6 +2002,11 @@ PrefabInstance:
       propertyPath: isCatch
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8938018048775381588, guid: 3e8c1e28fdee71d4e9646d418b241a3f,
+        type: 3}
+      propertyPath: comebackTime
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e8c1e28fdee71d4e9646d418b241a3f, type: 3}
 --- !u!4 &1234304750 stripped
