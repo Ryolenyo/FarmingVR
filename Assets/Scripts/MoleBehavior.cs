@@ -1,108 +1,142 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class MoleBehavior : MonoBehaviour
 {
-    public bool isEat = false;
-    public bool isGoUp = true;
     public bool isCatch = false;
+    private bool isEat = false;
+    private bool isGoUp = false;
 
-    public float eatTime;
-    public float escapeTime = 5;
+    public float eatTime = 5;
     public float currentTime = 0;
+    public float comebackTime = 15;
 
     public GameObject[] target;
     public int randomGround = 15;
-    public float speed = 0.01f;
+    private float speed = 0.01f;
 
     // Start is called before the first frame update
     void Start()
     {
-        eatTime = Random.Range(5.0f, 10.0f);
+        //eatTime = Random.Range(5.0f, 10.0f);
+    }
+
+    bool Timer(float startTime, float time)
+    {
+        startTime += Time.deltaTime;
+        if (startTime > time)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (!isCatch)
         {
             if (isEat)
             {
-                //COUNT DOWN TO EAT
+                //Wait x sec for player to catch while eating
                 if (currentTime > eatTime)
                 {
-                    eatTime = Random.Range(5.0f, 15.0f);
-                    //randomGround = Random.Range(0, 17);
-                    //GO TO TARGET POSITION
+                    //Ready to go down
                     currentTime = 0;
-                    transform.position = new Vector3(target[randomGround].transform.position.x, target[randomGround].transform.position.y - 0.1f, target[randomGround].transform.position.z);
                     isEat = false;
+                    isGoUp = false;
                 }
                 else
                 {
                     currentTime += Time.deltaTime;
+                    //Enable Throwable script
+                    Throwable script = GetComponent<Throwable>();
+                    script.enabled = true;
                 }
+
             }
             else
             {
-                //GO UP          
                 if (isGoUp)
                 {
                     if (transform.position.y < 0.4f)
                     {
+                        //Go Up from new target ground
                         transform.position = new Vector3(transform.position.x, transform.position.y + 0.005f, transform.position.z);
                     }
                     else
                     {
-                        isGoUp = false;
+                        //Reach nice spot ! Ready to eat
+                        currentTime = 0;
+                        isEat = true;
                     }
+
                 }
                 else
                 {
-                    //EATING
-                    if (currentTime > escapeTime)
+                    if (transform.position.y > -0.5f)
                     {
-                        //GoDown
-                        if (transform.position.y > -0.5)
-                        {
-                            transform.position = new Vector3(transform.position.x, transform.position.y - 0.005f, transform.position.z);
-                        }
-                        else
-                        {
-                            isEat = true;
-                            isGoUp = true;
-                            currentTime = 0;
-                        }
+                        //unable throwable script
+                        Throwable script = GetComponent<Throwable>();
+                        script.enabled = false;
+
+                        //Go Down
+                        transform.position = new Vector3(transform.position.x, transform.position.y - 0.005f, transform.position.z);
                     }
                     else
                     {
-                        currentTime += Time.deltaTime;
+                        //Find new ground
+                        randomGround = Random.Range(0, 17);
+                        //Go to that position
+                        transform.position = new Vector3(target[randomGround].transform.position.x, target[randomGround].transform.position.y - 1, target[randomGround].transform.position.z);
+                        transform.rotation = Quaternion.identity;
+
+                        //Ready to go up
+                        isGoUp = true;
                     }
                 }
             }
         }
         else
         {
-            //BE THROWN OUT -> Count down time to comeback
+            //Be thrown away
+            if (currentTime > comebackTime)
+            {
+                isCatch = false;
 
+                //Ready to go back down
+                Rigidbody mole = GetComponent<Rigidbody>();
+                Collider moleCol = GetComponent<Collider>();
+                mole.useGravity = false;
+                moleCol.isTrigger = true;
+
+                isEat = false;
+                isGoUp = false;
+            }
+            else
+            {
+                Debug.Log("Be Caught...");
+                currentTime += Time.deltaTime;
+            }
         }
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        //BE THROWN OUT
-        if (other.tag == "Wall")
-        {
-            isCatch = true;
-        }
+        //When mole be caught by player, Add gravity and trigger
         if (other.tag == "AllGround")
         {
+            isCatch = true;
             Rigidbody mole = GetComponent<Rigidbody>();
             Collider moleCol = GetComponent<Collider>();
             mole.useGravity = true;
             moleCol.isTrigger = false;
-            
         }
     }
 }

@@ -475,8 +475,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.066506386, y: 6.7757597, z: 0.6249211}
-  m_Center: {x: 0.27452293, y: 2.8878798, z: -0.02554009}
+  m_Size: {x: 0.061583314, y: 6.7757597, z: 0.56584334}
+  m_Center: {x: 0.32867754, y: 2.8878798, z: 0.0039986256}
 --- !u!1001 &234041276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1924,7 +1924,7 @@ PrefabInstance:
     - target: {fileID: 4138962821746284845, guid: 3e8c1e28fdee71d4e9646d418b241a3f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.484
+      value: -0.441
       objectReference: {fileID: 0}
     - target: {fileID: 4138962821746284845, guid: 3e8c1e28fdee71d4e9646d418b241a3f,
         type: 3}
@@ -2061,6 +2061,16 @@ PrefabInstance:
       propertyPath: target.Array.data[17]
       value: 
       objectReference: {fileID: 564877442}
+    - target: {fileID: 8938018048775381588, guid: 3e8c1e28fdee71d4e9646d418b241a3f,
+        type: 3}
+      propertyPath: isEat
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938018048775381588, guid: 3e8c1e28fdee71d4e9646d418b241a3f,
+        type: 3}
+      propertyPath: isCatch
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e8c1e28fdee71d4e9646d418b241a3f, type: 3}
 --- !u!4 &1234304750 stripped
@@ -2333,8 +2343,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.066506386, y: 6.7757597, z: 0.6249211}
-  m_Center: {x: 0.27452293, y: 2.8878798, z: -0.02554009}
+  m_Size: {x: 0.039429463, y: 6.7757597, z: 0.6249211}
+  m_Center: {x: 0.21913783, y: 2.8878798, z: -0.02554009}
 --- !u!1001 &1746665999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2527,8 +2537,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.066506386, y: 6.7757597, z: 0.6249211}
-  m_Center: {x: 0.27452293, y: 2.8878798, z: -0.02554009}
+  m_Size: {x: 0.02958312, y: 6.7757597, z: 0.6249211}
+  m_Center: {x: 0.32252356, y: 2.8878798, z: -0.02554009}
 --- !u!4 &1831258070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7810200831719873881, guid: d40624a1259e6234eae703f4c9402dd5,
@@ -2696,7 +2706,7 @@ PrefabInstance:
     - target: {fileID: 4631455229609313353, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0,
         type: 3}
       propertyPath: lim
-      value: 120
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0, type: 3}
@@ -2754,8 +2764,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.066506386, y: 6.7757597, z: 0.6249211}
-  m_Center: {x: 0.27452293, y: 2.8878798, z: -0.02554009}
+  m_Size: {x: 0.0541986, y: 6.7757597, z: 0.624921}
+  m_Center: {x: 0.22159931, y: 2.8878798, z: -0.025540091}
 --- !u!1001 &1978454483
 PrefabInstance:
   m_ObjectHideFlags: 0
