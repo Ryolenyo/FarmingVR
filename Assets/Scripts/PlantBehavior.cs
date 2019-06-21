@@ -139,7 +139,7 @@ public class PlantBehavior : MonoBehaviour
             {
                 GroundBehavior ground = otherObject.GetComponent<GroundBehavior>();
                 ground.isReset = true;
-            }y
+            }
             else if (otherObject.tag == "SpawnPoint" && !isPicked)
             {
                 PolyCarpicRespawn spawnPoint = otherObject.GetComponent<PolyCarpicRespawn>();
