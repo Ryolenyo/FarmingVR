@@ -7,10 +7,16 @@ using UnityEngine;
 public class ObjectiveGoal
 {
     public ObjectiveType objectiveType;
+
+    public int requiredAmount;
+    public int currentAmount;
+
+    
 }
 
 public enum ObjectiveType
 {
     Collecting,
+    TimeLimit,
     Restriction
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Objective
 {
-    public bool isDone;
+    public bool completed;
 
     public string description;
     public ObjectiveGoal type;
