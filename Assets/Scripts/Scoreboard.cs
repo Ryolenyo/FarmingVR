@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Scoreboard : MonoBehaviour
 {
-    private int money;
-    [SerializeField] Text score;
+    private int score;
+    [SerializeField] Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +17,11 @@ public class Scoreboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject player = GameObject.Find("Player");
-        PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
-        money = playerVariable.money;
+        GameObject Basket = GameObject.Find("basketVoid");
+        BasketBehavior basketVariable = Basket.GetComponent<BasketBehavior>();
+        score = basketVariable.score;
 
-        score.text = money.ToString();
+        scoreText.text = score.ToString();
+
     }
 }
