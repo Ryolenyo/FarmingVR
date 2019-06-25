@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasketBehavior : MonoBehaviour
 {
+    public int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +25,9 @@ public class BasketBehavior : MonoBehaviour
             PlantBehavior plantVariable = plant.GetComponent<PlantBehavior>();
             GameObject player = GameObject.Find("Player");
             PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
-            playerVariable.money += plantVariable.valuePlant;
 
-            //Debug.Log(playerVariable.money);
+            playerVariable.money += plantVariable.valuePlant;
+            score += plantVariable.valuePlant;
             
             Destroy(collider.gameObject);
         }

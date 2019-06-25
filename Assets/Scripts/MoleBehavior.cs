@@ -24,19 +24,6 @@ public class MoleBehavior : MonoBehaviour
 
     }
 
-    bool Timer(float startTime, float time)
-    {
-        startTime += Time.deltaTime;
-        if (startTime > time)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -135,7 +122,6 @@ public class MoleBehavior : MonoBehaviour
             }
             else
             {
-                Debug.Log("Be Caught...");
                 currentTime += Time.deltaTime;
             }
         }

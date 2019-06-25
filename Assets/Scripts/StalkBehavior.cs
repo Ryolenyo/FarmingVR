@@ -13,6 +13,9 @@ public class StalkBehavior : MonoBehaviour
     public bool stopGrow = false;
     public bool isFertilized = false;
 
+    private float currentTime;
+    public int spawnTime = 30;
+
     public GameObject fruitRespawn1;
     public GameObject fruitRespawn2;
     public GameObject fruitRespawn3;
@@ -43,10 +46,15 @@ public class StalkBehavior : MonoBehaviour
                     transform.position = new Vector3(transform.position.x, transform.position.y + 0.01f, transform.position.z);
                 }
             }
-            
-            fruitVariable1.isReady = true;
-            fruitVariable2.isReady = true;
-            fruitVariable3.isReady = true;
+
+            //first time
+            currentTime += Time.deltaTime;
+            if (currentTime > spawnTime)
+            {
+                fruitVariable1.isReady = true;
+                fruitVariable2.isReady = true;
+                fruitVariable3.isReady = true;
+            }
         }
         else
         {

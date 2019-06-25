@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef62818f4de66841a57c137d523c1fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lim: 0
   textField: {fileID: 4631455229609313355}
   sceneNameToLoad: Game
 --- !u!1 &4631455230563056990
@@ -509,4 +510,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cde6b70eab17cd4dbcded2de5b3e8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 4631455230563056994}
+  scoreText: {fileID: 4631455230563056994}
