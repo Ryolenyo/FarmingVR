@@ -23,6 +23,7 @@ TagManager:
   - planted
   - FxTemporaire
   - Hand
+  - Trapper
   layers:
   - Default
   - TransparentFX

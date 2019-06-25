@@ -6,6 +6,7 @@ using Valve.VR.InteractionSystem;
 public class MoleBehavior : MonoBehaviour
 {
     private bool isCatch = true;
+    private bool isCatchByTrapper = false;
     private bool isEat = false;
     private bool isGoUp = false;
 
@@ -106,37 +107,55 @@ public class MoleBehavior : MonoBehaviour
         else
         {
             //Be thrown away
-            if (currentTime > comebackTime)
+            if (!isCatchByTrapper)
             {
-                isCatch = false;
+                if (currentTime > comebackTime)
+                {
+                    isCatch = false;
 
-                //Ready to go back down
-                Rigidbody mole = GetComponent<Rigidbody>();
-                Collider moleCol = GetComponent<Collider>();
-                mole.useGravity = false;
-                moleCol.isTrigger = true;
+                    //Ready to go back down
+                    Rigidbody mole = GetComponent<Rigidbody>();
+                    Collider moleCol = GetComponent<Collider>();
+                    mole.useGravity = false;
+                    moleCol.isTrigger = true;
 
-                isEat = false;
-                isGoUp = false;
+                    isEat = false;
+                    isGoUp = false;
+                }
+                else
+                {
+                    Debug.Log("Be Caught...");
+                    currentTime += Time.deltaTime;
+                }
             }
-            else
-            {
-                Debug.Log("Be Caught...");
-                currentTime += Time.deltaTime;
-            }
-        }
+         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //When mole be caught by player, Add gravity and trigger
-        if (other.tag == "AllGround")
+        if (!isCatchByTrapper)
         {
-            isCatch = true;
-            Rigidbody mole = GetComponent<Rigidbody>();
-            Collider moleCol = GetComponent<Collider>();
-            mole.useGravity = true;
-            moleCol.isTrigger = false;
+            //When mole be caught by player, Add gravity and trigger
+            if (other.tag == "AllGround")
+            {
+                isCatch = true;
+                Rigidbody mole = GetComponent<Rigidbody>();
+                Collider moleCol = GetComponent<Collider>();
+                mole.useGravity = true;
+                moleCol.isTrigger = false;
+            }
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        //When mole be caught by trapper delete script
+        if (other.tag == "Trapper")
+        {
+            isCatchByTrapper = true;
+            isCatch = true;
+            transform.position = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
+        }
+    }
+
 }
