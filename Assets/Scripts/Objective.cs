@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Objective : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+[System.Serializable]
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class Objective
+{
+    public string title;
+    public bool isDone;
+    public ObjectiveType type;
+}
+
+public enum ObjectiveType
+{
+    Collecting,
+    ItemRestriction,
+    TimeLimit
 }
