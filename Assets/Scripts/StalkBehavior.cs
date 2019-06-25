@@ -14,7 +14,7 @@ public class StalkBehavior : MonoBehaviour
     public bool isFertilized = false;
 
     private float currentTime;
-    private int spawnTime = 30;
+    public int spawnTime = 30;
 
     public GameObject fruitRespawn1;
     public GameObject fruitRespawn2;
