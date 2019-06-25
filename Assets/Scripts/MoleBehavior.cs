@@ -40,7 +40,10 @@ public class MoleBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //finding trapper
+        GameObject trapper = GameObject.FindWithTag("Trapper");
 
+        //State
         if (!isCatch)
         {
             if (isEat)
@@ -92,11 +95,21 @@ public class MoleBehavior : MonoBehaviour
                     }
                     else
                     {
-                        //Find new ground
-                        randomGround = Random.Range(0, 17);
-                        //Go to that position
-                        transform.position = new Vector3(target[randomGround].transform.position.x, target[randomGround].transform.position.y - 1, target[randomGround].transform.position.z);
-                        transform.rotation = Quaternion.identity;
+                        //Luring by trapper
+                        if (trapper != null)
+                        {
+                            //found trapper Go to trapper
+                            transform.position = new Vector3(trapper.transform.position.x, trapper.transform.position.y - 1, trapper.transform.position.z);
+                            transform.rotation = Quaternion.identity;
+                        }
+                        else
+                        {
+                            //Find new ground
+                            randomGround = Random.Range(0, 17);
+                            //Go to that position
+                            transform.position = new Vector3(target[randomGround].transform.position.x, target[randomGround].transform.position.y - 1, target[randomGround].transform.position.z);
+                            transform.rotation = Quaternion.identity;
+                        }
 
                         //Ready to go up
                         isGoUp = true;
@@ -107,54 +120,48 @@ public class MoleBehavior : MonoBehaviour
         else
         {
             //Be thrown away
-            if (!isCatchByTrapper)
+            if (currentTime > comebackTime)
             {
-                if (currentTime > comebackTime)
-                {
-                    isCatch = false;
+                isCatch = false;
 
-                    //Ready to go back down
-                    Rigidbody mole = GetComponent<Rigidbody>();
-                    Collider moleCol = GetComponent<Collider>();
-                    mole.useGravity = false;
-                    moleCol.isTrigger = true;
+                //Ready to go back down
+                Rigidbody mole = GetComponent<Rigidbody>();
+                Collider moleCol = GetComponent<Collider>();
+                mole.useGravity = false;
+                moleCol.isTrigger = true;
 
-                    isEat = false;
-                    isGoUp = false;
-                }
-                else
-                {
-                    Debug.Log("Be Caught...");
-                    currentTime += Time.deltaTime;
-                }
+                isEat = false;
+                isGoUp = false;
             }
-         }
+            else
+            {
+                Debug.Log("Be Caught...");
+                currentTime += Time.deltaTime;
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!isCatchByTrapper)
+        //When mole be caught by player, Add gravity and trigger
+        if (other.tag == "AllGround")
         {
-            //When mole be caught by player, Add gravity and trigger
-            if (other.tag == "AllGround")
-            {
-                isCatch = true;
-                Rigidbody mole = GetComponent<Rigidbody>();
-                Collider moleCol = GetComponent<Collider>();
-                mole.useGravity = true;
-                moleCol.isTrigger = false;
-            }
+            isCatch = true;
+            Rigidbody mole = GetComponent<Rigidbody>();
+            Collider moleCol = GetComponent<Collider>();
+            mole.useGravity = true;
+            moleCol.isTrigger = false;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        //When mole be caught by trapper delete script
-        if (other.tag == "Trapper")
+        //When mole be caught by trapper, delete script
+        if (other.tag == "Trapper" || other.tag == "Net")
         {
-            isCatchByTrapper = true;
-            isCatch = true;
-            transform.position = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
+            gameObject.transform.parent = other.transform;
+            MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
+            Destroy(this);
         }
     }
 
