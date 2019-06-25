@@ -6,14 +6,8 @@ using UnityEngine;
 
 public class Objective
 {
-    public string title;
-    public bool isDone;
-    public ObjectiveType type;
-}
+    public bool completed;
 
-public enum ObjectiveType
-{
-    Collecting,
-    ItemRestriction,
-    TimeLimit
+    public string description;
+    public ObjectiveGoal type;
 }
