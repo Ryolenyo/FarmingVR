@@ -131,8 +131,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.009491852, y: 0.008910634, z: 0.017508648}
-  m_Center: {x: -0.000013213975, y: 0.00020140393, z: 0.004295168}
+  m_Size: {x: 0.009491852, y: 0.0014138191, z: 0.017508652}
+  m_Center: {x: -0.000013213975, y: -0.003546996, z: 0.004295169}
 --- !u!114 &657861306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,8 +291,18 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8dcdc08e6431d5b4cbdbbcfd60442086,
         type: 3}
       propertyPath: m_Name
-      value: basket_prototype
+      value: basket_prototype Variant
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 8dcdc08e6431d5b4cbdbbcfd60442086,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 8dcdc08e6431d5b4cbdbbcfd60442086,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be5d30597c1163947b450778cd5caee4, type: 2}
     - target: {fileID: -4216859302048453862, guid: 8dcdc08e6431d5b4cbdbbcfd60442086,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -363,16 +373,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 169.00345
       objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 8dcdc08e6431d5b4cbdbbcfd60442086,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 8dcdc08e6431d5b4cbdbbcfd60442086,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: be5d30597c1163947b450778cd5caee4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dcdc08e6431d5b4cbdbbcfd60442086, type: 3}
 --- !u!1 &5320719437547437960 stripped
