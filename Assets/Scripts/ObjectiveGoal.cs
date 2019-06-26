@@ -6,17 +6,28 @@ using UnityEngine;
 
 public class ObjectiveGoal
 {
-    public ObjectiveType objectiveType;
+    public bool completed;
 
     public int requiredAmount;
     public int currentAmount;
 
-    
-}
+    public void CollectingObjective(int amount, string[] name)
+    {
+        requiredAmount = amount;
 
-public enum ObjectiveType
-{
-    Collecting,
-    TimeLimit,
-    Restriction
+        if (requiredAmount >= currentAmount)
+        {
+            completed = true;
+        }
+    }
+
+    public void RestrictionObjective()
+    {
+
+    }
+
+    public void TimeLimitObjective()
+    {
+
+    }
 }
