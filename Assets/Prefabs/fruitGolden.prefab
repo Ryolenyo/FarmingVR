@@ -34,7 +34,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.76, y: 0.963, z: -0.49032223}
   m_LocalScale: {x: 0.16365978, y: 0.16365978, z: 0.16365978}
-  m_Children: []
+  m_Children:
+  - {fileID: 8826758361626100721}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -221,12 +222,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2adc82e53f73a42b2efb2c8306fae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  valuePlant: 30
   isReady: 0
   currentWater: 0
   maxWater: 50
   nextObject: {fileID: 8294433065010724548, guid: fa29b92ce11082d46978c21af5b6df69,
     type: 3}
-  targetTime: 10
   isTimerRun: 1
-  valuePlant: 30
-  fertilized: 0
+  targetTime: 10
+  isFertilized: 0
+--- !u!1 &7162122895796422924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8826758361626100721}
+  m_Layer: 0
+  m_Name: State
+  m_TagString: Gold
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8826758361626100721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7162122895796422924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7523832626796516394}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -25,6 +25,10 @@ TagManager:
   - Hand
   - Trapper
   - Net
+  - Gold
+  - Ripe
+  - Premature
+  - Wilt
   layers:
   - Default
   - TransparentFX
