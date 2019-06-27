@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb604ba622620bd4caed59fb200c2e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDug: 1
+  isDug: 0
   isPlanted: 0
   isWatered: 0
   isDraining: 0
@@ -170,11 +170,13 @@ MonoBehaviour:
   isDeclining: 0
   isFertile: 0
   isReset: 0
-  gNormal: {fileID: 0}
-  gDug: {fileID: 0}
-  gWatered: {fileID: 0}
-  gFertilized: {fileID: 0}
-  gWateredFertilized: {fileID: 0}
+  gNormal: {fileID: 5591549576816704518, guid: af7e64b031b7e0c4a83cca3a20475981, type: 3}
+  gDug: {fileID: 7120022171153245498}
+  gPlanted: {fileID: 3652503676971805268, guid: a450bf038f8333b47870e8183aeeb0ca,
+    type: 3}
+  gWatered: {fileID: 2100000, guid: 12e3d7fe8107c504cb8a80ba64fcb036, type: 2}
+  gFertilized: {fileID: 2100000, guid: 51506834bac5d1e4d859c7f01d5e5543, type: 2}
+  gWateredFertilized: {fileID: 2100000, guid: d71d6fca649da024e9c0a432ddca2776, type: 2}
   volume: 0
   maxVolume: 0
   remainFertilizer: 0

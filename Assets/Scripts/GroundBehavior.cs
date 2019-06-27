@@ -14,8 +14,9 @@ public class GroundBehavior : MonoBehaviour
 
     public bool isReset;
 
-    public Material gNormal;
-    public Material gDug;
+    public GameObject gNormal;
+    public GameObject gDug;
+    public GameObject gPlanted;
     public Material gWatered;
     public Material gFertilized;
     public Material gWateredFertilized;
@@ -44,7 +45,7 @@ public class GroundBehavior : MonoBehaviour
     //Be called when plant is harvested
     void ResetGround()
     {
-        isDug = false;
+        /*isDug = false;
         isPlanted = false;
         isWatered = false;
         isDraining = false;
@@ -55,10 +56,12 @@ public class GroundBehavior : MonoBehaviour
         isReset = false;
 
         volume = 0;
-
-        gameObject.GetComponent<Renderer>().material = gNormal;
-
-        gameObject.tag = "ground";
+        */
+        GameObject newGround = Instantiate(gNormal, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+        newGround.transform.parent = gameObject.transform.parent;
+        //gameObject.GetComponent<Renderer>().material = gNormal;
+        Destroy(gameObject);
+        //gameObject.tag = "ground";
     }
 
     // Update is called once per frame
@@ -67,14 +70,22 @@ public class GroundBehavior : MonoBehaviour
         //Normal Ground
         if (isDug)
         {
-            gameObject.GetComponent<Renderer>().material = gDug;
-            isDug = false;
-            gameObject.tag = "DigGround";
+            GameObject newGround = Instantiate(gDug, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+            newGround.transform.parent = gameObject.transform.parent;
+            Destroy(gameObject);
+            //gameObject.GetComponent<Renderer>().material = gDug;
+            //isDug = false;
+            //gameObject.tag = "DigGround";
         }
 
         if (isPlanted)
         {
-            gameObject.tag = "Planted";
+            GameObject planted = Instantiate(gPlanted, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+            GroundBehavior plantedVariable = planted.GetComponent<GroundBehavior>();
+            plantedVariable.transform.parent = gameObject.transform.parent;
+            plantedVariable = this;
+            Destroy(gameObject);
+            //gameObject.tag = "Planted";
         }
 
         //Check water volume
