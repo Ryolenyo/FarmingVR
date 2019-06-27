@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public string nextSceneName;
-    public void nextScene()
+    public void nextScene(string nextSceneName)
     {
-        SceneManager.LoadScene(nextSceneName);
+        Application.LoadLevel(nextSceneName);
     }
 }
