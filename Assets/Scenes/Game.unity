@@ -1952,6 +1952,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4412724761532465087, guid: eb3e55998dbfb6546b9243cc390361b8,
+        type: 3}
+      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1140207059}
+    - target: {fileID: 4412724761532465087, guid: eb3e55998dbfb6546b9243cc390361b8,
+        type: 3}
+      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: buyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412724761532465087, guid: eb3e55998dbfb6546b9243cc390361b8,
+        type: 3}
+      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1140207059}
+    - target: {fileID: 4412724761532465087, guid: eb3e55998dbfb6546b9243cc390361b8,
+        type: 3}
+      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: spawnItem
+      objectReference: {fileID: 0}
     - target: {fileID: 939078531260711291, guid: eb3e55998dbfb6546b9243cc390361b8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2024,26 +2044,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5667763244146616357, guid: 463700583b91eac4c8511ced2631f71a,
         type: 3}
-    - target: {fileID: 4412724761532465087, guid: eb3e55998dbfb6546b9243cc390361b8,
-        type: 3}
-      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1140207059}
-    - target: {fileID: 4412724761532465087, guid: eb3e55998dbfb6546b9243cc390361b8,
-        type: 3}
-      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: buyItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412724761532465087, guid: eb3e55998dbfb6546b9243cc390361b8,
-        type: 3}
-      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1140207059}
-    - target: {fileID: 4412724761532465087, guid: eb3e55998dbfb6546b9243cc390361b8,
-        type: 3}
-      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: spawnItem
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb3e55998dbfb6546b9243cc390361b8, type: 3}
 --- !u!4 &929490729 stripped
@@ -2720,8 +2720,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 149.98225, y: 27.110912, z: 43.13218}
-  m_Center: {x: 0.9996727, y: -0.63198173, z: -0.000035456425}
+  m_Size: {x: 149.98225, y: 27.110912, z: 83.53167}
+  m_Center: {x: 0.9996727, y: -0.63198173, z: 1.3466067}
 --- !u!1 &1131443490 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 94277071938696467, guid: d40624a1259e6234eae703f4c9402dd5,

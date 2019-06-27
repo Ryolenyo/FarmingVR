@@ -209,7 +209,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &748315051
 PrefabInstance:
@@ -252,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -314,6 +314,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.10391343, y: 0.12412596, z: 0.24344325}
   m_Center: {x: 0.0033686757, y: 0.0067374706, z: 0.05487886}
+--- !u!1001 &1037701220
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9086930971020627395, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_Name
+      value: Basket
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.944
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.43429995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206190075405729744, guid: 204f0500d7ab8a14c8a5deeb511a100f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 204f0500d7ab8a14c8a5deeb511a100f, type: 3}
 --- !u!1 &1500043638
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,15 +504,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objective:
-    title: 
-    isDone: 0
+    description: 
     type: 0
-  objectiveTitle:
-  - Collect 10 crops during golden time
-  - Plant only monocarpic crops
-  - Get 1000 score without using fertilizer
-  - Get 500 within the first 2 minutes of the game
-  - Handle moles without using trapper
+    goal:
+      completed: 0
+      requiredAmount: 0
+      currentAmount: 0
+  requiredObject: []
 --- !u!4 &2078771113
 Transform:
   m_ObjectHideFlags: 0
@@ -456,5 +523,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
