@@ -13,7 +13,7 @@ public class ObjectiveGiver : MonoBehaviour
         objective.description = "collect 10 gold products";
         objective.type = ObjectiveType.Collecting;
 
-        requiredObject = new string[] {"GoldPlant", "GoldFruit"};
+        requiredObject = new string[] {"Gold"};
 
         objective.Init(10, requiredObject);
     }

@@ -14,15 +14,15 @@ public class Objective
     {
         if(type == ObjectiveType.Collecting)
         {
-            goal.CollectingObjective(requiredAmount, requiredObject);
+            goal.CollectingInit(requiredAmount, requiredObject);
         }
         else if(type == ObjectiveType.Restriction)
         {
-            goal.RestrictionObjective();
+            goal.RestrictionInit();
         }
         else
         {
-            goal.TimeLimitObjective();
+            goal.TimeLimitInit();
         }
     }
 }

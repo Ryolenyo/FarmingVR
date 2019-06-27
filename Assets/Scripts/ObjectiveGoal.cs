@@ -10,10 +10,25 @@ public class ObjectiveGoal
 
     public int requiredAmount;
     public int currentAmount;
+    public string[] requiredObject;
 
-    public void CollectingObjective(int amount, string[] name)
+    public void CollectingInit(int amount, string[] name)
     {
         requiredAmount = amount;
+        requiredObject = name;
+    }
+
+    public void CollectingComplete(string sellingObject)
+    {
+        foreach (string obj in requiredObject)
+        {
+            if (sellingObject == obj)
+            {
+                currentAmount++;
+                break;
+            }
+            Debug.Log("sup");
+        }
 
         if (requiredAmount >= currentAmount)
         {
@@ -21,12 +36,12 @@ public class ObjectiveGoal
         }
     }
 
-    public void RestrictionObjective()
+    public void RestrictionInit()
     {
 
     }
 
-    public void TimeLimitObjective()
+    public void TimeLimitInit()
     {
 
     }
