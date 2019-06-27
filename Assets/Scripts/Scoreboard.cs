@@ -21,7 +21,7 @@ public class Scoreboard : MonoBehaviour
         BasketBehavior basketVariable = Basket.GetComponent<BasketBehavior>();
         score = basketVariable.score;
 
-        scoreText.text = score.ToString();
+        scoreText.text = "Score: " + score.ToString();
 
     }
 }

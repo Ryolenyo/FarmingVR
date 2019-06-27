@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     private int fraction;
 
     public int lim;
+    public GameObject uiEnd;
 
     //Create a reference for the textfield
 
@@ -43,12 +44,11 @@ public class Timer : MonoBehaviour
         if (guiTime <= 0)
         {
             textField.text = "TIMES UP";
-            SceneManager.LoadScene(sceneNameToLoad);
-
+            //uiEnd.SetActive(true);
         }
         else
         {
-            textField.text = textTime;
+            textField.text = "Time: " + textTime;
         }
 
 
