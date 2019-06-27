@@ -19,7 +19,6 @@ TagManager:
   - SpawnPoint
   - Mole
   - projectile
-  - planted
   - FxTemporaire
   - Trapper
   - Net
@@ -27,6 +26,7 @@ TagManager:
   - Ripe
   - Premature
   - Wilt
+  - Hand
   layers:
   - Default
   - TransparentFX
