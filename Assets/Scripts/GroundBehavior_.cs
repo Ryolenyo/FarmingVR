@@ -14,7 +14,7 @@ public class GroundBehavior_ : MonoBehaviour
 
     public bool isReset;
 
-    public GameObject[] ground;
+    //public GameObject[] ground;
     /* GROUND NUMBER
             Normal  =   0
             Dug     =   1
@@ -45,17 +45,18 @@ public class GroundBehavior_ : MonoBehaviour
         remainFertilizer = 0;
     }
 
-    void setGround(int numGround)
+    void setGround(string ground)
     {
-        for (int i = 0; i < 6; i++)
+        foreach (Transform child in transform)
         {
-            if (i == numGround)
+            Debug.Log(child.name);
+            if (child.name == ground)
             {
-                ground[i].SetActive(true);
+                child.gameObject.SetActive(true);
             }
             else
             {
-                ground[i].SetActive(false);
+                child.gameObject.SetActive(false);
             }
         }
     }
@@ -75,7 +76,7 @@ public class GroundBehavior_ : MonoBehaviour
 
         volume = 0;
 
-        setGround(0); //Normal ground
+        setGround("NormalGround"); //Normal ground
 
         gameObject.tag = "ground";
     }
@@ -86,7 +87,7 @@ public class GroundBehavior_ : MonoBehaviour
         //Normal Ground
         if (isDug)
         {
-            setGround(1); //Dug ground
+            setGround("DigGround"); //Dug ground
             isDug = false;
             gameObject.tag = "DigGround";
         }
@@ -100,7 +101,7 @@ public class GroundBehavior_ : MonoBehaviour
 
         if (isWatered && isFertilized)
         {
-            setGround(5); //Water + Fer ground
+            //setGround(5); //Water + Fer ground
 
             if (!isDraining)
             {
@@ -117,7 +118,7 @@ public class GroundBehavior_ : MonoBehaviour
         }
         else if (isWatered && !isFertilized)
         {
-            setGround(3); //Watered ground
+            setGround("PlantGround_water"); //Watered ground
             if (!isDraining)
             {
                 volume -= maxVolume;
@@ -126,7 +127,7 @@ public class GroundBehavior_ : MonoBehaviour
         }
         else if (!isWatered && isFertilized)
         {
-            setGround(4); // Fertilized ground
+            setGround("PlantGround_fer"); // Fertilized ground
             if (!isDeclining)
             {
                 remainFertilizer = 50;

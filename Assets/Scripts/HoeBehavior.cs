@@ -27,7 +27,7 @@ public class HoeBehavior : MonoBehaviour
         if (collider.gameObject.tag == "ground" && isReady)
         {
             GameObject ground = collider.gameObject;
-            GroundBehavior groundVariable = ground.GetComponent<GroundBehavior>();
+            GroundBehavior_ groundVariable = ground.GetComponent<GroundBehavior_>();
             groundVariable.isDug = true;
             isReady = false;
         }
