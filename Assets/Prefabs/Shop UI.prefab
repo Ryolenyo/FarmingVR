@@ -44,7 +44,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151192049}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 149.98225, y: 27.110912, z: 83.53167}
@@ -253,7 +253,7 @@ MonoBehaviour:
         m_MethodName: spawnItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5833583252705549075, guid: a4282b265a960a944ba1e35d5f511feb,
+          m_ObjectArgument: {fileID: 807256114716815406, guid: de1cf3ba7f8e2f74f86b60648e3e48d8,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -521,7 +521,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925979229}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 149.98225, y: 27.110912, z: 83.53167}
@@ -570,7 +570,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954744723}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 149.98225, y: 27.110912, z: 83.53167}
@@ -619,7 +619,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130600268}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 149.98225, y: 27.110912, z: 83.53167}
@@ -1042,7 +1042,7 @@ MonoBehaviour:
         m_MethodName: spawnItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6440391039121461736, guid: a356ff788b50c2a44bc28d5489fd9d66,
+          m_ObjectArgument: {fileID: 5016944973361860047, guid: 4f15461829d905248a30657f2ae0b526,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -1096,7 +1096,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465391912}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 149.98225, y: 27.110912, z: 83.53167}
@@ -1406,7 +1406,7 @@ MonoBehaviour:
         m_MethodName: spawnItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5667763244146616357, guid: 463700583b91eac4c8511ced2631f71a,
+          m_ObjectArgument: {fileID: 8890599045697588060, guid: b009fce47513797439ea75672030b31a,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
