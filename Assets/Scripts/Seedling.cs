@@ -29,7 +29,11 @@ public class Seedling : MonoBehaviour
             switch (seedType)
             {
                 case 1:
-                    Instantiate(sapling, new Vector3(groundVariable.transform.position.x, groundVariable.transform.position.y + 0.1f, groundVariable.transform.position.z), Quaternion.identity);
+                    //Debug.Log(groundVariable.transform.position.x+" "+ groundVariable.transform.position.y+ " "+ groundVariable.transform.position.z);
+                    //Debug.Log(groundVariable.transform.localPosition.x + " " + groundVariable.transform.localPosition.y + " " + groundVariable.transform.localPosition.z);
+                    GameObject sap = Instantiate(sapling, new Vector3(0, 0, 0), Quaternion.identity, collider.gameObject.transform);
+                    sap.transform.localPosition = new Vector3(0.22f, 0f, -0.24f);
+                    
                     break;
                 case 2:
                     Instantiate(sapling, new Vector3(groundVariable.transform.position.x, groundVariable.transform.position.y - 0.1f, groundVariable.transform.position.z), Quaternion.identity);
