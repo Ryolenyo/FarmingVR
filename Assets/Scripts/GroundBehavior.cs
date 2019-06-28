@@ -14,13 +14,6 @@ public class GroundBehavior : MonoBehaviour
 
     public bool isReset;
 
-    public GameObject gNormal;
-    public GameObject gDug;
-    public GameObject gPlanted;
-    public Material gWatered;
-    public Material gFertilized;
-    public Material gWateredFertilized;
-
     public float volume;
     public float maxVolume;
     public float remainFertilizer;
@@ -40,12 +33,28 @@ public class GroundBehavior : MonoBehaviour
 
         volume = 0;
         remainFertilizer = 0;
-}
+    }
+
+    void setGround(string ground)
+    {
+        foreach (Transform child in transform)
+        {
+            Debug.Log(child.name);
+            if (child.name == ground)
+            {
+                child.gameObject.SetActive(true);
+            }
+            else
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+    }
 
     //Be called when plant is harvested
     void ResetGround()
     {
-        /*isDug = false;
+        isDug = false;
         isPlanted = false;
         isWatered = false;
         isDraining = false;
@@ -56,12 +65,10 @@ public class GroundBehavior : MonoBehaviour
         isReset = false;
 
         volume = 0;
-        */
-        GameObject newGround = Instantiate(gNormal, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
-        newGround.transform.parent = gameObject.transform.parent;
-        //gameObject.GetComponent<Renderer>().material = gNormal;
-        Destroy(gameObject);
-        //gameObject.tag = "ground";
+        remainFertilizer = 0;
+        
+        setGround("NormalGround");
+        gameObject.tag = "ground";
     }
 
     // Update is called once per frame
@@ -70,29 +77,23 @@ public class GroundBehavior : MonoBehaviour
         //Normal Ground
         if (isDug)
         {
-            GameObject newGround = Instantiate(gDug, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
-            newGround.transform.parent = gameObject.transform.parent;
-            Destroy(gameObject);
-            //gameObject.GetComponent<Renderer>().material = gDug;
-            //isDug = false;
-            //gameObject.tag = "DigGround";
+            setGround("DigGround");
+            isDug = false;
+            gameObject.tag = "DigGround";
         }
 
         if (isPlanted)
         {
-            GameObject planted = Instantiate(gPlanted, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
-            GroundBehavior plantedVariable = planted.GetComponent<GroundBehavior>();
-            plantedVariable.transform.parent = gameObject.transform.parent;
-            plantedVariable = this;
-            Destroy(gameObject);
-            //gameObject.tag = "Planted";
+            setGround("PlantGround_plant");
+            isPlanted = false;
+            gameObject.tag = "Planted";
         }
 
         //Check water volume
 
         if (isWatered && isFertilized)
         {
-            gameObject.GetComponent<Renderer>().material = gWateredFertilized;
+            setGround("PlantedGround_water_fer");
 
             if (!isDraining)
             {
@@ -109,7 +110,7 @@ public class GroundBehavior : MonoBehaviour
         }
         else if (isWatered && !isFertilized)
         {
-            gameObject.GetComponent<Renderer>().material = gWatered;
+            setGround("PlantGround_water");
             if (!isDraining)
             {
                 volume -= maxVolume;
@@ -118,7 +119,7 @@ public class GroundBehavior : MonoBehaviour
         }
         else if (!isWatered && isFertilized)
         {
-            gameObject.GetComponent<Renderer>().material = gFertilized;
+            setGround("PlantGround_fer");
             if (!isDeclining)
             {
                 remainFertilizer = 50;
