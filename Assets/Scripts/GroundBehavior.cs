@@ -93,7 +93,14 @@ public class GroundBehavior : MonoBehaviour
 
         if (isWatered && isFertilized)
         {
-            setGround("PlantedGround_water_fer");
+            if (gameObject.tag == "Planted")
+            {
+                setGround("PlantedGround_water_fer");
+            }
+            else
+            {
+                setGround("DigGround_water_fer");
+            }
 
             if (!isDraining)
             {
@@ -110,7 +117,15 @@ public class GroundBehavior : MonoBehaviour
         }
         else if (isWatered && !isFertilized)
         {
-            setGround("PlantGround_water");
+            if (gameObject.tag == "Planted")
+            {
+                setGround("PlantGround_water");
+            }
+            else
+            {
+                setGround("DigGround_water");
+            }
+
             if (!isDraining)
             {
                 volume -= maxVolume;
@@ -119,7 +134,15 @@ public class GroundBehavior : MonoBehaviour
         }
         else if (!isWatered && isFertilized)
         {
-            setGround("PlantGround_fer");
+            if (gameObject.tag == "Planted")
+            {
+                setGround("PlantGround_fer");
+            }
+            else
+            {
+                setGround("DigGround_fer");
+            }
+
             if (!isDeclining)
             {
                 remainFertilizer = 50;
