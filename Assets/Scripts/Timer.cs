@@ -22,7 +22,6 @@ public class Timer : MonoBehaviour
     //Create a reference for the textfield
 
     public Text textField;
-    public string sceneNameToLoad;
 
     // Use this for initialization
     void Start()
