@@ -10,6 +10,7 @@ public class ObjectiveGoal
 
     public int requiredAmount;
     public int currentAmount;
+	public int limit;
     public string[] requiredObject;
 
     public void CollectingInit(int amount, string[] name)
@@ -37,12 +38,14 @@ public class ObjectiveGoal
 
     public void RestrictionInit()
     {
-
+		
     }
 
-    public void TimeLimitInit()
+    public void TimeLimitInit(int amount, string[] name, int time)
     {
-
+		requiredAmount = amount;
+        requiredObject = name;
+		limit = time;
     }
 
 	public void TimeLimitComplete(string sellingObject)
@@ -58,7 +61,12 @@ public class ObjectiveGoal
 
         if (requiredAmount >= currentAmount)
         {
-            completed = true;
+			GameObject timer = GameObject.Find("ScoreBoard").transform.Find("Timer").Find("Text").gameObject;
+			Timer timerVariable = timer.GetComponent<Timer>();
+			if (timerVariable.currentTime <= limit)
+			{
+	            completed = true;
+			}
         }
     }
 }

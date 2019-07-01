@@ -22,6 +22,6 @@ public class ObjectiveGiver : MonoBehaviour
 
         requiredObject = new string[] {"Gold"};
 
-        objective.Init(10, requiredObject);
+        objective.Init(10, requiredObject, 60);
     }
 }
