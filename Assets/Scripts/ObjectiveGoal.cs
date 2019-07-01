@@ -27,7 +27,6 @@ public class ObjectiveGoal
                 currentAmount++;
                 break;
             }
-            Debug.Log("sup");
         }
 
         if (requiredAmount >= currentAmount)

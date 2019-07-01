@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4421407155861414236}
   - component: {fileID: 3042530180741991607}
+  - component: {fileID: 3923511790202037433}
   m_Layer: 0
   m_Name: CheckOutline
   m_TagString: Untagged
@@ -44,6 +45,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9159874, y: 0.16257912, z: 0.8434899}
   m_Center: {x: -0.042006142, y: 0.36409563, z: -0.07149064}
+--- !u!114 &3923511790202037433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714458541227537072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024315f5ac999fa4da72f46fefece673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8683859671066480667
 GameObject:
   m_ObjectHideFlags: 0
