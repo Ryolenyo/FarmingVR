@@ -10,7 +10,7 @@ public class Objective
     public ObjectiveType type;
     public ObjectiveGoal goal;
 
-   public void Init(int requiredAmount, string[] requiredObject)
+   public void Init(int requiredAmount, string[] requiredObject, int time)
     {
         if(type == ObjectiveType.Collecting)
         {
@@ -22,7 +22,7 @@ public class Objective
         }
         else
         {
-            goal.TimeLimitInit();
+            goal.TimeLimitInit(requiredAmount, requiredObject, time);
         }
     }
 }

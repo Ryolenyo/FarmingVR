@@ -6,7 +6,7 @@ using UnityEngine;
 public class BasketBehavior : MonoBehaviour
 {
     public int score = 0;
-    private bool objectiveChecker;
+    public bool objectiveChecker;
     private GameObject objective;
 	private ObjectiveGiver objectiveGiver;
 
@@ -43,7 +43,7 @@ public class BasketBehavior : MonoBehaviour
 				}
 				else
 				{
-					//objectiveGiver.objective.goal.TimeLimitComplete(plantState.tag);
+					objectiveGiver.objective.goal.TimeLimitComplete(plantState.tag);
 				}
             }
             
