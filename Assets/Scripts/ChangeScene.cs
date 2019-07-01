@@ -6,6 +6,13 @@ public class ChangeScene : MonoBehaviour
 {
     public void nextScene(string nextSceneName)
     {
-        Application.LoadLevel(nextSceneName);
+        if (nextSceneName == "Exit")
+        {
+            Application.Quit();
+        }
+        else
+        {
+            Application.LoadLevel(nextSceneName);
+        }
     }
 }
