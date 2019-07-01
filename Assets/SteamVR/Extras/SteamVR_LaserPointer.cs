@@ -154,6 +154,15 @@ namespace Valve.VR.Extras
             }
             pointer.transform.localPosition = new Vector3(0f, 0f, dist / 2f);
         }
+
+        //EDIT HERE
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.name == "SButton")
+            {
+                Debug.Log("TOUCH");
+            }
+        }
     }
 
     public struct PointerEventArgs
@@ -165,4 +174,6 @@ namespace Valve.VR.Extras
     }
 
     public delegate void PointerEventHandler(object sender, PointerEventArgs e);
+
+    
 }
