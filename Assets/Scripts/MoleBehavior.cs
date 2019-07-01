@@ -15,7 +15,7 @@ public class MoleBehavior : MonoBehaviour
     public float comebackTime = 15;
 
     public GameObject[] target;
-    private int randomGround = 15;
+    public int randomGround = 15;
     private float speed = 0.01f;
 
     // Start is called before the first frame update
@@ -94,7 +94,7 @@ public class MoleBehavior : MonoBehaviour
                             //Find new ground
                             randomGround = Random.Range(0, 17);
                             //Go to that position
-                            transform.position = new Vector3(target[randomGround].transform.position.x, target[randomGround].transform.position.y - 1, target[randomGround].transform.position.z);
+                            transform.localPosition = new Vector3(target[randomGround].transform.position.x + 0.25f , target[randomGround].transform.position.y - 1, target[randomGround].transform.position.z + 0.25f);
                             transform.rotation = Quaternion.identity;
                         }
 
