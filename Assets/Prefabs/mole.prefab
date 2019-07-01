@@ -198,10 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b45cd1256c353488af2f34c8d2e153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCatch: 0
   eatTime: 5
   currentTime: 0
-  comebackTime: 5
+  comebackTime: 30
   target:
   - {fileID: 0}
   - {fileID: 0}
@@ -221,7 +220,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  randomGround: 5
+  randomGround: 15
 --- !u!114 &5070283235965251355
 MonoBehaviour:
   m_ObjectHideFlags: 0

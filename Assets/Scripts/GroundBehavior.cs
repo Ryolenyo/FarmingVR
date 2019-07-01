@@ -39,7 +39,6 @@ public class GroundBehavior : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            Debug.Log(child.name);
             if (child.name == ground)
             {
                 child.gameObject.SetActive(true);
