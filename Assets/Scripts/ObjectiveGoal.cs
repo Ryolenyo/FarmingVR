@@ -44,4 +44,21 @@ public class ObjectiveGoal
     {
 
     }
+
+	public void TimeLimitComplete(string sellingObject)
+    {
+        foreach (string obj in requiredObject)
+        {
+            if (sellingObject == obj)
+            {
+                currentAmount++;
+                break;
+            }
+        }
+
+        if (requiredAmount >= currentAmount)
+        {
+            completed = true;
+        }
+    }
 }

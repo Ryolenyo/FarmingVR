@@ -6,19 +6,15 @@ using UnityEngine;
 public class BasketBehavior : MonoBehaviour
 {
     public int score = 0;
-    private bool collectingChecker = false;
+    private bool objectiveChecker;
     private GameObject objective;
-    private ObjectiveGiver objectiveGiver;
+	private ObjectiveGiver objectiveGiver;
 
     // Start is called before the first frame update
     void Start()
     {
         objective = GameObject.Find("ObjectiveGiver");
         objectiveGiver = objective.GetComponent<ObjectiveGiver>();
-        if (objectiveGiver.objective.type == ObjectiveType.Collecting)
-        {
-            collectingChecker = true;
-        }
     }
 
     // Update is called once per frame
@@ -38,10 +34,17 @@ public class BasketBehavior : MonoBehaviour
             playerVariable.money += plantVariable.valuePlant;
             score += plantVariable.valuePlant;
 
-            if (collectingChecker)
+            if (objectiveChecker)
             {
                 GameObject plantState = plant.transform.GetChild(0).gameObject;
-                objectiveGiver.objective.goal.CollectingComplete(plantState.tag);
+				if (objectiveGiver.objective.type == ObjectiveType.Collecting)
+				{
+	                objectiveGiver.objective.goal.CollectingComplete(plantState.tag);
+				}
+				else
+				{
+					//objectiveGiver.objective.goal.TimeLimitComplete(plantState.tag);
+				}
             }
             
             Destroy(collider.gameObject);
