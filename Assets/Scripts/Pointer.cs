@@ -25,6 +25,9 @@ public class Pointer : MonoBehaviour
             textField.text = "" + ((int)countDown+1)%60;
             if (countDown < 0)
             {
+                GameObject player = GameObject.Find("Player");
+                PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
+                Destroy(player);
                 Application.LoadLevel(sceneName);
             }
         }
