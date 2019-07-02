@@ -18,7 +18,6 @@ public class Pointer : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.tag);
         if (other.tag == "Laser")
         {
             countDown -= Time.deltaTime;
@@ -33,7 +32,7 @@ public class Pointer : MonoBehaviour
                 {
                     GameObject player = GameObject.Find("Player");
                     PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
-                    Destroy(player);
+                    //Destroy(player);
                     Application.LoadLevel(sceneName);
                 }
             }

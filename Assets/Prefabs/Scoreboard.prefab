@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDown: 3
-  sceneName: Exit
+  sceneName: Start
   textField: {fileID: 4871823436162741579}
-  title: EXIT
+  title: Exit
 --- !u!65 &3181017172043508604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -507,8 +507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  lim: 300
-  uiEnd: {fileID: 0}
+  lim: 15
+  uiEnd: {fileID: 5587424283719609371}
   textField: {fileID: 4631455229609313355}
 --- !u!1 &5587424283719609371
 GameObject:

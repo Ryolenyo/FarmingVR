@@ -57,11 +57,7 @@ public class Timer : MonoBehaviour
             PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
             playerVariable.pointerOn = true;
 
-            GameObject Basket = GameObject.Find("basketVoid");
-            BasketBehavior basketVariable = Basket.GetComponent<BasketBehavior>();
-
             uiEnd.SetActive(true);
-            //SHUT EVERYTHING DOWN
         }
         else
         {
