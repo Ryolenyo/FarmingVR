@@ -1468,6 +1468,7 @@ GameObject:
   - component: {fileID: 1990576304}
   - component: {fileID: 1990576303}
   - component: {fileID: 1990576300}
+  - component: {fileID: 1990576301}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -1511,6 +1512,19 @@ MonoBehaviour:
   sceneName: Game
   textField: {fileID: 1703664245}
   title: MULTIPLE
+--- !u!65 &1990576301
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990576298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 161.2996, y: 26.57824, z: 510.48938}
+  m_Center: {x: 5.408655, y: -1.7672988, z: 0.00000017463876}
 --- !u!114 &1990576303
 MonoBehaviour:
   m_ObjectHideFlags: 0

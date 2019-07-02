@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+        uiEnd.SetActive(false);
     }
 
     // Update is called once per frame
@@ -52,11 +52,16 @@ public class Timer : MonoBehaviour
 			}
 
             textField.text = "TIMES UP";
-            startTime = Time.time;
+
             GameObject player = GameObject.Find("Player");
             PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
             playerVariable.pointerOn = true;
-            //uiEnd.SetActive(true);
+
+            GameObject Basket = GameObject.Find("basketVoid");
+            BasketBehavior basketVariable = Basket.GetComponent<BasketBehavior>();
+
+            uiEnd.SetActive(true);
+            //SHUT EVERYTHING DOWN
         }
         else
         {
