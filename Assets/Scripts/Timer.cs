@@ -44,6 +44,13 @@ public class Timer : MonoBehaviour
         //text.Time is the time that will be displayed.
         if (guiTime <= 0)
         {
+			GameObject objective = GameObject.Find("Objective System/ObjectiveGiver");
+			ObjectiveGiver objectiveGiver = objective.GetComponent<ObjectiveGiver>();
+			if (objectiveGiver.objective.type == ObjectiveType.Restriction)
+			{
+				objectiveGiver.objective.goal.RestrictionCompleted();
+			}
+
             textField.text = "TIMES UP";
             startTime = Time.time;
             GameObject player = GameObject.Find("Player");

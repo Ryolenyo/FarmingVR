@@ -39,11 +39,11 @@ public class BasketBehavior : MonoBehaviour
                 GameObject plantState = plant.transform.GetChild(0).gameObject;
 				if (objectiveGiver.objective.type == ObjectiveType.Collecting)
 				{
-	                objectiveGiver.objective.goal.CollectingComplete(plantState.tag);
+	                objectiveGiver.objective.goal.CollectingCompleted(plantState.tag);
 				}
 				else
 				{
-					objectiveGiver.objective.goal.TimeLimitComplete(plantState.tag);
+					objectiveGiver.objective.goal.TimeLimitCompleted(plantState.tag);
 				}
             }
             

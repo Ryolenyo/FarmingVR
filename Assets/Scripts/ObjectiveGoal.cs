@@ -27,7 +27,7 @@ public class ObjectiveGoal
 		basketVariable.objectiveChecker = true;
     }
 
-    public void CollectingComplete(string sellingObject)
+    public void CollectingCompleted(string sellingObject)
     {
         foreach (string obj in requiredObject)
         {
@@ -62,6 +62,14 @@ public class ObjectiveGoal
         objectiveFailed = true;
     }
 
+	public void RestrictionCompleted()
+    {
+        if (!objectiveFailed)
+		{
+			completed = true;
+		}
+    }
+
 	// TIME LIMIT TYPE
 
     public void TimeLimitInit(int amount, string[] name, int time)
@@ -76,7 +84,7 @@ public class ObjectiveGoal
 		basketVariable.objectiveChecker = true;
     }
 
-	public void TimeLimitComplete(string sellingObject)
+	public void TimeLimitCompleted(string sellingObject)
     {
         foreach (string obj in requiredObject)
         {
