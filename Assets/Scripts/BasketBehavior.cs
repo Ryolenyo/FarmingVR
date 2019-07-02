@@ -13,7 +13,7 @@ public class BasketBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objective = GameObject.Find("ObjectiveGiver");
+        objective = GameObject.Find("Objective System/ObjectiveGiver");
         objectiveGiver = objective.GetComponent<ObjectiveGiver>();
     }
 

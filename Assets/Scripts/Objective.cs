@@ -18,7 +18,7 @@ public class Objective
         }
         else if(type == ObjectiveType.Restriction)
         {
-            goal.RestrictionInit();
+            goal.RestrictionInit(requiredObject);
         }
         else
         {
