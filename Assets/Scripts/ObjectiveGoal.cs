@@ -98,9 +98,8 @@ public class ObjectiveGoal
         if (requiredAmount >= currentAmount)
         {
 			//GameObject timer = GameObject.Find("ScoreBoard").transform.Find("Timer").Find("Text").gameObject;
-			GameObject timer = GameObject.Find("ScoreBoard/Timer/Text");
-			Timer timerVariable = timer.GetComponent<Timer>();
-			if (timerVariable.currentTime <= limit)
+			
+			if (Time.timeSinceLevelLoad <= limit)
 			{
 	            completed = true;
 			}

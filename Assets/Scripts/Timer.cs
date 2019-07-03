@@ -16,8 +16,6 @@ public class Timer : MonoBehaviour
     private int seconds;
     private int fraction;
 
-	public float currentTime;
-
     public int lim;
     public GameObject uiEnd;
 
@@ -34,8 +32,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		currentTime = Time.time - startTime;
-        guiTime = lim - (Time.time - startTime);
+		guiTime = lim - Time.timeSinceLevelLoad;
         //The gui-Time is the difference between the actual time and the start time.
         minutes = (int)guiTime / 60; //Divide the guiTime by sixty to get the minutes.
         seconds = (int)guiTime % 60;//Use the euclidean division for the seconds.
