@@ -31,4 +31,15 @@ public class ObjectiveGiver : MonoBehaviour
 
         objective.Init(0, requiredObject, 0);*/
     }
+
+	void Update()
+	{
+		if (objective.goal.completed)
+		{
+			GameObject Basket = GameObject.Find("basketVoid");
+			BasketBehavior basketVariable = Basket.GetComponent<BasketBehavior>();
+
+			basketVariable.score += objective.rewardScore;
+		}
+	}
 }
