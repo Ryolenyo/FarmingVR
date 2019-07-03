@@ -13,7 +13,7 @@ public class OutlinedObject : MonoBehaviour
     void Start()
     {
         rend = GetComponentInParent<Renderer>();
-        standard = Shader.Find("Standard");
+        standard = Shader.Find("Legacy Shaders/Diffuse");
         outline = Shader.Find("Outlined/UltimateOutline");
 
     }
