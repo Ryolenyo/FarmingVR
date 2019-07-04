@@ -26,7 +26,7 @@ public class FertilizerBehavior : MonoBehaviour
         GroundBehavior groundVariable = ground.GetComponent<GroundBehavior>();
         //Fertilized groundQuality = ground.GetComponent<Fertilized>();
 
-        if((ground.tag == "Planted" || ground.tag == "DigGround") && !groundVariable.isFertilized && max > 0/* && fertilizerBag.transform.position.y > minHeight*/)
+        if((ground.tag == "Planted" || ground.tag == "DigGround") && !groundVariable.isFertilized && max > 0 && fertilizerBag.transform.position.y > minHeight)
         {
             max--;
             groundVariable.isFertilized = true;
