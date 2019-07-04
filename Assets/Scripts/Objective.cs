@@ -9,6 +9,7 @@ public class Objective
     public string description;
     public ObjectiveType type;
     public ObjectiveGoal goal;
+	public int rewardScore;
 
    public void Init(int requiredAmount, string[] requiredObject, int time)
     {
