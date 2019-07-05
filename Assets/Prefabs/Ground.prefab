@@ -529,9 +529,10 @@ MonoBehaviour:
   isFertilized: 0
   isDeclining: 0
   isFertile: 0
+  isWeed: 0
   isReset: 0
   volume: 0
-  maxVolume: 0
+  maxVolume: 50
   remainFertilizer: 0
 --- !u!1 &8801408103819359513
 GameObject:

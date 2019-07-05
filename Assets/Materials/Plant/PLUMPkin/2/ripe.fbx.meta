@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 95e909b6d3e930c45add7613f388c443
+guid: e8df67f5d2c11ee418c13dcc78867704
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -30,7 +30,7 @@ ModelImporter:
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
-    animationWrapMode: 0
+    animationWrapMode: 2
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
@@ -40,7 +40,7 @@ ModelImporter:
       internalID: 1827226128182048838
       firstFrame: 1
       lastFrame: 58
-      wrapMode: 2
+      wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
