@@ -20,10 +20,10 @@ public class ObjectiveList
 		ObjectiveType.Restriction
 	};
 
-	public string[,] requiredObject = new string[,] {
-		{"Gold"},
-		{"Gold"},
-		{""}
+	public string[][] requiredObject = new string[][] {
+		new string[] {"Gold"},
+		new string[] {"Gold"},
+		new string[] {""}
 	};
 
 	public int[] requiredAmount = new int[] {
