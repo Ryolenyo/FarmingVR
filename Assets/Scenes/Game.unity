@@ -910,6 +910,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1852133289}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &647691807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8010913671418374068, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3181017172113850859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &753308368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8683859671066480667, guid: db29e2670aa4bf246ba4b13cc692eb2d,
@@ -2625,8 +2631,13 @@ PrefabInstance:
     - target: {fileID: 4631455229609313353, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0,
         type: 3}
       propertyPath: lim
-      value: 300
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4631455229609313353, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0,
+        type: 3}
+      propertyPath: objective
+      value: 
+      objectReference: {fileID: 647691807}
     - target: {fileID: 816674395355883520, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0,
         type: 3}
       propertyPath: objectiveText

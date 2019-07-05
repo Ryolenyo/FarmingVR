@@ -19,14 +19,7 @@ public class ObjectiveGiver : MonoBehaviour
 		
 		objective.description = list.description[n];
         objective.type = list.type[n];
-        //requiredObject[0] = list.requiredObject[n,0];
-		/*for (int i = 0; i < list.requiredObject.GetLength(1); i++)
-		{
-			if (list.requiredObject[n, i] != null)
-			{
-				requiredObject[0] = list.requiredObject[n, 0];
-			}
-		}*/
+        requiredObject =  list.requiredObject[n];
 		requiredAmount = list.requiredAmount[n];
 		time = list.time[n];
         
