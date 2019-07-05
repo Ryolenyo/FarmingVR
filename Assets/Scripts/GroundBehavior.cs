@@ -11,6 +11,7 @@ public class GroundBehavior : MonoBehaviour
     public bool isFertilized;
     public bool isDeclining;
     public bool isFertile;
+    public bool isWeed;
 
     public bool isReset;
 
@@ -160,7 +161,7 @@ public class GroundBehavior : MonoBehaviour
             {
                 if (!isFertilized)
                 {
-                    isDug = true;
+                    isPlanted = true;
                 }
                 isDraining = false;
                 isWatered = false;
@@ -177,7 +178,7 @@ public class GroundBehavior : MonoBehaviour
             {
                 if (!isWatered)
                 {
-                    isDug = true;
+                    isPlanted = true;
                 }
                 isDeclining = false;
                 isFertilized = false;
@@ -189,6 +190,22 @@ public class GroundBehavior : MonoBehaviour
         if (isReset)
         {
             ResetGround();
+        }
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Weed")
+        {
+            isWeed = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Weed")
+        {
+            isWeed = false;
         }
     }
 }

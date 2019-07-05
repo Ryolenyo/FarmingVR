@@ -21,6 +21,7 @@ public class PlantBehavior : MonoBehaviour
     public bool isFertilized = false;
 
     private bool isPicked = false;
+    private bool isWeed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +50,7 @@ public class PlantBehavior : MonoBehaviour
         }
 
         //GROWING PART
-        if (isTimerRun)
+        if (isTimerRun & !isWeed)
         {
             timer(targetTime);
         }
@@ -103,6 +104,17 @@ public class PlantBehavior : MonoBehaviour
                 valuePlant += valuePlant * 10 / 100;
                 isFertilized = true;
             }
+
+            //Check weed
+            if (ground.isWeed)
+            {
+                isWeed = true;
+            }
+            else
+            {
+                isWeed = false;
+            }
+
         }
         else if (otherObject.tag == "SpawnPoint")
         {
@@ -118,7 +130,6 @@ public class PlantBehavior : MonoBehaviour
         {
             Transform molePos = otherObject.GetComponent<Transform>();
             transform.position = new Vector3(transform.position.x, molePos.transform.position.y + 0.28f, transform.position.z);
-            Debug.Log("TOUCH");
         }
 
     }

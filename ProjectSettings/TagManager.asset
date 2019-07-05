@@ -28,6 +28,7 @@ TagManager:
   - Wilt
   - Hand
   - Laser
+  - Weed
   layers:
   - Default
   - TransparentFX

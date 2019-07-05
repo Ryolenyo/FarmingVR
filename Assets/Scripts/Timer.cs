@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     private int fraction;
 
     public int lim;
+	public GameObject objectiveBoard;
     public GameObject uiEnd;
 
     //Create a reference for the textfield
@@ -54,6 +55,7 @@ public class Timer : MonoBehaviour
             PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
             playerVariable.pointerOn = true;
 
+			objectiveBoard.SetActive(false);
             uiEnd.SetActive(true);
         }
         else
