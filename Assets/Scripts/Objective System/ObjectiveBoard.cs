@@ -20,9 +20,17 @@ public class ObjectiveBoard : MonoBehaviour
     void Update()
     {
         objectiveText.text = objectiveGiver.objective.description;
-		if (objectiveGiver.objective.type != ObjectiveType.Restriction)
+		if (objectiveGiver.objective.type != ObjectiveType.Restriction && !objectiveGiver.objective.goal.objectiveFailed)
 		{
 			objectiveText.text += " (" + objectiveGiver.objective.goal.currentAmount + "/" + objectiveGiver.objective.goal.requiredAmount + ")";
+		}
+		else if (objectiveGiver.objective.goal.objectiveFailed)
+		{
+			objectiveText.text += " (Failed)";
+		}
+		else if (objectiveGiver.objective.goal.completed)
+		{
+			objectiveText.text += " (Success!)";
 		}
     }
 }

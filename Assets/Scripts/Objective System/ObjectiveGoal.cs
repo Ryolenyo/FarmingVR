@@ -7,12 +7,12 @@ using UnityEngine;
 public class ObjectiveGoal
 {
     public bool completed;
+	public bool objectiveFailed = false;
 
     public int requiredAmount;
     public int currentAmount;
 	public int limit;
     public string[] requiredObject;
-	private bool objectiveFailed = false;
 
 	// COLLECTING TYPE
 
