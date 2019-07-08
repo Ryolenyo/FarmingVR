@@ -433,14 +433,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4441474447007866433}
-  m_LocalRotation: {x: -0.66308707, y: 0.7485423, z: -8.643737e-17, w: -5.232624e-18}
+  m_LocalRotation: {x: 0, y: 0, z: -0.6630841, w: 0.748545}
   m_LocalPosition: {x: 0.00017415867, y: 0.008728553, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6937414060324378671}
   m_Father: {fileID: 8136567684139132163}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -83.07101}
 --- !u!1 &4726608462142812161
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +498,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5094060374922090256}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.842865, y: 0.46966332, z: 2.1589355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -506,7 +506,7 @@ Transform:
   - {fileID: 8763697033458393883}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &6501765702325027163
 Animation:
   m_ObjectHideFlags: 0
@@ -566,8 +566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReady: 0
-  currentWater: 0
-  maxWater: 50
   stopGrow: 0
   isFertilized: 0
   spawnTime: 30

@@ -152,6 +152,7 @@ public class PlantBehavior : MonoBehaviour
             isTimerRun = false;
             rigidbody.useGravity = true;
             collider.isTrigger = false;
+            transform.parent = null;
 
             if (otherObject.tag == "Planted" && !isPicked)
             {
