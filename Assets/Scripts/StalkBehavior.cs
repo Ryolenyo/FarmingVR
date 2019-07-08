@@ -33,7 +33,7 @@ public class StalkBehavior : MonoBehaviour
         {
             if (!stopGrow)
             {
-                if (transform.position.y > 0.6f)
+                if (transform.position.y > 0.65f)
                 {
                     stopGrow = true;
                 }
