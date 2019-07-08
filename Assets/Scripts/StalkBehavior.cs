@@ -5,11 +5,7 @@ using UnityEngine;
 
 public class StalkBehavior : MonoBehaviour
 {
-    //WATERING PART
     public bool isReady = false;
-    public float currentWater = 0;
-    public float maxWater = 50;
-
     public bool stopGrow = false;
     public bool isFertilized = false;
 

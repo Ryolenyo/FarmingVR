@@ -45,7 +45,7 @@ public class PolyCarpicRespawn : MonoBehaviour
 
     void GrowUp()
     {
-        Instantiate(fruitObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(fruitObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, transform);
         isGrowUp = false;
     }
 

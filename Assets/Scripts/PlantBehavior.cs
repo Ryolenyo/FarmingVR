@@ -81,7 +81,14 @@ public class PlantBehavior : MonoBehaviour
     {
         //Debug.Log("CHANGING...");
         targetTime = 3.0f;
-        Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        if (gameObject.transform.parent != null)
+        {
+            Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity,transform.parent);
+        }
+        else
+        {
+            Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        }
         PlantBehavior nextVariable = nextObject.GetComponent<PlantBehavior>();
 
         Destroy(gameObject);
