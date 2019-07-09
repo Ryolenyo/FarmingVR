@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seedType: 1
-  sapling: {fileID: 2981789034160058744, guid: eba25b8bd9e767048a3766f72f5615e4, type: 3}
+  sapling: {fileID: 6057376344933217852, guid: a2f090da2961f5e41a73edaa5e739bdf, type: 3}
 --- !u!1 &7248712752910830636
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ public class PlantBehavior : MonoBehaviour
     {
         if (isReady)
         {
-            if (transform.position.y > 0.75)
+            if (transform.position.y > 0.6f)
             {
                 isReady = false;
                 isTimerRun = true;
@@ -81,7 +81,14 @@ public class PlantBehavior : MonoBehaviour
     {
         //Debug.Log("CHANGING...");
         targetTime = 3.0f;
-        Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        if (gameObject.transform.parent != null)
+        {
+            Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity,transform.parent);
+        }
+        else
+        {
+            Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        }
         PlantBehavior nextVariable = nextObject.GetComponent<PlantBehavior>();
 
         Destroy(gameObject);
@@ -145,6 +152,7 @@ public class PlantBehavior : MonoBehaviour
             isTimerRun = false;
             rigidbody.useGravity = true;
             collider.isTrigger = false;
+            transform.parent = null;
 
             if (otherObject.tag == "Planted" && !isPicked)
             {

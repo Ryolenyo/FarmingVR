@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seedType: 2
-  sapling: {fileID: 5716724724312440348, guid: 34e23f17f9112ce41ae286dcd9eef9b5, type: 3}
+  sapling: {fileID: 5094060374922090256, guid: 2f62dfe1eef51e9418ed7d047af25563, type: 3}
 --- !u!114 &-6367270981632769965
 MonoBehaviour:
   m_ObjectHideFlags: 0
