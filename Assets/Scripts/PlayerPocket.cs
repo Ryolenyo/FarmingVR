@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class PlayerPocket : MonoBehaviour
+public class PlayerPocket : MonoBehaviourPun
 {
     public int money;
     public GameObject pointer;
@@ -20,6 +21,14 @@ public class PlayerPocket : MonoBehaviour
         if (pointerOn)
         {
             pointer.SetActive(true);
+        }
+    }
+
+    private void Awake()
+    {
+        if (!photonView.IsMine)
+        {
+
         }
     }
 }
