@@ -13,6 +13,7 @@ public class Mole : MonoBehaviour
     public float currentTime = 0;
 	public float upTime = 6.07f;
     public float comebackTime = 15;
+	public float startPos = -0.79f;
 
 	public GameObject[] animation;
     public GameObject[] target;
@@ -28,79 +29,98 @@ public class Mole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject trapper = GameObject.FindWithTag("Trapper");
+		GameObject trapper = GameObject.FindWithTag("Trapper");
 
 		if (!isCatch)
 		{
+			Animation goUp = animation[0].GetComponent<Animation>();
+
 			if (isGoUp)
 			{
-				animation[0].SetActive(true);
-				animation[1].SetActive(false);
-				animation[2].SetActive(false);
-
-				if (currentTime < upTime)
-				{
-					currentTime += Time.deltaTime;
-				}
-				else
+				if(!goUp.IsPlaying("Take 001"))
 				{
 					isGoUp = false;
 					isGoDown = true;
-					currentTime = 0;
 				}
 			}
 			else if (isGoDown)
 			{
-				animation[0].SetActive(false);
-				animation[1].SetActive(true);
-				animation[2].SetActive(false);
+				transform.position = new Vector3(transform.position.x, transform.position.y + 0.005f, transform.position.z);
 
-				if (animation[1].transform.localPosition.y > -0.3f)
+				if (transform.position.y < 4.5f)
 				{
-					animation[1].transform.position = new Vector3(animation[1].transform.position.x, animation[1].transform.position.y - 0.005f, animation[1].transform.position.z);
+					isGoDown = false;
+					animation[1].SetActive(false);
+				}
+			}
+			else
+			{
+				if (trapper != null)
+				{
+					transform.position = new Vector3(trapper.transform.position.x, startPos, trapper.transform.position.z);
+                    transform.rotation = Quaternion.identity;
 				}
 				else
 				{
-					animation[1].SetActive(false);
-					//animation[1].transform.localPosition.y = -0.07f;
+					randomGround = Random.Range(0, 17);
 
-					if (trapper != null)
-					{
-						animation[0].SetActive(true);
-						animation[2].SetActive(false);
-
-						transform.position = new Vector3(trapper.transform.position.x, transform.position.y, trapper.transform.position.z);
-                        transform.rotation = Quaternion.identity;
-					}
-					else
-					{
-						randomGround = Random.Range(0, 17);
-						transform.localPosition = new Vector3(target[randomGround].transform.position.x + 0.25f , transform.position.y, target[randomGround].transform.position.z - 0.25f);
-                        transform.rotation = Quaternion.identity;
-					}
-
-					isGoUp = true;
+					transform.localPosition = new Vector3(target[randomGround].transform.position.x + 0.25f , startPos, target[randomGround].transform.position.z - 0.25f);
+                    transform.rotation = Quaternion.identity;
 				}
+
+				isGoUp = true;
+				goUp.Play("Take 001");
 			}
 		}
 		else
 		{
-			if (currentTime < comebackTime)
-			{
-				currentTime += Time.deltaTime;
-			}
-			else
-			{
-				isCatch = false;
+			if (currentTime > comebackTime)
+            {
+                isCatch = false;
 
-				Rigidbody mole = GetComponent<Rigidbody>();
-				Collider moleCol = GetComponent<Collider>();
+                Rigidbody mole = GetComponent<Rigidbody>();
+                Collider moleCol = GetComponent<Collider>();
+                mole.useGravity = false;
+                moleCol.isTrigger = true;
 
-				mole.useGravity = false;
-				moleCol.isTrigger = true;
-
-				isGoUp = false;
-			}
+                isGoUp = false;
+				isGoDown = false;
+            }
+            else
+            {
+                currentTime += Time.deltaTime;
+            }
 		}
+    }
+
+	private void OnTriggerExit(Collider other)
+    {
+        //When mole be caught by player, Add gravity and trigger
+        if (other.tag == "AllGround")
+        {
+            isCatch = true;
+
+			animation[0].SetActive(false);
+			animation[1].SetActive(true);
+
+			Animation caught = animation[1].GetComponent<Animation>();
+			caught.Play("Take 001");
+
+            Rigidbody mole = GetComponent<Rigidbody>();
+            Collider moleCol = GetComponent<Collider>();
+            mole.useGravity = true;
+            moleCol.isTrigger = false;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        //When mole be caught by trapper, delete script
+        if (other.tag == "Trapper" || other.tag == "Net")
+        {
+            gameObject.transform.parent = other.transform;
+            MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
+            Destroy(this);
+        }
     }
 }
