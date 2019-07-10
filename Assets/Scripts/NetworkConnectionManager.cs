@@ -65,8 +65,8 @@ public class NetworkConnectionManager : MonoBehaviourPunCallbacks
 
         TriesToConnectToRoom = true;
         //Specific Room
-        PhotonNetwork.CreateRoom("AAA");
-        //PhotonNetwork.JoinRoom("AAA");
+        //PhotonNetwork.CreateRoom("AAA");
+        PhotonNetwork.JoinRoom("AAA");
         //PhotonNetwork.JoinRandomRoom();
     }
 
