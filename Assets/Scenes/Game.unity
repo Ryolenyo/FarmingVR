@@ -2668,6 +2668,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3923262512555207464, guid: 0838c3f2921367a4d867d14cd61b8f65,
+        type: 3}
+      propertyPath: m_Name
+      value: Mole
+      objectReference: {fileID: 0}
     - target: {fileID: 2353287708943557998, guid: 0838c3f2921367a4d867d14cd61b8f65,
         type: 3}
       propertyPath: target.Array.data[0]
@@ -2758,10 +2763,10 @@ PrefabInstance:
       propertyPath: target.Array.data[17]
       value: 
       objectReference: {fileID: 1094770873}
-    - target: {fileID: 3923262512555207464, guid: 0838c3f2921367a4d867d14cd61b8f65,
+    - target: {fileID: 2353287708943557998, guid: 0838c3f2921367a4d867d14cd61b8f65,
         type: 3}
-      propertyPath: m_Name
-      value: Mole
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3923262512555207467, guid: 0838c3f2921367a4d867d14cd61b8f65,
         type: 3}
@@ -2817,6 +2822,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7410132393865197552, guid: 0838c3f2921367a4d867d14cd61b8f65,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0838c3f2921367a4d867d14cd61b8f65, type: 3}
