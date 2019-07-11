@@ -66,16 +66,16 @@ public class NetworkConnectionManager : MonoBehaviourPunCallbacks
         TriesToConnectToRoom = true;
         //Specific Room
         //PhotonNetwork.CreateRoom("AAA");
-        PhotonNetwork.JoinRoom("AAA");
-        //PhotonNetwork.JoinRandomRoom();
+        //PhotonNetwork.JoinRoom("AAA");
+        PhotonNetwork.JoinRandomRoom();
     }
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
         TriesToConnectToRoom = false;
-        Debug.Log("Master: " + PhotonNetwork.IsMasterClient + " | Players In Room: " + PhotonNetwork.CurrentRoom.Name);
-        SceneManager.LoadScene("Game");
+        Debug.Log("Master: " + PhotonNetwork.IsMasterClient + " | Players In Room: " + PhotonNetwork.CurrentRoom.PlayerCount + " at " + PhotonNetwork.CurrentRoom.Name);
+        SceneManager.LoadScene("Lobby");
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)

@@ -296,6 +296,16 @@ PrefabInstance:
       propertyPath: pointer
       value: 
       objectReference: {fileID: 1837918520}
+    - target: {fileID: 3169221875658568693, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3169221875658568693, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
+        type: 3}
+      propertyPath: InstantiationId
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a, type: 3}
 --- !u!1 &663966364

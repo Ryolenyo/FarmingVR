@@ -26,9 +26,9 @@ public class PlayerPocket : MonoBehaviourPun
 
     private void Awake()
     {
-        if (!photonView.IsMine)
+        if (!photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
-
+            return;
         }
     }
 }
