@@ -934,6 +934,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mole 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3808506570949707322, guid: 0838c3f2921367a4d867d14cd61b8f65,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168526315679728312, guid: 0838c3f2921367a4d867d14cd61b8f65,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3575365917541184007, guid: 0838c3f2921367a4d867d14cd61b8f65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1002,25 +1012,26 @@ PrefabInstance:
     - target: {fileID: 8853882460234619107, guid: 0838c3f2921367a4d867d14cd61b8f65,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4939969515977814297, guid: 0838c3f2921367a4d867d14cd61b8f65,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2168526315679728312, guid: 0838c3f2921367a4d867d14cd61b8f65,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6742889224738983216, guid: 0838c3f2921367a4d867d14cd61b8f65,
         type: 3}
       propertyPath: m_PlayAutomatically
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0838c3f2921367a4d867d14cd61b8f65, type: 3}
+--- !u!1 &747274626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4131179678513076075, guid: 0838c3f2921367a4d867d14cd61b8f65,
+    type: 3}
+  m_PrefabInstance: {fileID: 747274625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &753308368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8683859671066480667, guid: db29e2670aa4bf246ba4b13cc692eb2d,
@@ -1280,11 +1291,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  upTime: 6.07
-  comebackTime: 15
+  comebackTime: 5
   startPos: -0.79
   animation:
   - {fileID: 658604948}
+  - {fileID: 747274626}
   target:
   - {fileID: 358586249}
   - {fileID: 1342153155}

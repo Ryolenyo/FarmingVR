@@ -11,7 +11,6 @@ public class Mole : MonoBehaviour
 
     //public float eatTime = 5;
     public float currentTime = 0;
-	public float upTime = 6.07f;
     public float comebackTime = 15;
 	public float startPos = -0.79f;
 
@@ -39,18 +38,19 @@ public class Mole : MonoBehaviour
 			{
 				if(!goUp.IsPlaying("Take 001"))
 				{
+					currentTime = 0;
 					isGoUp = false;
 					isGoDown = true;
 				}
 			}
 			else if (isGoDown)
 			{
-				transform.position = new Vector3(transform.position.x, transform.position.y + 0.005f, transform.position.z);
+				transform.position = new Vector3(transform.position.x, transform.position.y - 0.005f, transform.position.z);
 
-				if (transform.position.y < 4.5f)
+				if (transform.position.y < -1.8f)
 				{
 					isGoDown = false;
-					animation[1].SetActive(false);
+					animation[0].SetActive(false);
 				}
 			}
 			else
@@ -69,6 +69,7 @@ public class Mole : MonoBehaviour
 				}
 
 				isGoUp = true;
+				animation[0].SetActive(true);
 				goUp.Play("Take 001");
 			}
 		}
