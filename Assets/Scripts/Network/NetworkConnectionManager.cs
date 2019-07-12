@@ -29,6 +29,12 @@ public class NetworkConnectionManager : MonoBehaviourPunCallbacks
             BtnConnectMaster.gameObject.SetActive(!PhotonNetwork.IsConnected && !TriesToConnectToMaster);
         if (BtnConnectRoom != null)
             BtnConnectRoom.gameObject.SetActive(PhotonNetwork.IsConnected && !TriesToConnectToMaster && !TriesToConnectToRoom);
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        {
+            GameObject player = GameObject.Find("Player");
+            Destroy(player);
+            Application.LoadLevel("Lobby");
+        }
     }
 
     public void onClickConnectToMaster()
@@ -75,9 +81,6 @@ public class NetworkConnectionManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         TriesToConnectToRoom = false;
         Debug.Log("Master: " + PhotonNetwork.IsMasterClient + " | Players In Room: " + PhotonNetwork.CurrentRoom.PlayerCount + " at " + PhotonNetwork.CurrentRoom.Name);
-        GameObject player = GameObject.Find("Player");
-		Destroy(player);
-        Application.LoadLevel("Lobby");
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
