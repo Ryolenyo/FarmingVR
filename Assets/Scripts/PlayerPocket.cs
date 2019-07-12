@@ -22,13 +22,10 @@ public class PlayerPocket : MonoBehaviourPun
         {
             pointer.SetActive(true);
         }
-    }
-
-    private void Awake()
-    {
         if (!photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
             return;
         }
     }
+
 }
