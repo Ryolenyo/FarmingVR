@@ -75,7 +75,7 @@ public class NetworkConnectionManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         TriesToConnectToRoom = false;
         Debug.Log("Master: " + PhotonNetwork.IsMasterClient + " | Players In Room: " + PhotonNetwork.CurrentRoom.PlayerCount + " at " + PhotonNetwork.CurrentRoom.Name);
-        SceneManager.LoadScene("Lobby");
+        Application.LoadLevel("Lobby");
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
