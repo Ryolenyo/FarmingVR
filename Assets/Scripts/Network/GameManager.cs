@@ -14,6 +14,15 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+        /*
+        PhotonView pv = gameObject.GetComponent<PhotonView>();
+        if (pv)
+        {
+            pv.RPC("CreateCar",PhotonTargets.AllBuffed);
+        }
+        */
+
+
         if (PhotonNetwork.IsMasterClient)
         {
             number = 3;
