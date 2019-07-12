@@ -75,6 +75,7 @@ public class NetworkConnectionManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         TriesToConnectToRoom = false;
         Debug.Log("Master: " + PhotonNetwork.IsMasterClient + " | Players In Room: " + PhotonNetwork.CurrentRoom.PlayerCount + " at " + PhotonNetwork.CurrentRoom.Name);
+        Destroy(this.gameObject);
         Application.LoadLevel("Lobby");
     }
 

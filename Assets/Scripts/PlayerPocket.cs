@@ -21,13 +21,6 @@ public class PlayerPocket : MonoBehaviourPun
         if (pointerOn)
         {
             pointer.SetActive(true);
-        }
-        
-        if (!photonView.IsMine == false && PhotonNetwork.IsConnected == true)
-        {
-            return;
-        }
-        
+        }    
     }
-
 }
