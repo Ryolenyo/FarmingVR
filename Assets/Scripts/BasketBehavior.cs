@@ -9,6 +9,7 @@ public class BasketBehavior : MonoBehaviour
     public bool objectiveChecker;
     private GameObject objective;
 	private ObjectiveGiver objectiveGiver;
+    public GameObject coin;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,10 @@ public class BasketBehavior : MonoBehaviour
 					objectiveGiver.objective.goal.TimeLimitCompleted(plantState.tag);
 				}
             }
-            
+            GameObject coinObject = Instantiate(coin,new Vector3 (collider.transform.position.x, collider.transform.position.y, collider.transform.position.z), Quaternion.Euler(90, 0, 90));
+            MoneyBehavior moneyVariable = coinObject.GetComponent<MoneyBehavior>();
+            moneyVariable.money = plantVariable.valuePlant;
+
             Destroy(collider.gameObject);
         }
     }
