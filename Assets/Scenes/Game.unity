@@ -1030,6 +1030,26 @@ PrefabInstance:
       propertyPath: m_PlayAutomatically
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8493208360283056165, guid: 0838c3f2921367a4d867d14cd61b8f65,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493208360283056165, guid: 0838c3f2921367a4d867d14cd61b8f65,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.40757036
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493208360283056165, guid: 0838c3f2921367a4d867d14cd61b8f65,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.3646741
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208050373970219391, guid: 0838c3f2921367a4d867d14cd61b8f65,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0838c3f2921367a4d867d14cd61b8f65, type: 3}
 --- !u!1 &747274626 stripped
@@ -1296,6 +1316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f238112e55f808d478eb3ee97444d629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCatch: 1
+  isCatchByTrapper: 0
+  isGoDown: 0
+  isGoUp: 0
   currentTime: 0
   comebackTime: 5
   startPos: -0.79
@@ -1868,6 +1892,21 @@ PrefabInstance:
       propertyPath: pointer
       value: 
       objectReference: {fileID: 1516051395}
+    - target: {fileID: 906341323506635305, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805274635457944412, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
+        type: 3}
+      propertyPath: textField
+      value: 
+      objectReference: {fileID: 1628665566}
+    - target: {fileID: 5805274635457944412, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
+        type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 3181017172113850860}
     - target: {fileID: 4869970660746509367, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1938,11 +1977,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 906341323506635305, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3399869096721474196, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1968,16 +2002,6 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5805274635457944412, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
-        type: 3}
-      propertyPath: textField
-      value: 
-      objectReference: {fileID: 1628665566}
-    - target: {fileID: 5805274635457944412, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
-        type: 3}
-      propertyPath: timer
-      value: 
-      objectReference: {fileID: 3181017172113850860}
     m_RemovedComponents:
     - {fileID: 7216888815425577970, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a, type: 3}
