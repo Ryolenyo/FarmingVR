@@ -125,6 +125,13 @@ public class Mole : MonoBehaviour
         {
             gameObject.transform.parent = other.transform;
             MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
+
+            animation[0].SetActive(false);
+            animation[1].SetActive(true);
+
+            Animation caught = animation[1].GetComponent<Animation>();
+            caught.Play("Take 001");
+
             Destroy(this);
         }
     }
