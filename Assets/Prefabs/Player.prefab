@@ -2007,7 +2007,7 @@ GameObject:
   - component: {fileID: 1897421470013394396}
   - component: {fileID: 2278514405592849654}
   - component: {fileID: 2118843437867167100}
-  - component: {fileID: 7216888815425577970}
+  - component: {fileID: 5805274635457944412}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2076,7 +2076,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: SUP
---- !u!114 &7216888815425577970
+--- !u!114 &5805274635457944412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
