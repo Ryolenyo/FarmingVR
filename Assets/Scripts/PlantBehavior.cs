@@ -87,7 +87,7 @@ public class PlantBehavior : MonoBehaviour
         }
         else
         {
-            Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(nextObject, new Vector3(transform.position.x, transform.position.y, transform.position.z), nextObject.transform.rotation);
         }
         PlantBehavior nextVariable = nextObject.GetComponent<PlantBehavior>();
 
