@@ -2009,7 +2009,7 @@ GameObject:
   - component: {fileID: 2118843437867167100}
   - component: {fileID: 5805274635457944412}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2031,8 +2031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 500}
+  m_AnchoredPosition: {x: 0, y: -231}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2278514405592849654
 CanvasRenderer:
@@ -2064,7 +2064,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9b77204827583ac4092331bf6eff728c, type: 3}
-    m_FontSize: 100
+    m_FontSize: 85
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -2075,7 +2075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SUP
+  m_Text: Timer
 --- !u!114 &5805274635457944412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2088,3 +2088,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4105f1053ad26764b9e0032db6b8ad0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  textField: {fileID: 0}
