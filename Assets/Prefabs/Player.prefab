@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 942495518766747422}
   - component: {fileID: 6795794510790899099}
   - component: {fileID: 4094595492753391955}
+  - component: {fileID: 3315451622927104875}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -348,6 +349,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Score
+--- !u!114 &3315451622927104875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051849270513139535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cde6b70eab17cd4dbcded2de5b3e8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 4094595492753391955}
 --- !u!1 &5148800133561352536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,7 +2184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  textField: {fileID: 0}
+  textField: {fileID: 2118843437867167100}
 --- !u!1 &8835193008405546280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,7 +2196,7 @@ GameObject:
   - component: {fileID: 6701375937632689834}
   - component: {fileID: 8159026326730758781}
   - component: {fileID: 6956376421089613514}
-  - component: {fileID: 4221088035630251817}
+  - component: {fileID: 1225895020200812848}
   m_Layer: 5
   m_Name: Money
   m_TagString: Untagged
@@ -2251,7 +2265,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Money
---- !u!114 &4221088035630251817
+--- !u!114 &1225895020200812848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2260,8 +2274,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8835193008405546280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4105f1053ad26764b9e0032db6b8ad0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 76ba23d692c83a4478fe80e5c6db8459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 0}
-  textField: {fileID: 0}
+  moneyText: {fileID: 6956376421089613514}

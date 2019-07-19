@@ -22,7 +22,7 @@ public class MoneyBoard : MonoBehaviour
         PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
         money = playerVariable.money;
 
-        moneyText.text = money.ToString();
+        moneyText.text = "Money: " + money.ToString();
 
     }
 }

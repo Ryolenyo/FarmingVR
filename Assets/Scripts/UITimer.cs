@@ -41,7 +41,7 @@ public class UITimer : MonoBehaviour
 		}
 		else
 		{
-			textField.text = "Time: " + textTime;
+			textField.text = textTime;
 		}
     }
 }
