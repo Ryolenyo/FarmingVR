@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8332267646701102828}
   - component: {fileID: 2808525109520314850}
   - component: {fileID: 1527800282288876559}
-  - component: {fileID: 1090301090}
   m_Layer: 0
   m_Name: Mole 1
   m_TagString: Mole
@@ -164,48 +163,6 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   harvastablePlant: {fileID: 0}
   interactable: {fileID: 0}
---- !u!114 &1090301090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3808506570949707322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f238112e55f808d478eb3ee97444d629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCatch: 1
-  isCatchByTrapper: 0
-  isGoDown: 0
-  isGoUp: 0
-  currentTime: 0
-  comebackTime: 5
-  startPos: -0.79
-  animation:
-  - {fileID: 2168526315679728312}
-  - {fileID: 4131179678513076075}
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  randomGround: 15
 --- !u!1001 &102852010844407176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -285,12 +242,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41a753798244744eb05c703db9f975b, type: 3}
---- !u!1 &4131179678513076075 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4051411574009975523, guid: f41a753798244744eb05c703db9f975b,
-    type: 3}
-  m_PrefabInstance: {fileID: 102852010844407176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1085297001706513784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1036628928184426736, guid: f41a753798244744eb05c703db9f975b,
@@ -371,12 +322,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c32a0b99607ad1e45bae678f5f34930c, type: 3}
---- !u!1 &2168526315679728312 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5759227352412447865, guid: c32a0b99607ad1e45bae678f5f34930c,
-    type: 3}
-  m_PrefabInstance: {fileID: 5905562657606117057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2901302125017149611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8770684526228084330, guid: c32a0b99607ad1e45bae678f5f34930c,
