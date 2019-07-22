@@ -121,9 +121,9 @@ public class Mole : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //When mole be caught by trapper, delete script
-        if (other.tag == "Trapper" || other.tag == "Net")
+        if ((other.tag == "Trapper" || other.tag == "Net") && !isGoUp)
         {
-            gameObject.transform.parent = other.transform;
+            //gameObject.transform.parent = other.transform;
             MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
 
             animation[0].SetActive(false);
