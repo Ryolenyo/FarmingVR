@@ -891,7 +891,7 @@ PrefabInstance:
     - target: {fileID: 3808506570949707322, guid: 0838c3f2921367a4d867d14cd61b8f65,
         type: 3}
       propertyPath: m_Name
-      value: Mole 1
+      value: Mole
       objectReference: {fileID: 0}
     - target: {fileID: 3808506570949707322, guid: 0838c3f2921367a4d867d14cd61b8f65,
         type: 3}
@@ -1003,7 +1003,8 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1090301090, guid: 0838c3f2921367a4d867d14cd61b8f65, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0838c3f2921367a4d867d14cd61b8f65, type: 3}
 --- !u!1 &747274626 stripped
 GameObject:
