@@ -135,10 +135,12 @@ public class PlantBehavior : MonoBehaviour
 
         else if (otherObject.tag == "Mole")
         {
-            Transform molePos = otherObject.GetComponent<Transform>();
-            transform.position = new Vector3(transform.position.x, molePos.transform.position.y + 0.28f, transform.position.z);
-        }
-
+            Mole mole = otherObject.GetComponent<Mole>();
+			if (mole.isGoDown)
+			{
+				transform.position = new Vector3(transform.position.x, transform.position.y - 0.005f, transform.position.z);
+			}
+		}
     }
 
     private void OnTriggerExit(Collider other)
