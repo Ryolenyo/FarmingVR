@@ -16,13 +16,12 @@ public class Tutorial : MonoBehaviour
 
     public Transform spawnPoint;
 
-    public bool[] state;
-    public int currentState = 0;
+    public int currentState = -1;
 
     public Text textField;
-    private string tutorText;
+    private string tutorText = "Welcome to Tutorial";
 
-    private bool isTimerRun = false;
+    private bool isTimerRun = true;
     private float currentTime = 0;
 
     // Start is called before the first frame update
@@ -45,18 +44,18 @@ public class Tutorial : MonoBehaviour
         else if (currentState == 1) // Buy item
         {
             shopUI.SetActive(true);
-            tutorText = "Buy some seed by press the blue button !";
+            tutorText = "Buy some seed by press the blue button ! and Plant the seed !";
             currentState = 2;
         }
         else if (currentState == 2) // plant
         {
-            tutorText = "Plant the seed !";
             currentState = -1;
         }
         else if (currentState == 3) // fill , water
         {
             Instantiate(wateringCan, spawnPoint);
             tutorText = "Fill this watering can and water your plant !";
+            currentTime = 0;
             currentState = -1;
         }
         else if (currentState == 4) // harvest , throw in basket
