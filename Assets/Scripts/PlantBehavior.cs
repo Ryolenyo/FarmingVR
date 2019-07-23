@@ -16,12 +16,15 @@ public class PlantBehavior : MonoBehaviour
     public GameObject nextObject; // Next state of plant
     public bool isTimerRun = false;
     public float targetTime;
+	public bool stolen = false;
 
     //FERTILIZE PART
     public bool isFertilized = false;
 
     private bool isPicked = false;
     private bool isWeed = false;
+
+	private GroundBehavior ground;
 
     // Start is called before the first frame update
     void Start()
@@ -55,10 +58,14 @@ public class PlantBehavior : MonoBehaviour
             timer(targetTime);
         }
 
-		Debug.Log(transform.localScale.x);
         //BE STOLEN
-        if ((transform.position.y < 0 && transform.localScale.x > 1) || (transform.position.y < 0.6 && transform.localScale.x <= 1))
+        if (stolen)
         {
+			Debug.Log("STOLEN");
+			if (transform.localScale.x > 1)
+			{
+				ground.isReset = true;
+			}
             Destroy(gameObject);
         }
     }
@@ -101,7 +108,7 @@ public class PlantBehavior : MonoBehaviour
         GameObject otherObject = other.gameObject;
         if (otherObject.tag == "Planted")
         {
-            GroundBehavior ground = otherObject.GetComponent<GroundBehavior>();
+            ground = otherObject.GetComponent<GroundBehavior>();
             if (ground.isWatered)
             {
                 isReady = true;
@@ -152,14 +159,13 @@ public class PlantBehavior : MonoBehaviour
             Collider collider = GetComponent<Collider>();
             Rigidbody rigidbody = GetComponent<Rigidbody>();
 
-            isTimerRun = false;
-            rigidbody.useGravity = true;
-            collider.isTrigger = false;
-            transform.parent = null;
+			isTimerRun = false;
+			transform.parent = null;
+			rigidbody.useGravity = true;
+			collider.isTrigger = false;
 
             if (otherObject.tag == "Planted" && !isPicked)
             {
-                GroundBehavior ground = otherObject.GetComponent<GroundBehavior>();
                 ground.isReset = true;
             }
             else if (otherObject.tag == "SpawnPoint" && !isPicked)

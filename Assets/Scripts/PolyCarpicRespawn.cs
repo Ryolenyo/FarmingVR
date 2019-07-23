@@ -51,8 +51,11 @@ public class PolyCarpicRespawn : MonoBehaviour
 
     void OnTriggerExit(Collider collider)
     {
-        growUpTime = 3.0f;
-        isGrowUp = true;
+		if (collider.tag == "Plant")
+		{
+			growUpTime = 3.0f;
+			isGrowUp = true;
+		}
     }
 
 }

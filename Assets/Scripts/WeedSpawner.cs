@@ -21,7 +21,7 @@ public class WeedSpawner : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > spawnTime)
         {
-            int num = Random.RandomRange(0,17);
+            int num = Random.Range(0,17);
             GameObject chooseGroud = ground[num];
             Instantiate(weed, 
                 new Vector3 (chooseGroud.transform.position.x+0.25f, chooseGroud.transform.position.y+0.1f, chooseGroud.transform.position.z - 0.25f), 

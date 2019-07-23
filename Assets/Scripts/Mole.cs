@@ -134,5 +134,14 @@ public class Mole : MonoBehaviour
 
             Destroy(this);
         }
+		else if (other.tag == "Plant" || other.tag == "Sapling")
+		{
+			if(transform.position.y < -1)
+			{
+				Debug.Log("STOLE");
+				PlantBehavior plant = other.gameObject.GetComponent<PlantBehavior>();
+				plant.stolen = true;
+			}
+		}
     }
 }
