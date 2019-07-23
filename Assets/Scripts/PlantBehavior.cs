@@ -55,8 +55,9 @@ public class PlantBehavior : MonoBehaviour
             timer(targetTime);
         }
 
+		Debug.Log(transform.localScale.x);
         //BE STOLEN
-        if (transform.position.y < 0)
+        if ((transform.position.y < 0 && transform.localScale.x > 1) || (transform.position.y < 0.6 && transform.localScale.x <= 1))
         {
             Destroy(gameObject);
         }
@@ -135,10 +136,12 @@ public class PlantBehavior : MonoBehaviour
 
         else if (otherObject.tag == "Mole")
         {
-            Transform molePos = otherObject.GetComponent<Transform>();
-            transform.position = new Vector3(transform.position.x, molePos.transform.position.y + 0.28f, transform.position.z);
-        }
-
+            Mole mole = otherObject.GetComponent<Mole>();
+			if (mole.isGoDown)
+			{
+				transform.position = new Vector3(transform.position.x, transform.position.y - 0.005f, transform.position.z);
+			}
+		}
     }
 
     private void OnTriggerExit(Collider other)
