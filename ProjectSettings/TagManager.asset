@@ -29,6 +29,7 @@ TagManager:
   - Hand
   - Laser
   - Weed
+  - Coin
   layers:
   - Default
   - TransparentFX

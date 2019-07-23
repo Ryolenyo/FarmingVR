@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2adc82e53f73a42b2efb2c8306fae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valuePlant: 50
+  valuePlant: 70
   isReady: 0
   currentWater: 0
   maxWater: 50
