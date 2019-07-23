@@ -55,8 +55,9 @@ public class PlantBehavior : MonoBehaviour
             timer(targetTime);
         }
 
+		Debug.Log(transform.localScale.x);
         //BE STOLEN
-        if (transform.position.y < 0)
+        if ((transform.position.y < 0 && transform.localScale.x > 1) || (transform.position.y < 0.6 && transform.localScale.x <= 1))
         {
             Destroy(gameObject);
         }
