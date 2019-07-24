@@ -9,6 +9,7 @@ public class PolyCarpicRespawn : MonoBehaviour
     public bool isGrowUp = true;
     public bool isFertilized = false;
     public bool isFertile = false;
+	public bool isWeed = false;
 
     public GameObject fruitObject;
 
@@ -26,7 +27,7 @@ public class PolyCarpicRespawn : MonoBehaviour
         {
             if (growUpTime <= 0.0f)
             {
-                if (isGrowUp)
+                if (isGrowUp & !isWeed)
                 {
                     GrowUp();
                 }
@@ -56,6 +57,8 @@ public class PolyCarpicRespawn : MonoBehaviour
 			growUpTime = 3.0f;
 			isGrowUp = true;
 		}
+
+		isFertile = false;
     }
 
 }

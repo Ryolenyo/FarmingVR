@@ -8,6 +8,7 @@ public class StalkBehavior : MonoBehaviour
     public bool isReady = false;
     public bool stopGrow = false;
     public bool isFertilized = false;
+	public bool isWeed = false;
 
     private float currentTime;
     public int spawnTime = 30;
@@ -71,6 +72,19 @@ public class StalkBehavior : MonoBehaviour
             fruitVariable2.isFertilized = false;
             fruitVariable3.isFertilized = false;
         }
+
+		if (isWeed)
+		{
+			fruitVariable1.isWeed = true;
+			fruitVariable2.isWeed = true;
+			fruitVariable3.isWeed = true;
+		}
+		else
+		{
+			fruitVariable1.isWeed = false;
+			fruitVariable2.isWeed = false;
+			fruitVariable3.isWeed = false;
+		}
     }
 
     private void OnTriggerStay(Collider other)
@@ -97,6 +111,15 @@ public class StalkBehavior : MonoBehaviour
             {
                 isFertilized = false;
             }
+
+			if (ground.isWeed)
+			{
+				isWeed = true;
+			}
+			else
+			{
+				isWeed = false;
+			}
         }
     }
 }

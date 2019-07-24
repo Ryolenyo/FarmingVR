@@ -139,6 +139,15 @@ public class PlantBehavior : MonoBehaviour
                 valuePlant += valuePlant * 10 / 100;
                 isFertilized = true;
             }
+
+			if (spawnPoint.isWeed)
+            {
+                isWeed = true;
+            }
+            else
+            {
+                isWeed = false;
+            }
         }
 
         else if (otherObject.tag == "Mole")
