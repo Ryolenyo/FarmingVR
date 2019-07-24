@@ -12,6 +12,7 @@ public class Tutorial : MonoBehaviour
     public GameObject trapper;
     public GameObject shopUI;
     public GameObject tutorPlant;
+    public GameObject tutorPlant2;
     public GameObject tutorMole;
 
     public Transform spawnPoint;
@@ -23,6 +24,7 @@ public class Tutorial : MonoBehaviour
 
     private bool isTimerRun = true;
     private float currentTime = 0;
+    private bool stop = true;
 
     // Start is called before the first frame update
     void Start()
@@ -72,14 +74,26 @@ public class Tutorial : MonoBehaviour
         else if (currentState == 6) // mole
         {
             tutorMole.SetActive(true);
+            tutorPlant2.SetActive(true);
             tutorText = "That Mole try to steal your product! Catch it! Throw it away!";
+            
         }
         else if (currentState == 7) // mole
         {
             Instantiate(net, spawnPoint);
             Instantiate(trapper, spawnPoint);
             tutorText = "But it will come back in every 30s. You have to use trapper or net !";
-            currentState = -1;
+            currentState = 8;
+        }
+        else if (currentState == 8)
+        {
+            currentTime = 0;
+            isTimerRun = true;
+        }
+        else if (currentState == 9)
+        {
+            string currentText = string.Format("", (int)currentTime % 60);
+            tutorText = "Tutorial ends here. You will be sent back to game in " + currentText;
         }
 
         //timer
@@ -105,7 +119,11 @@ public class Tutorial : MonoBehaviour
         }
         else if (other.tag == "Seed")
         {
-            currentState = 3;
+            if (stop)
+            {
+                currentState = 3;
+                stop = false;
+            }
         }
         else if (other.tag == "Can")
         {
