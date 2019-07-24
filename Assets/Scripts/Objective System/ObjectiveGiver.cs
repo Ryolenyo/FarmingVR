@@ -54,7 +54,10 @@ public class ObjectiveGiver : MonoBehaviour
 			GameObject Basket = GameObject.Find("basketVoid");
 			BasketBehavior basketVariable = Basket.GetComponent<BasketBehavior>();
 
-			basketVariable.score += objective.rewardScore;
+			if (basketVariable)
+			{
+				basketVariable.score += objective.rewardScore;
+			}
 		}
 	}
 }

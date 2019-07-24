@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Scoreboard : MonoBehaviour
 {
-    private int score;
+    public int score;
     [SerializeField] Text scoreText;
 
     // Start is called before the first frame update
@@ -19,7 +19,10 @@ public class Scoreboard : MonoBehaviour
     {
         GameObject Basket = GameObject.Find("basketVoid");
         BasketBehavior basketVariable = Basket.GetComponent<BasketBehavior>();
-        score = basketVariable.score;
+		if (basketVariable)
+		{
+			score = basketVariable.score;
+		}
 
         scoreText.text = "Score: " + score.ToString();
 

@@ -19,6 +19,9 @@ public class Timer : MonoBehaviour
     public int lim;
 	public GameObject objectiveBoard;
     public GameObject uiEnd;
+	public GameObject highScore;
+
+	public GameObject basket;
 
     //Create a reference for the textfield
 
@@ -28,6 +31,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         uiEnd.SetActive(false);
+		highScore.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,7 +60,10 @@ public class Timer : MonoBehaviour
             playerVariable.pointerOn = true;
 
 			objectiveBoard.SetActive(false);
+			highScore.SetActive(true);
             uiEnd.SetActive(true);
+
+			Destroy(basket.GetComponent<BasketBehavior>());
         }
         else
         {
