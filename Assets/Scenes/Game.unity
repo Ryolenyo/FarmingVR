@@ -1341,6 +1341,11 @@ PrefabInstance:
       propertyPath: basket
       value: 
       objectReference: {fileID: 217711887}
+    - target: {fileID: 4631455229609313353, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0,
+        type: 3}
+      propertyPath: WeedSpawner
+      value: 
+      objectReference: {fileID: 1776962050}
     - target: {fileID: 3242995857188841401, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0,
         type: 3}
       propertyPath: UIText
@@ -2099,6 +2104,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8683859671066480664, guid: db29e2670aa4bf246ba4b13cc692eb2d,
     type: 3}
   m_PrefabInstance: {fileID: 96553483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1776962050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5333517834916513436, guid: bba1316a836d843448843329eac2d5ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 5376694488991992405}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1806713592
 PrefabInstance:
@@ -3809,6 +3820,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WeedSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333517834916513436, guid: bba1316a836d843448843329eac2d5ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5333517834916513438, guid: bba1316a836d843448843329eac2d5ce,
         type: 3}
