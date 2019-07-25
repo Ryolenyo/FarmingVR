@@ -156,8 +156,8 @@ MonoBehaviour:
     type: 3}
   fertilizer: {fileID: 807256114716815406, guid: de1cf3ba7f8e2f74f86b60648e3e48d8,
     type: 3}
-  net: {fileID: 3748919245784271686, guid: f4bdd2cbf69227c449887509d20b4b04, type: 3}
-  trapper: {fileID: 8026794913715382866, guid: 7fb2953ddb2a4c148b87877b78b930d9, type: 3}
+  net: {fileID: 6549925926523078206, guid: f440d397aef67ce498154fa89162f64f, type: 3}
+  trapper: {fileID: 5239361886909581602, guid: e05c01ab1ead7274483a4bbc2eeacb66, type: 3}
   shopUI: {fileID: 431048689}
   tutorPlant: {fileID: 635655013}
   tutorPlant2: {fileID: 2031117160}
