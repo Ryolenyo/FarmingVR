@@ -26,10 +26,27 @@ public class Tutorial : MonoBehaviour
     private float currentTime = 0;
     private bool stop = true;
 
+    public GameObject[] arrowSet;
+
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    void activateArrow(int active)
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            if (i == active)
+            {
+                arrowSet[i].SetActive(true);
+            }
+            else
+            {
+                arrowSet[i].SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -42,16 +59,19 @@ public class Tutorial : MonoBehaviour
             Instantiate(hoe,spawnPoint);
             tutorText = "Pick the hoe up and dig the ground !";
             currentState = -1;
+            activateArrow(0);
         }
         else if (currentState == 1) // Buy item
         {
             shopUI.SetActive(true);
             tutorText = "Buy some seed by press the blue button ! and Plant the seed !";
             currentState = 2;
+            activateArrow(1);
         }
         else if (currentState == 2) // plant
         {
             currentState = -1;
+            activateArrow(2);
         }
         else if (currentState == 3) // fill , water
         {
@@ -59,6 +79,7 @@ public class Tutorial : MonoBehaviour
             tutorText = "Fill this watering can and water your plant !";
             currentTime = 0;
             currentState = -1;
+            activateArrow(3);
         }
         else if (currentState == 4) // harvest , throw in basket
         {
@@ -69,6 +90,7 @@ public class Tutorial : MonoBehaviour
         else if (currentState == 5) // harvest , throw in basket
         {
             tutorPlant.SetActive(false);
+            activateArrow(5);
             tutorText = "Harvest it and put in the basket !";
         }
         else if (currentState == 6) // mole
@@ -95,6 +117,8 @@ public class Tutorial : MonoBehaviour
             string currentText = string.Format("", (int)currentTime % 60);
             tutorText = "Tutorial ends here. You will be sent back to game in " + currentText;
         }
+
+        Debug.Log(currentState);
 
         //timer
         if (isTimerRun)

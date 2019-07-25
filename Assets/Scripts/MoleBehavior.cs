@@ -145,6 +145,7 @@ public class MoleBehavior : MonoBehaviour
         //When mole be caught by trapper, delete script
         if (other.tag == "Trapper" || other.tag == "Net")
         {
+            Debug.Log("Caughtaa");
             gameObject.transform.parent = other.transform;
             MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
             Destroy(this);
