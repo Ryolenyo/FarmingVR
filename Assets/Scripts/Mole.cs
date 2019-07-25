@@ -18,12 +18,21 @@ public class Mole : MonoBehaviour
     public GameObject[] animation;
     public GameObject[] target;
     public int randomGround = 15;
+	public int randomed;
     private float speed = 0.01f;
+
+	private float timing = 6.06f;
+	
+	AudioSource sound;
+	public AudioClip getOut;
+	public AudioClip squeak;
+	private bool outed = false;
+	private bool squeaked = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+		sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,8 +46,28 @@ public class Mole : MonoBehaviour
 
             if (isGoUp)
             {
+				Debug.Log(timing);
+				if (timing > 0)
+				{
+					if (timing <= 5 && !outed)
+					{
+						sound.PlayOneShot(getOut, 0.7f);
+						outed = true;
+					}
+					else if (timing <= 3 && !squeaked)
+					{
+						sound.PlayOneShot(squeak, 0.7f);
+						squeaked = true;
+					}
+					timing -= Time.deltaTime;
+				}
+
                 if (!goUp.IsPlaying("Take 001"))
                 {
+					timing = 6.06f;
+					outed = false;
+					squeaked = false;
+
                     currentTime = 0;
                     isGoUp = false;
                     isGoDown = true;
@@ -48,8 +77,15 @@ public class Mole : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y - 0.005f, transform.position.z);
 
+				if (transform.position.y < -1 && !outed)
+				{
+					sound.PlayOneShot(getOut, 0.7f);
+					outed = true;
+				}
+
                 if (transform.position.y < -1.8f)
                 {
+					outed = false;
                     isGoDown = false;
                     animation[0].SetActive(false);
                 }
@@ -63,9 +99,9 @@ public class Mole : MonoBehaviour
                 }
                 else
                 {
-                    randomGround = Random.Range(0, randomGround-1);
+                    randomed = Random.Range(0, randomGround);
 					
-                    transform.localPosition = new Vector3(target[randomGround].transform.position.x + 0.25f, startPos, target[randomGround].transform.position.z);
+                    transform.localPosition = new Vector3(target[randomed].transform.position.x + 0.25f, startPos, target[randomed].transform.position.z);
                     transform.rotation = Quaternion.identity;
                 }
 
