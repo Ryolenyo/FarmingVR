@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2242027135418138110}
-  - component: {fileID: 4184021706007313618}
+  - component: {fileID: 3384027323178249996}
   m_Layer: 0
   m_Name: Caesar
   m_TagString: Net
@@ -61,8 +61,8 @@ Transform:
   m_Father: {fileID: 320704151258318121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4184021706007313618
-SphereCollider:
+--- !u!65 &3384027323178249996
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -72,8 +72,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.034995332
-  m_Center: {x: 0, y: 0.004, z: -0.0118619455}
+  m_Size: {x: 0.053418096, y: 0.06636816, z: 0.026451265}
+  m_Center: {x: 0, y: 0.0031009724, z: 0}
 --- !u!1 &3264957614297027420
 GameObject:
   m_ObjectHideFlags: 0

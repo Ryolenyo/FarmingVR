@@ -162,11 +162,10 @@ public class Mole : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //When mole be caught by trapper, delete script
-        if ((other.tag == "Trapper" || other.tag == "Net") && !isGoUp)
+        if (other.tag == "Trapper" && !isGoUp)
         {
             gameObject.transform.parent = other.transform;
-            MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
-			sc.tool = other.tag;
+
             animation[0].SetActive(false);
             animation[1].SetActive(true);
 
@@ -175,6 +174,9 @@ public class Mole : MonoBehaviour
 			
 			Destroy(gameObject.GetComponent<Throwable>());
 			Destroy(gameObject.GetComponent<Interactable>());
+			Destroy(gameObject.GetComponent<VelocityEstimator>());
+			Destroy(gameObject.GetComponent<Rigidbody>());
+			Destroy(gameObject.GetComponent<Collider>());
             Destroy(this);
         }
 		else if (other.tag == "Plant" || other.tag == "Sapling")
@@ -193,8 +195,12 @@ public class Mole : MonoBehaviour
 		if(other.tag == "Net")
 		{
 			gameObject.transform.parent = other.transform;
-            MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
-			sc.tool = other.tag;
+			Vector3 temp = other.transform.position;
+			temp.y = gameObject.transform.position.y + 0.25f;
+			temp.z = gameObject.transform.position.z + 0.05f;
+			temp.x = gameObject.transform.position.x + 0.05f;
+			gameObject.transform.position = temp;
+
 
             animation[0].SetActive(false);
             animation[1].SetActive(true);
@@ -204,6 +210,9 @@ public class Mole : MonoBehaviour
 			
 			Destroy(gameObject.GetComponent<Throwable>());
 			Destroy(gameObject.GetComponent<Interactable>());
+			Destroy(gameObject.GetComponent<VelocityEstimator>());
+			Destroy(gameObject.GetComponent<Rigidbody>());
+			Destroy(gameObject.GetComponent<Collider>());
             Destroy(this);
 		}
 	}
