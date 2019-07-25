@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef62818f4de66841a57c137d523c1fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lim: 15
+  lim: 300
   objectiveBoard: {fileID: 8010913671418374068}
   uiEnd: {fileID: 5587424283719609371}
   basket: {fileID: 0}
@@ -1213,6 +1213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 7810092492261666132}
+  UIText: {fileID: 0}
 --- !u!1 &8010913671418374068
 GameObject:
   m_ObjectHideFlags: 0
