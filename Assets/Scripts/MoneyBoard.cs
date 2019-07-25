@@ -7,6 +7,7 @@ public class MoneyBoard : MonoBehaviour
 {
     private int money;
     [SerializeField] Text moneyText;
+	[SerializeField] Text UIText;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +18,12 @@ public class MoneyBoard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         GameObject player = GameObject.Find("Player");
         PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
         money = playerVariable.money;
 
         moneyText.text = "Money: " + money.ToString();
+		UIText.text = money.ToString();
 
     }
 }

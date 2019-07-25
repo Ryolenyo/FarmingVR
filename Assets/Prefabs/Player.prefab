@@ -262,8 +262,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2834181193721982103}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.08, z: -0.1163008}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.094, z: -0.182}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 906341323506635305}
   m_Father: {fileID: 5148800133561720380}
@@ -363,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 4094595492753391955}
+  UIText: {fileID: 0}
 --- !u!1 &5148800133561352536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,3 +2280,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 6956376421089613514}
+  UIText: {fileID: 0}

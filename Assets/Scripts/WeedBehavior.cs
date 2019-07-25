@@ -7,10 +7,12 @@ public class WeedBehavior : MonoBehaviour
 	private bool isPulled = false;
 	private float timeTarget = 10;
 
+	AudioSource sound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,7 +39,8 @@ public class WeedBehavior : MonoBehaviour
             Collider weedCol = GetComponent<Collider>();
             weed.useGravity = true;
             weedCol.isTrigger = false;
-			
+			sound.Play(0);
+
 			isPulled = true;
         }
     }
