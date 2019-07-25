@@ -7,6 +7,7 @@ public class Scoreboard : MonoBehaviour
 {
     public int score;
     [SerializeField] Text scoreText;
+	[SerializeField] Text UIText;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,6 @@ public class Scoreboard : MonoBehaviour
 		}
 
         scoreText.text = "Score: " + score.ToString();
-
+		UIText.text = score.ToString();
     }
 }
