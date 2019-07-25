@@ -34,21 +34,6 @@ public class Tutorial : MonoBehaviour
 
     }
 
-    void activateArrow(int active)
-    {
-        for (int i = 0; i < 6; i++)
-        {
-            if (i == active)
-            {
-                arrowSet[i].SetActive(true);
-            }
-            else
-            {
-                arrowSet[i].SetActive(false);
-            }
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -59,19 +44,20 @@ public class Tutorial : MonoBehaviour
             Instantiate(hoe,spawnPoint);
             tutorText = "Pick the hoe up and dig the ground !";
             currentState = -1;
-            activateArrow(0);
+            arrowSet[0].SetActive(true);
         }
         else if (currentState == 1) // Buy item
         {
             shopUI.SetActive(true);
             tutorText = "Buy some seed by press the blue button ! and Plant the seed !";
             currentState = 2;
-            activateArrow(1);
+            arrowSet[1].SetActive(true);
+            arrowSet[0].SetActive(false);
         }
         else if (currentState == 2) // plant
         {
             currentState = -1;
-            activateArrow(2);
+
         }
         else if (currentState == 3) // fill , water
         {
@@ -79,10 +65,13 @@ public class Tutorial : MonoBehaviour
             tutorText = "Fill this watering can and water your plant !";
             currentTime = 0;
             currentState = -1;
-            activateArrow(3);
+            arrowSet[3].SetActive(true);
+            arrowSet[1].SetActive(false);
+
         }
         else if (currentState == 4) // harvest , throw in basket
         {
+            arrowSet[3].SetActive(false);
             tutorPlant.SetActive(true);
             tutorText = "This is all state of plant. Golden state is the most valuable plant !";
             isTimerRun = true;
@@ -90,32 +79,36 @@ public class Tutorial : MonoBehaviour
         else if (currentState == 5) // harvest , throw in basket
         {
             tutorPlant.SetActive(false);
-            activateArrow(5);
             tutorText = "Harvest it and put in the basket !";
+            arrowSet[5].SetActive(true);
+            arrowSet[3].SetActive(false);
         }
         else if (currentState == 6) // mole
         {
             tutorMole.SetActive(true);
             tutorPlant2.SetActive(true);
+            arrowSet[5].SetActive(false);
+            arrowSet[6].SetActive(true);
             tutorText = "That Mole try to steal your product! Catch it! Throw it away!";
             
         }
         else if (currentState == 7) // mole
         {
+            arrowSet[6].SetActive(false);
             Instantiate(net, spawnPoint);
             Instantiate(trapper, spawnPoint);
             tutorText = "But it will come back in every 30s. You have to use trapper or net !";
             currentState = 8;
-        }
-        else if (currentState == 8)
-        {
             currentTime = 0;
             isTimerRun = true;
         }
+        else if (currentState == 8)
+        {
+            
+        }
         else if (currentState == 9)
         {
-            string currentText = string.Format("", (int)currentTime % 60);
-            tutorText = "Tutorial ends here. You will be sent back to game in " + currentText;
+            tutorText = "Tutorial ends here.";
         }
 
         Debug.Log(currentState);
