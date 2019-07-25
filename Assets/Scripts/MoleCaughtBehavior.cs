@@ -6,12 +6,20 @@ public class MoleCaughtBehavior : MonoBehaviour
 {
 	Vector3 pos;
 	float diff;
+	public string tool;
 
     // Start is called before the first frame update
     void Start()
     {
-        diff = transform.parent.position.y - transform.position.y;
-    }
+		if (tool == "Net")
+		{
+			diff = 1.5f;
+		}
+		else
+		{
+			diff = transform.parent.position.y - transform.position.y;
+		}
+	}
 
     // Update is called once per frame
     void Update()

@@ -43,10 +43,8 @@ public class Mole : MonoBehaviour
         if (!isCatch)
         {
             Animation goUp = animation[0].GetComponent<Animation>();
-
             if (isGoUp)
             {
-				Debug.Log(timing);
 				if (timing > 0)
 				{
 					if (timing <= 5 && !outed)
@@ -119,6 +117,8 @@ public class Mole : MonoBehaviour
 
                 Rigidbody mole = GetComponent<Rigidbody>();
                 Collider moleCol = GetComponent<Collider>();
+				mole.velocity = new Vector3(0, 0, 0);
+				mole.angularVelocity = new Vector3(0, 0, 0);
                 mole.useGravity = false;
                 moleCol.isTrigger = true;
 
@@ -147,11 +147,15 @@ public class Mole : MonoBehaviour
 
             Rigidbody mole = GetComponent<Rigidbody>();
             Collider moleCol = GetComponent<Collider>();
-            mole.useGravity = true;
-            moleCol.isTrigger = false;
+			mole.useGravity = true;
+            //moleCol.isTrigger = false;
 
-            currentTime = 0;
-            isCatch = true;
+			if (!isCatch)
+			{
+				Debug.Log("set zero");
+				currentTime = 0;
+				isCatch = true;
+			}
         }
     }
 
@@ -162,7 +166,7 @@ public class Mole : MonoBehaviour
         {
             gameObject.transform.parent = other.transform;
             MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
-
+			sc.tool = other.tag;
             animation[0].SetActive(false);
             animation[1].SetActive(true);
 
@@ -183,4 +187,24 @@ public class Mole : MonoBehaviour
 			}
 		}
     }
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Net")
+		{
+			gameObject.transform.parent = other.transform;
+            MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
+			sc.tool = other.tag;
+
+            animation[0].SetActive(false);
+            animation[1].SetActive(true);
+
+            Animation caught = animation[1].GetComponent<Animation>();
+            caught.Play("Take 001");
+			
+			Destroy(gameObject.GetComponent<Throwable>());
+			Destroy(gameObject.GetComponent<Interactable>());
+            Destroy(this);
+		}
+	}
 }
