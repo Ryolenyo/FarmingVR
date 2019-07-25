@@ -11,6 +11,16 @@ public class Pointer : MonoBehaviour
     public Text textField;
     public string title;
 
+	private int numCheck = 4;
+	private int currentTime;
+
+	AudioSource sound;
+
+	private void Start()
+	{
+		sound = GetComponent<AudioSource>();
+	}
+
     private void Update()
     {
         
@@ -21,7 +31,14 @@ public class Pointer : MonoBehaviour
         if (other.tag == "Laser")
         {
             countDown -= Time.deltaTime;
-            textField.text = "" + ((int)countDown+1)%60;
+			currentTime = ((int)countDown+1)%60;
+            textField.text = "" + currentTime;
+			if (currentTime < numCheck)
+			{
+				numCheck = currentTime;
+				sound.Play(0);
+			}
+
             if (countDown < 0)
             {
                 if (sceneName == "Quit")
@@ -73,6 +90,7 @@ public class Pointer : MonoBehaviour
         if (other.tag == "Laser")
         {
             countDown = 3;
+			numCheck = 4;
             textField.text = title;
         }
     }
