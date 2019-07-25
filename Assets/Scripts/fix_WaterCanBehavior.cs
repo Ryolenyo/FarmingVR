@@ -96,7 +96,7 @@ public class fix_WaterCanBehavior : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "DigGround" || other.tag == "Planted" || other.tag == "AllGround")
+        if (other.tag == "DigGround" || other.tag == "Planted" || other.tag == "AllGround" || other.tag == "ground")
         {
             isWat = false;
         }
