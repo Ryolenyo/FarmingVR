@@ -1664,6 +1664,11 @@ PrefabInstance:
       propertyPath: pointer
       value: 
       objectReference: {fileID: 752159963}
+    - target: {fileID: 5148800134474830041, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
+        type: 3}
+      propertyPath: money
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 906341323506635305, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
         type: 3}
       propertyPath: m_LocalPosition.z
