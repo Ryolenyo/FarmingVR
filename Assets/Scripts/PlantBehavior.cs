@@ -26,10 +26,12 @@ public class PlantBehavior : MonoBehaviour
 
 	private GroundBehavior ground;
 
+	AudioSource sound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -172,15 +174,19 @@ public class PlantBehavior : MonoBehaviour
 			rigidbody.useGravity = true;
 			collider.isTrigger = false;
 
-            if (otherObject.tag == "Planted" && !isPicked)
-            {
-                ground.isReset = true;
-            }
-            else if (otherObject.tag == "SpawnPoint" && !isPicked)
-            {
-                PolyCarpicRespawn spawnPoint = otherObject.GetComponent<PolyCarpicRespawn>();
-                spawnPoint.isFertile = false;
-            }
+			if (!isPicked)
+			{
+				if (otherObject.tag == "Planted")
+				{
+					ground.isReset = true;
+				}
+				else if (otherObject.tag == "SpawnPoint")
+				{
+					PolyCarpicRespawn spawnPoint = otherObject.GetComponent<PolyCarpicRespawn>();
+					spawnPoint.isFertile = false;
+				}
+				sound.Play(0);
+			}
             isPicked = true;
         }
     }
