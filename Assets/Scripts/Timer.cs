@@ -20,8 +20,9 @@ public class Timer : MonoBehaviour
 	public GameObject objectiveBoard;
     public GameObject uiEnd;
     public GameObject WeedSpawner;
+    public GameObject count;
 
-	public GameObject basket;
+    public GameObject basket;
 
     //Create a reference for the textfield
 
@@ -71,6 +72,11 @@ public class Timer : MonoBehaviour
         if (guiTime < 240)
         {
             WeedSpawner.SetActive(true);
+        }
+
+        if (guiTime < 10)
+        {
+            count.SetActive(true);
         }
 
     }
