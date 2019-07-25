@@ -467,7 +467,7 @@ MonoBehaviour:
         m_MethodName: spawnItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 3748919245784271686, guid: f4bdd2cbf69227c449887509d20b4b04,
+          m_ObjectArgument: {fileID: 6549925926523078206, guid: f440d397aef67ce498154fa89162f64f,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -828,7 +828,7 @@ MonoBehaviour:
         m_MethodName: spawnItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8026794913715382866, guid: 7fb2953ddb2a4c148b87877b78b930d9,
+          m_ObjectArgument: {fileID: 5239361886909581602, guid: e05c01ab1ead7274483a4bbc2eeacb66,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -1161,7 +1161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2cc915b7cbb569c46897d0432f8d6823, type: 2}
+  - {fileID: 2100000, guid: 0f89e0dec7c249e47a0787dc0e3fa228, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: board
+  m_Name: shop
   m_Shader: {fileID: 4800000, guid: cc1a78a1fe8ca94478b427ee96d10a20, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -74,5 +74,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.9388051, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.6429647, b: 0.5707547, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
