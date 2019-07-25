@@ -32,7 +32,36 @@ public class Pointer : MonoBehaviour
                 {
                     GameObject player = GameObject.Find("Player");
                     PlayerPocket playerVariable = player.GetComponent<PlayerPocket>();
-                    Destroy(player);
+                    
+					Destroy(player);
+					Destroy(GameObject.FindWithTag("Mole"));
+					
+					GameObject[] destroyList;
+					
+					destroyList = GameObject.FindGameObjectsWithTag("Destroy");
+					foreach (GameObject destroyObj in destroyList)
+					{
+						Destroy(destroyObj);
+					}
+
+					destroyList = GameObject.FindGameObjectsWithTag("Seed");
+					foreach (GameObject destroyObj in destroyList)
+					{
+						Destroy(destroyObj);
+					}
+					
+					destroyList = GameObject.FindGameObjectsWithTag("Sapling");
+					foreach (GameObject destroyObj in destroyList)
+					{
+						Destroy(destroyObj);
+					}
+
+					destroyList = GameObject.FindGameObjectsWithTag("Plant");
+					foreach (GameObject destroyObj in destroyList)
+					{
+						Destroy(destroyObj);
+					}
+
                     Application.LoadLevel(sceneName);
                 }
             }
