@@ -1914,7 +1914,7 @@ PrefabInstance:
         type: 3}
       propertyPath: timer
       value: 
-      objectReference: {fileID: 2125922296}
+      objectReference: {fileID: 2071579686}
     - target: {fileID: 4869970660746509367, guid: cfe43bf09cb1cc94f9aa8f97c0a9394a,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2731,9 +2731,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 492584484}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2125922296 stripped
+--- !u!1 &2071579686 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4631455229104404230, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0,
+  m_CorrespondingSourceObject: {fileID: 4631455229609313351, guid: 6fa4b2fbc488a8d45abca01ec89ef5f0,
     type: 3}
   m_PrefabInstance: {fileID: 1012761668}
   m_PrefabAsset: {fileID: 0}
