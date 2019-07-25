@@ -63,7 +63,7 @@ public class Mole : MonoBehaviour
                 }
                 else
                 {
-                    randomGround = Random.Range(0, 17);
+                    randomGround = Random.Range(0, randomGround-1);
 					
                     transform.localPosition = new Vector3(target[randomGround].transform.position.x + 0.25f, startPos, target[randomGround].transform.position.z);
                     transform.rotation = Quaternion.identity;

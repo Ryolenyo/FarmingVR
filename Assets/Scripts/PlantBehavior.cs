@@ -61,7 +61,6 @@ public class PlantBehavior : MonoBehaviour
         //BE STOLEN
         if (stolen)
         {
-			Debug.Log("STOLEN");
 			if (transform.localScale.x > 1)
 			{
 				ground.isReset = true;
