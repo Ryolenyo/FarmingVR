@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class Mole : MonoBehaviour
 {
@@ -123,7 +124,7 @@ public class Mole : MonoBehaviour
         //When mole be caught by trapper, delete script
         if ((other.tag == "Trapper" || other.tag == "Net") && !isGoUp)
         {
-            //gameObject.transform.parent = other.transform;
+            gameObject.transform.parent = other.transform;
             MoleCaughtBehavior sc = gameObject.AddComponent<MoleCaughtBehavior>();
 
             animation[0].SetActive(false);
@@ -131,7 +132,9 @@ public class Mole : MonoBehaviour
 
             Animation caught = animation[1].GetComponent<Animation>();
             caught.Play("Take 001");
-
+			
+			Destroy(gameObject.GetComponent<Throwable>());
+			Destroy(gameObject.GetComponent<Interactable>());
             Destroy(this);
         }
 		else if (other.tag == "Plant" || other.tag == "Sapling")
