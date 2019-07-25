@@ -162,6 +162,8 @@ MonoBehaviour:
   tutorPlant: {fileID: 635655013}
   tutorPlant2: {fileID: 2031117160}
   tutorMole: {fileID: 686153597}
+  laser: {fileID: 705847299}
+  exit: {fileID: 2069700151289230280}
   spawnPoint: {fileID: 324024992}
   currentState: -1
   textField: {fileID: 6146571092049760827}
@@ -198,8 +200,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43915653, y: 0.20436597, z: 0.50563335}
-  m_Center: {x: 0.15377972, y: -1.6543678, z: 2.204245}
+  m_Size: {x: 0.43915653, y: 0.21963441, z: 0.50563335}
+  m_Center: {x: 0.15377972, y: -1.6467335, z: 2.204245}
 --- !u!65 &61472264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3321,7 +3323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2187113904940522310
 MonoBehaviour:
   m_ObjectHideFlags: 0
