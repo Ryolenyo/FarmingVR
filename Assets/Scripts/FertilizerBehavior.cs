@@ -5,13 +5,15 @@ using UnityEngine;
 public class FertilizerBehavior : MonoBehaviour
 {
     public int max;
-    public GameObject fertilizerBag;
+    //public GameObject fertilizerBag;
     public float minHeight;
+
+	AudioSource sound;
 
     // Start is called before the first frame update
     void Start()
     {
-
+		sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class FertilizerBehavior : MonoBehaviour
             max--;
             groundVariable.isFertilized = true;
             //groundQuality.fertilized = true;
+			sound.Play(0);
             Debug.Log("fertilizer remain: "+ max);
         }
     }
