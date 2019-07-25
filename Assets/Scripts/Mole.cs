@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class Mole : MonoBehaviour
 {
@@ -131,7 +132,9 @@ public class Mole : MonoBehaviour
 
             Animation caught = animation[1].GetComponent<Animation>();
             caught.Play("Take 001");
-
+			
+			Destroy(gameObject.GetComponent<Throwable>());
+			Destroy(gameObject.GetComponent<Interactable>());
             Destroy(this);
         }
 		else if (other.tag == "Plant" || other.tag == "Sapling")
