@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
     public int lim;
 	public GameObject objectiveBoard;
     public GameObject uiEnd;
+    public GameObject WeedSpawner;
 
 	public GameObject basket;
 
@@ -67,6 +68,10 @@ public class Timer : MonoBehaviour
             textField.text = "Time: " + textTime;
         }
 
+        if (guiTime < 240)
+        {
+            WeedSpawner.SetActive(true);
+        }
 
     }
 }
