@@ -162,6 +162,8 @@ MonoBehaviour:
   tutorPlant: {fileID: 635655013}
   tutorPlant2: {fileID: 2031117160}
   tutorMole: {fileID: 686153597}
+  UI: {fileID: 7127033984342995365}
+  laser: {fileID: 705847299}
   spawnPoint: {fileID: 324024992}
   currentState: -1
   textField: {fileID: 6146571092049760827}
@@ -198,8 +200,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43915653, y: 0.20436597, z: 0.50563335}
-  m_Center: {x: 0.15377972, y: -1.6543678, z: 2.204245}
+  m_Size: {x: 0.43915653, y: 0.21502447, z: 0.50563335}
+  m_Center: {x: 0.15377972, y: -1.6490386, z: 2.204245}
 --- !u!65 &61472264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3082,8 +3084,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9102129952929350252, guid: cfd3f1654974d1b40b717a0e836e217b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfd3f1654974d1b40b717a0e836e217b, type: 3}
+--- !u!1 &7127033984342995365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9102129952929350252, guid: cfd3f1654974d1b40b717a0e836e217b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7127033984342995364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8296172667428451878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9021048853846439830, guid: 2655a35616fa3e64588ed4cd51630389,

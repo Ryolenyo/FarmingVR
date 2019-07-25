@@ -14,6 +14,8 @@ public class Tutorial : MonoBehaviour
     public GameObject tutorPlant;
     public GameObject tutorPlant2;
     public GameObject tutorMole;
+    public GameObject UI;
+    public GameObject laser;
 
     public Transform spawnPoint;
 
@@ -109,9 +111,9 @@ public class Tutorial : MonoBehaviour
         else if (currentState == 9)
         {
             tutorText = "Tutorial ends here.";
+            UI.SetActive(true);
+            UI.SetActive(true);
         }
-
-        Debug.Log(currentState);
 
         //timer
         if (isTimerRun)
