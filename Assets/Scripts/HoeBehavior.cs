@@ -6,11 +6,12 @@ public class HoeBehavior : MonoBehaviour
 {
     public bool isReady = false;
 
+	AudioSource sound;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class HoeBehavior : MonoBehaviour
     {
         if (collider.gameObject.tag == "ground" && isReady)
         {
+			sound.Play(0);
             GameObject ground = collider.gameObject;
             GroundBehavior groundVariable = ground.GetComponent<GroundBehavior>();
             groundVariable.isDug = true;
