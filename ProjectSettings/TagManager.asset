@@ -30,6 +30,7 @@ TagManager:
   - Laser
   - Weed
   - Coin
+  - Destroy
   layers:
   - Default
   - TransparentFX
