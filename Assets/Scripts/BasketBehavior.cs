@@ -11,11 +11,16 @@ public class BasketBehavior : MonoBehaviour
 	private ObjectiveGiver objectiveGiver;
     public GameObject coin;
 
+    public bool isTutor;
+
     // Start is called before the first frame update
     void Start()
     {
-        objective = GameObject.Find("Objective System/ObjectiveGiver");
-        objectiveGiver = objective.GetComponent<ObjectiveGiver>();
+        if (!isTutor)
+        {
+            objective = GameObject.Find("Objective System/ObjectiveGiver");
+            objectiveGiver = objective.GetComponent<ObjectiveGiver>();
+        }
     }
 
     // Update is called once per frame
