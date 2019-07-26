@@ -11,16 +11,16 @@ GameObject:
   - component: {fileID: 8629112149833764976}
   - component: {fileID: 764421677048556102}
   - component: {fileID: 6460215875170309823}
-  - component: {fileID: 662435594063609991}
-  - component: {fileID: 4923491984052708772}
-  - component: {fileID: 3123137124809406501}
-  - component: {fileID: 2668077667111278235}
-  - component: {fileID: 1796813894726842885}
-  - component: {fileID: 3636023217784774683}
-  - component: {fileID: 1827599898508125134}
+  - component: {fileID: -1199135310302317437}
+  - component: {fileID: 7125230688245305978}
+  - component: {fileID: 379274512483386974}
+  - component: {fileID: 3593555654114728592}
+  - component: {fileID: 7702864069414528379}
+  - component: {fileID: 8272209765565289588}
+  - component: {fileID: 6987824403118554653}
   m_Layer: 0
   m_Name: Cloudberry_gold
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,13 +32,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4727541631363818083}
-  m_LocalRotation: {x: -0.053754777, y: -0.5767211, z: -0.018468907, w: 0.8149615}
-  m_LocalPosition: {x: 3.065, y: 0.728, z: -0.656}
+  m_LocalRotation: {x: -0.053753138, y: -0.576722, z: -0.018470166, w: 0.8149609}
+  m_LocalPosition: {x: 0.6864548, y: 0.5719033, z: -4.551506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -6.2530003, y: -70.672005, z: 1.8390001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &764421677048556102
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d947d87b49210d4289420684757c130, type: 2}
+  - {fileID: 2100000, guid: f28bad6c35f14ec47931ad7f225e9da0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &662435594063609991
+--- !u!136 &-1199135310302317437
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,11 +94,11 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.04533029
-  m_Height: 0.14314042
+  m_Radius: 0.04502238
+  m_Height: 0.13203128
   m_Direction: 0
-  m_Center: {x: -0.004585803, y: -0.031501766, z: 0.008390084}
---- !u!114 &4923491984052708772
+  m_Center: {x: -0.006951347, y: -0.034202218, z: 0.006121304}
+--- !u!114 &7125230688245305978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +149,7 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
---- !u!54 &3123137124809406501
+--- !u!54 &379274512483386974
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2668077667111278235
+--- !u!114 &3593555654114728592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +180,7 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!114 &1796813894726842885
+--- !u!114 &7702864069414528379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,29 +211,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   harvastablePlant: {fileID: 0}
   interactable: {fileID: 0}
---- !u!114 &3636023217784774683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727541631363818083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2adc82e53f73a42b2efb2c8306fae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valuePlant: 30
-  isReady: 0
-  currentWater: 0
-  maxWater: 50
-  nextObject: {fileID: 2549423730573963137, guid: 221a29f769abb3c429a54e92522b337c,
-    type: 3}
-  isTimerRun: 1
-  targetTime: 10
-  stolen: 0
-  isFertilized: 0
---- !u!82 &1827599898508125134
+--- !u!82 &8272209765565289588
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,7 +222,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: befeba0101d5b914f94fdd74c82bc21d, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -329,3 +307,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< HEAD
+--- !u!114 &6987824403118554653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727541631363818083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2adc82e53f73a42b2efb2c8306fae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valuePlant: 20
+  isReady: 0
+  currentWater: 0
+  maxWater: 50
+  nextObject: {fileID: 2549423730573963137, guid: 221a29f769abb3c429a54e92522b337c,
+    type: 3}
+  isTimerRun: 1
+  targetTime: 7
+  stolen: 0
+  isFertilized: 0
+=======
+>>>>>>> 154a5a0345f3ff2c2095dc6f53ccf9ea72caedd0

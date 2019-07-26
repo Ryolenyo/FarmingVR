@@ -1620,7 +1620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 494014, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1.44
+      value: 0.01667
       objectReference: {fileID: 0}
     - target: {fileID: 494014, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
       propertyPath: m_LocalScale.y
@@ -1629,22 +1629,6 @@ PrefabInstance:
     - target: {fileID: 494014, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 19908282, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: m_MaxParticleSize
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19908282, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: m_MinParticleSize
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19908282, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19908282, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: m_RenderAlignment
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
       propertyPath: InitialModule.maxNumParticles
@@ -1657,94 +1641,6 @@ PrefabInstance:
     - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
       propertyPath: SizeBySpeedModule.z.minMaxState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: ShapeModule.arc.value
-      value: 357.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.minCurve.m_Curve.Array.data[0].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.minCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.minCurve.m_Curve.Array.data[2].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.minCurve.m_Curve.Array.data[3].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.minCurve.m_Curve.Array.data[4].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.minCurve.m_Curve.Array.data[5].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[5].time
-      value: 0.53786427
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[5].value
-      value: 0.15602994
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[4].time
-      value: 0.44953865
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[4].value
-      value: 0.041980505
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[3].value
-      value: 0.035217047
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[3].time
-      value: 0.3571314
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[2].time
-      value: 0.20333117
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[2].value
-      value: 0.18362695
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 2.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: -0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: ShapeModule.m_Scale.y
-      value: 0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: ShapeModule.m_Scale.z
-      value: 0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 19893682, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
-      propertyPath: ShapeModule.randomDirectionAmount
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19815728, guid: 847bc0ce7577e6a4992fb57041d6294b, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
