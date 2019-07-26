@@ -227,7 +227,7 @@ MonoBehaviour:
   isReady: 0
   currentWater: 0
   maxWater: 50
-  nextObject: {fileID: 4727541631363818083, guid: bbef25e2a7b497e47907ed9a23bd7b1b,
+  nextObject: {fileID: 236548583525590035, guid: ee963914c8590094d9ca830a0cc619db,
     type: 3}
   isTimerRun: 1
   targetTime: 7
