@@ -123,14 +123,10 @@ public class Mole : MonoBehaviour
                 moleCol.isTrigger = true;
 
                 isGoUp = false;
-                isGoDown = false;
+                isGoDown = true;
             }
             else
             {
-				if (transform.position.y > -0.5f)
-				{
-					transform.position = new Vector3(transform.position.x, transform.position.y-0.005f, transform.position.z);
-				}
                 currentTime += Time.deltaTime;
             }
         }
