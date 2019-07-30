@@ -39,7 +39,7 @@ public class PlantBehavior : MonoBehaviour
     {
         if (isReady)
         {
-            if (transform.position.y > 0.6f)
+            if (transform.position.y > 0.5f)
             {
                 isReady = false;
                 isTimerRun = true;
