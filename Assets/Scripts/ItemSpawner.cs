@@ -28,6 +28,7 @@ public class ItemSpawner : MonoBehaviour
             GameObject itemSpawner = GameObject.Find("itemShopSpawner");
             Instantiate(item, new Vector3(itemSpawner.transform.position.x, itemSpawner.transform.position.y + 0.5f, itemSpawner.transform.position.z), Quaternion.identity);
         }
+		haveMoney = true;
     }
 
 }
