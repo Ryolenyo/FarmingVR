@@ -19,8 +19,8 @@ GameObject:
   - component: {fileID: 8100162328330599710}
   - component: {fileID: 8100162328330599705}
   m_Layer: 0
-  m_Name: Cloudberry
-  m_TagString: Untagged
+  m_Name: Cloudberry_gold
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
