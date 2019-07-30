@@ -127,6 +127,10 @@ public class Mole : MonoBehaviour
             }
             else
             {
+				if (transform.position.y > -0.5f)
+				{
+					transform.position = new Vector3(transform.position.x, transform.position.y-0.005f, transform.position.z);
+				}
                 currentTime += Time.deltaTime;
             }
         }
@@ -148,7 +152,7 @@ public class Mole : MonoBehaviour
             Rigidbody mole = GetComponent<Rigidbody>();
             Collider moleCol = GetComponent<Collider>();
 			mole.useGravity = true;
-            //moleCol.isTrigger = false;
+            moleCol.isTrigger = false;
 
 			if (!isCatch)
 			{
