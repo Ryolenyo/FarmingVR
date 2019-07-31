@@ -95,7 +95,7 @@ public class GroundBehavior : MonoBehaviour
         {
             if (gameObject.tag == "Planted")
             {
-                setGround("PlantedGround_water_fer");
+                setGround("PlantGround_water_fer");
             }
             else
             {
